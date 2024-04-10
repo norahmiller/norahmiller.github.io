@@ -107,7 +107,6 @@
 	
 		function typeText() {
 			if (index < text.length) {
-				console.log("reached typing")
 				if (text.charAt(index) === '\n') {
 					typedTextElement.innerHTML += "<br>";
 				} else {
