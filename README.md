@@ -20,7 +20,6 @@
 ## About The Project
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -31,7 +30,6 @@
 * [![Angular][Angular.io]][Angular-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -41,7 +39,6 @@
 
 For now, this website is for my own personal usage. There are no current instructions for community use, however you are welcome to try and fiddle around with things if you like my layout!
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -50,7 +47,6 @@ For now, this website is for my own personal usage. There are no current instruc
 
 If you have any suggestions on improving things, please contact me!
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- CONTACT -->
@@ -58,7 +54,6 @@ If you have any suggestions on improving things, please contact me!
 
 Norah Miller - norah@purdue.edu
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
