@@ -97,6 +97,34 @@
 
 	// Main Sections: Two.
 
+	//Main left description
+
+	document.addEventListener("DOMContentLoaded", function() {
+		var typedTextElement = document.getElementById("typed-text");
+		var text = ", an Honors College\nstudent pursuing Computer Science\nat Purdue University.";
+		var typingSpeed = 40; // Delay between typing each character (in milliseconds)
+		var index = 0;
+	
+		function typeText() {
+			if (index < text.length) {
+				if (text.charAt(index) === '\n') {
+					typedTextElement.innerHTML += "<br>";
+				} else {
+					typedTextElement.innerHTML += text.charAt(index);
+				}
+				index++;
+				setTimeout(typeText, typingSpeed);
+			} else {
+				// Replace "Purdue University" with the linked text
+				typedTextElement.innerHTML = typedTextElement.innerHTML.replace("Purdue University", "<a href='https://www.purdue.edu/'>Purdue University</a>");
+			}
+		}
+	
+		// Start typing out the text after a delay
+		setTimeout(typeText, 1000); // Delay before starting typing (in milliseconds)
+	});
+	
+
  //About button
 
  document.getElementById("Learn more").addEventListener("click", function() {
