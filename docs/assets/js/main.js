@@ -98,13 +98,14 @@
 	// Main Sections: Two.
 
 	//Main left description
-	
+
 		var typedTextElement = document.getElementById("typed-text");
 		var text = ", an Honors College\nstudent pursuing Computer Science\nat Purdue University.";
 		var typingSpeed = 40; // Delay between typing each character (in milliseconds)
 		var index = 0;
 	
 		function typeText() {
+			console.log("Reached the typing area")
 			if (index < text.length) {
 				if (text.charAt(index) === '\n') {
 					typedTextElement.innerHTML += "<br>";
@@ -117,6 +118,7 @@
 				// Replace "Purdue University" with the linked text
 				typedTextElement.innerHTML = typedTextElement.innerHTML.replace("Purdue University", "<a href='https://www.purdue.edu/'>Purdue University</a>");
 			}
+			console.log("end of typing")
 		}
 	
 		// Start typing out the text after a delay
