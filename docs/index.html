@@ -296,23 +296,28 @@
 		<section id="three">
 			<h2>Get In Touch</h2>
 			<p>Feel free to leave me a message, and I'll get right back to you!</p>
-			emailjs.init("AMy-iDuVTpHrTQTA4");
 			<div class="row">
 				<div class="col-8 col-12-small">
-					<form method="post" action="#">
+					<form id="contact-form" method="post" action="#">
 						<div class="row gtr-uniform gtr-50">
-							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name"
-									placeholder="Name" /></div>
-							<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email"
-									placeholder="Email" /></div>
-							<div class="col-12"><textarea name="message" id="message" placeholder="Message"
-									rows="4"></textarea></div>
+							<div class="col-6 col-12-xsmall">
+								<input type="text" name="name" id="name" placeholder="Name" />
+							</div>
+							<div class="col-6 col-12-xsmall">
+								<input type="email" name="email" id="email" placeholder="Email" />
+							</div>
+							<div class="col-12">
+								<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+							</div>
 						</div>
 					</form>
 					<ul class="actions">
-						<li><input onclick="sendmail()" type="submit" value="Send Message" /></li>
+						<li><input type="submit" value="Send Message" onclick="sendmail()"/></li>
+						<span id="result-message" style="margin-left: 10px; margin-top: 10px; font-style: italic;"></span>
 					</ul>
+					
 				</div>
+				
 				<div class="col-4 col-12-small">
 					<ul class="labeled-icons">
 						<li>
@@ -402,7 +407,7 @@
 	<script type="text/javascript">
 			(function(){
  			 emailjs.init({
-				publicKey: "AMy-iDuVTpHrTQTA4",
+				publicKey: 'AMy-iDuVTpHrTQTA4',
 				limitRate: {
     			// Set the limit rate for the application
    				 id: 'app',
@@ -410,20 +415,53 @@
    				 throttle: 10000,
 				},
  			 });
+			 console.log("called");
 			})();
 			function sendmail() {
-				let fullName = document.getElementById("name").value;
-				let userEmail = document.getElementById("email").value;
-				let userMessage = document.getElementById("message").value;
+   			 let fullName = document.getElementById("name").value;
+  			  let userEmail = document.getElementById("email").value;
+  			  let userMessage = document.getElementById("message").value;
 
-				var contactParams = {
-					from_name: fullName,
-					from_email: userEmail,
-					message: userMessage
-				};
+				if (!fullName.trim() || !userEmail.trim() || !userMessage.trim()) {
+      			  document.getElementById("result-message").innerText = 'Please fill in all fields.';
+     			   document.getElementById("result-message").style.color = 'red'; // Set the color to red for errors
+   			     return; // Stop the function if any field is empty
+   				 }
 
-				emailjs.send('service_jxstxi3', 'template_184f8em', contactParams).then(function (res) {})
-			}
+				  // Email validation regex pattern
+  				  const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
+    
+   				 // Check if the email address is valid
+   				 if (!emailRegex.test(userEmail)) {
+    			    document.getElementById("result-message").innerText = 'Please enter a valid email address.';
+    			    document.getElementById("result-message").style.color = 'red';
+  			      document.getElementById("result-message").style.fontStyle = 'italic';
+ 			       return; // Stop the function if the email is invalid
+ 			   }
+
+ 			   var contactParams = {
+ 			       from_name: fullName,
+ 			       from_email: userEmail,
+ 			       message: userMessage
+ 			   };
+
+ 		   emailjs.send('service_jxstxi3', 'template_184f8em', contactParams)
+	 		   .then(function(response) {
+		        console.log('SUCCESS!', response.status, response.text);
+		        // Clear the form fields
+		        document.getElementById("name").value = '';
+		        document.getElementById("email").value = '';
+		        document.getElementById("message").value = '';
+		        // Display the success message
+		        document.getElementById("result-message").innerText = 'Email sent successfully!';
+				document.getElementById("result-message").style.color = 'grey';
+		    }, function(error) {
+		        console.log('FAILED...', error);
+ 		       // Optionally handle errors here and display a failure message
+   			     document.getElementById("result-message").innerText = 'Failed to send email. Try again later.';
+
+			});
+		}
 	</script>
 	
 
