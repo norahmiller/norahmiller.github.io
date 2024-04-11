@@ -101,7 +101,7 @@
 
 	document.addEventListener("DOMContentLoaded", function() {
 		var typedTextElement = document.getElementById("typed-text");
-		var text = ", an Honors College\nstudent pursuing Computer Science\nat Purdue University.";
+		var text = ", an Honors College\n student pursuing Computer Science\n at Purdue University.";
 		var typingSpeed = 40; // Delay between typing each character (in milliseconds)
 		var index = 0;
 	
