@@ -20,7 +20,7 @@
 ## About The Project
 
 
-
+This site is a work in progress, and still has a long way to go! It's sort of my side project since I'm a full time student and working part time. I have many updates to make still, so check back frequently to see changes!
 
 
 ### Built With
