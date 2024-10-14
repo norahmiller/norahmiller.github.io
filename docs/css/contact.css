@@ -1,0 +1,206 @@
+body {
+    background-color: #1C2630;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anonymous-pro-font {
+    font-family: 'Anonymous Pro', monospace;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-in-touch .form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.get-in-touch {
+    width: 100vw;
+    position: absolute;
+    left: 300px;
+}
+
+.get-in-touch h2 {
+    color: #FFFFFF;
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 300;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+
+.get-in-touch .row1 {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+.name-input {
+    width: 300px;
+    height: 25px;
+    background-color: rgba(186, 197, 210, 0.58);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    border-radius: 0.35em;
+    resize: none;
+    padding: 0.75em;
+    margin-top: 3px;
+    border: none;
+    margin-left: 0px;
+}
+
+
+.email-input {
+    width: 300px;
+    height: 25px;
+    background-color: rgba(186, 197, 210, 0.58);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    border-radius: 0.35em;
+    resize: none;
+    padding: 0.75em;
+    margin-top: 3px;
+    border: none;
+    margin-left: 20px;
+}
+
+.subject-input {
+    width: 645px;
+    height: 25px;
+    background-color: rgba(186, 197, 210, 0.58);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    border-radius: 0.35em;
+    resize: none;
+    padding: 0.75em;
+    border: none;
+    margin-top: 65px;
+}
+
+
+.message-input {
+    width: 645px;
+    height: 150px;
+    background-color: rgba(186, 197, 210, 0.58);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    border-radius: 0.35em;
+    resize: none;
+    padding: 0.75em;
+    margin-top: 3px;
+    border: none;
+    margin-top: 15px;
+}
+
+input[type="submit"] {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 0.35em;
+    background-color: rgba(228, 232, 236, 0.87);
+    color: #1C2630;
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+}
+
+.actions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.result {
+    position: absolute;
+    list-style-type: none;
+    margin-top: -32px;
+    margin-left: 150px; 
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+}
+
+.main .contact-side {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 550px;
+    flex: 1;
+}
+
+.contact-side .icon {
+    height: 30px;
+    width: 30px;
+}
+
+ul.labeled-icons {
+    list-style: none;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+ul.labeled-icons li {
+    line-height: 35px;
+    margin-top: 50px;
+    margin-left: 620px;
+    display: flex;
+}
+
+ul.labeled-icons li:first-child {
+    margin-bottom: -18px; /* Custom bottom margin for the first item */
+}
+
+ul.labeled-icons li a {
+    color: inherit;
+}
+
+ul.labeled-icons li .contact-text {
+    padding-left: 10px;
+    margin-top: -2px;
+}
+
+::-webkit-input-placeholder {
+    color: #FFFFFF !important;
+    opacity: 1.0;
+}
+
+:-moz-placeholder {
+    color: #FFFFFF !important;
+    opacity: 1.0;
+}
+
+::-moz-placeholder {
+    color: #FFFFFF !important;
+    opacity: 1.0;
+}
+
+:-ms-input-placeholder {
+    color: #FFFFFF !important;
+    opacity: 1.0;
+}
+
+.blobs {
+    z-index: -2;
+}
+

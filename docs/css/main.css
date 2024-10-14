@@ -1,0 +1,411 @@
+body {
+    overflow-x: hidden; /* Hide horizontal overflow */
+    background-color: #1C2630;
+    font-family: 'Anonymous Pro', monospace;
+    margin: 0;
+    padding: 0;
+    color: white; /* Default text color */
+}
+
+.main-container {
+    height: 100px;
+    overflow-y: hidden;
+}
+
+  /* Firefox */
+* {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: rgba(156, 165, 178, .5) #1C2630; /* Thumb color and track color */
+  }
+  
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #1C2630; /* Track background color */
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: rgba(156, 165, 178, 1); /* Background color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid #ffffff; /* Border around the scrollbar thumb */
+  }
+  
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 165, 178, .5); /* Darker color for thumb on hover */
+  }
+
+  
+.icons {
+    position: absolute;
+    width: 159px;
+    height: 47px;
+    display: block;
+    top: 440px;
+    left: 600px;
+}
+
+.icons img {
+    width: 37px;
+    height: 37px;
+    padding-left: 5px;
+}
+
+.arrow{
+    position: absolute;
+    left: 620px;
+    top: 695px;
+    cursor: pointer; /* Changes the cursor to a hand when hovering */
+}
+
+/* Set up the path to be visible by default */
+.arrow svg path {
+    stroke-dasharray: 150; /* Match this to the path length */
+    stroke-dashoffset: 0;  /* Fully visible by default */
+    transition: none;      /* No initial transition */
+}
+
+/* Hover effect to draw the path again */
+.arrow:hover svg path {
+    animation: draw-arrow 1s ease-in-out forwards; /* Draws the arrow on hover */
+}
+
+/* Keyframes to animate drawing */
+@keyframes draw-arrow {
+    from {
+        stroke-dashoffset: 150; /* Start from hidden */
+    }
+    to {
+        stroke-dashoffset: 0;   /* End with the full arrow visible */
+    }
+}
+
+a {
+    text-decoration: none; /* Removes the underline from the link */
+}
+
+a:visited {
+    color: inherit; /* Ensures the visited state does not change color */
+}
+  
+
+/* Define the Sassy Frass font style */
+.sassy-frass-regular {
+    font-family: 'Sassy Frass', cursive;
+}
+
+@font-face {
+    font-family: 'Saturday August';
+    src: url('fonts/SaturdayAugust-Regular.ttf') format('truetype'); /* Adjust the file name and format as needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.saturday-august-regular {
+    font-family: 'Saturday August', sans-serif;
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: transparent; /* Clear background */
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Style the navigation list */
+nav ul {
+    list-style: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Align list items horizontally */
+    justify-content: flex-end; /* Align items to the right */
+}
+
+nav ul li {
+    margin: 0 35px; /* Space between list items */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 21px;
+    transition: color 0.3s ease;
+}
+
+/* Add hover effect for navigation links */
+nav a:hover {
+    color: #A8A8A8; /* Change to a lighter gray when hovered */
+}
+
+/* Highlight the active link */
+nav a.active {
+    border-bottom: 2px solid white;
+}
+
+header .gradient-overlay {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 70px; /* Adjust height of the gradient overlay */
+    background: linear-gradient(to bottom, rgba(28, 38, 48, 1) 25%, rgba(28, 38, 48, 0) 98%);
+    pointer-events: none; /* Ensure the overlay does not interfere with user interactions */
+    z-index: 2; /* Higher z-index to ensure it is on top of the avatar */
+}
+
+main {
+    display: flex;          /* Enables Flexbox */
+    width: 100vw;          
+    margin: 0; 
+    padding-bottom: 100px;
+}
+
+.intro {
+    position: absolute;  /* Enables positioning by coordinates */
+    top: 320px;          /* Sets the top position */
+    left: 304px;         /* Sets the left position */
+    width: 443px;        /* Sets the width */
+    /* height: 100px; */ /* Set the height when you know it */
+}
+
+.intro h1, .intro h2, .intro p {
+    text-align: right;
+}
+
+main .intro h1 {
+    font: weight 50px;
+    font-size: 35px;
+    font-family: 'Anonymous Pro', monospace;
+    margin-bottom: 0;
+}
+
+main .intro h2 {
+    margin-top: 0;
+    font-size: 28px;
+    font-weight: 10;
+    padding-top: 10px;
+}
+
+main .intro p {
+    padding-top: 200px;
+    font-size: 21px;
+    font-weight: 10;
+}
+
+/* Watermark styling */
+.watermark {
+    position: fixed; /* Keeps it in the top corner */
+    top: 10px;       /* Adjust for perfect placement */
+    left: 10px;      /* Adjust as needed */
+    font-size: 50px; /* Adjust size to your liking */
+    color: white; /* Subtle, semi-transparent white */
+    z-index: 1001;  /* Place it above most content */
+}
+
+.blobs {
+    overflow-x: hidden;
+}
+
+.blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden; /* To prevent scrollbars if the blob moves outside the viewport */
+    filter: blur(15px);
+}
+
+.blob1 {
+    background: linear-gradient(45deg, rgba(156, 165, 178, .5), rgba(156, 165, 178, 0));
+	height: 764px;
+	width: 918px;
+	left: -600px;
+	top: 550px;
+	transform: rotate(-180deg);
+	animation: transform 20s ease-in-out infinite both alternate, movement_two 20s ease-in-out infinite both;
+}
+
+.blob2 {
+    background: linear-gradient(-45deg, rgba(138, 65, 133, 1), rgba(138, 65, 133, 0));
+	height: 764px;
+	width: 918px;
+	left: 750px;
+	top: -400px;
+	transform: rotate(180deg);
+	animation: transform 17s ease-in-out infinite both alternate, movement_two 20s ease-in-out infinite both;
+    overflow: hidden;
+}
+
+.blob3 {
+    background: linear-gradient(-45deg, rgba(138, 65, 133, 1), rgba(138, 65, 133, 0));
+	height: 764px;
+	width: 918px;
+	left: 950px;
+	top: 1500px;
+	transform: rotate(180deg);
+	animation: transform 25s ease-in-out infinite both alternate;
+    overflow-y: hidden;
+}
+
+@keyframes transform
+{
+    0%,
+  100% { border-radius: 33% 67% 70% 30% / 30% 40% 70% 70%; } 
+   20% { border-radius: 37% 63% 51% 49% / 37% 35% 35% 63%; } 
+   40% { border-radius: 36% 64% 64% 36% / 64% 48% 52% 26%; } 
+   60% { border-radius: 37% 63% 51% 49% / 30% 30% 70% 73%; } 
+   80% { border-radius: 40% 60% 42% 58% / 51% 51% 49% 59%; } 
+}
+
+@keyframes movement_two
+{
+    0%,
+  500% { transform: none; }
+   50% { transform: translate(5%, 0%) rotate(-200deg) scale(1.3);}
+}
+
+
+
+main .avatar {
+    position: absolute;
+    width: 500px; /* Adjust as needed */
+    height: 900px; /* Adjust as needed */
+    left: 740px;
+    top: -100px;
+}
+
+#avatar-canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.avatar .gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 9px;
+    width: 100%;
+    height: 400px; /* Adjust height of the gradient overlay */
+    background: linear-gradient(to top, rgba(28, 38, 48, 1) 25%, rgba(28, 38, 48, 0) 100%);
+    pointer-events: none; /* Ensure the overlay does not interfere with user interactions */
+    z-index: 2; /* Higher z-index to ensure it is on top of the avatar */
+}
+
+main .greeting .saturday-august-regular {
+    position: absolute;
+    left: 1150px;
+    top: 200px;
+    font-size: 45px;
+    color: white;
+    transform: rotate(10deg); /* Rotate the text */
+}
+
+main .greeting svg {
+    position: absolute;
+    left: 1190px;
+    top: 250px;
+    transform: rotate(25deg); /* Rotate the text */
+}
+
+.mid .illustrations{
+    top: 260px;
+    position: absolute;
+    left: 460px;
+}
+
+.mid .labels {
+    position: absolute;
+    top: 500px;
+    left: 100px
+}
+
+/* Style the navigation list */
+.mid .labels ul {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Align list items horizontally */
+    justify-content: center;
+}
+
+.mid .labels ul li {
+    padding-left: 169px; /* Space between list items */
+}
+
+.mid .labels a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 26px;
+}
+
+/* Add hover effect for navigation links */
+.mid .labels a:hover {
+    color: #A8A8A8; /* Change to a lighter gray when hovered */
+}
+
+
+.mid .illustrations img{
+    width: 200px;
+    height: 200px;
+    padding-left: 80px;
+}
+
+.mid .illustrations #hand{
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    left: -320px;
+    top: -40px;
+}
+
+.mid{
+    position: absolute;
+    top: 900px;
+    width: 100vw;
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+.mid .illustrations img {
+    transition: transform .5s ease;
+  }
+  
+  /* [3] Finally, transforming the image when container gets hovered */
+.illustrations img:hover {
+    transform: scale(1.1);
+}
+
+.label h3 {
+    margin-top: 80px;
+    font-size: 30px;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.later h3 {
+    margin-top: -80px;
+    font-size: 35px;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.announcement .construction{
+    width: 400px;
+    margin-top: -100px;
+}
+
+.announcement {
+    display: flex; /* Align list items horizontally */
+    flex-direction: column; /* Align items to the right */
+    align-items: center;
+}
+
