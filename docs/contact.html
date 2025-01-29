@@ -37,7 +37,7 @@
         <div class="get-in-touch">
             <h2>Contact Me</h2>
             <div class="form">
-                <form id="contact-form" method="post" action="#">
+                <form id="contact-form" method="POST" action="https://formspree.io/f/mdkagqpe">
                     <div class="row1">
                         <div class="half">
                             <input type="text" name="name" id="name" class="name-input" placeholder="Name"/>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <ul class="actions">
-                        <li><input type="submit" value="Send Message" onclick="sendmail()" /></li>
+                        <li><input type="submit" value="Send Message"/></li>
                     </ul>
                     <ul class="result">
                         <li><span id="result-message"></span></li>
@@ -89,69 +89,62 @@
             </ul>
         </div>
     </div>
+
     <script src="js/main.js"></script>
- 	<script type="text/javascript"
-		src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-	</script>
-	<script type="text/javascript">
-			(function(){
- 			 emailjs.init({
-				publicKey: 'AMy-iDuVTpHrTQTA4',
-				limitRate: {
-    			// Set the limit rate for the application
-   				 id: 'app',
-    			// Allow 1 request per 10s
-   				 throttle: 10000,
-				},
- 			 });
-			 console.log("called");
-			})();
-			function sendmail() {
-            event.preventDefault(); // Prevents the default form submission
-   			 let fullName = document.getElementById("name").value;
-  			  let userEmail = document.getElementById("email").value;
-  			  let userMessage = document.getElementById("message").value;
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
 
-				if (!fullName.trim() || !userEmail.trim() || !userMessage.trim()) {
-      			   document.getElementById("result-message").innerText = 'Please fill in all fields.';
-     			   document.getElementById("result-message").style.color = 'red'; // Set the color to red for errors
-   			     return; // Stop the function if any field is empty
-   				 }
+            let fullName = document.getElementById("name").value.trim();
+            let userEmail = document.getElementById("email").value.trim();
+            let userSubject = document.getElementById("subject").value.trim();
+            let userMessage = document.getElementById("message").value.trim();
+            let resultMessage = document.getElementById("result-message");
 
-				  // Email validation regex pattern
-  				  const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
-    
-   				 // Check if the email address is valid
-   				 if (!emailRegex.test(userEmail)) {
-    			    document.getElementById("result-message").innerText = 'Please enter a valid email address.';
-    			    document.getElementById("result-message").style.color = 'red';
-  			        document.getElementById("result-message").style.fontStyle = 'italic';
- 			       return; // Stop the function if the email is invalid
- 			   }
+            // Validate required fields
+            if (!fullName || !userEmail || !userMessage) {
+                resultMessage.innerText = 'Please fill in all required fields.';
+                resultMessage.style.color = 'red';
+                return;
+            }
 
- 			   var contactParams = {
- 			       from_name: fullName,
- 			       from_email: userEmail,
- 			       message: userMessage
- 			   };
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(userEmail)) {
+                resultMessage.innerText = 'Please enter a valid email address.';
+                resultMessage.style.color = 'red';
+                return;
+            }
 
- 		   emailjs.send('service_jxstxi3', 'template_184f8em', contactParams)
-	 		   .then(function(response) {
-		        console.log('SUCCESS!', response.status, response.text);
-		        // Clear the form fields
-		        document.getElementById("name").value = '';
-		        document.getElementById("email").value = '';
-		        document.getElementById("message").value = '';
-		        // Display the success message
-		        document.getElementById("result-message").innerText = 'Email sent successfully!';
-				document.getElementById("result-message").style.color = 'grey';
-		    }, function(error) {
-		        console.log('FAILED...', error);
- 		       // Optionally handle errors here and display a failure message
-   			     document.getElementById("result-message").innerText = 'Failed to send email. Try again later.';
+            // Prepare form data for Formspree
+            let formData = new FormData(this);
 
-			});
-		}
-	</script>
+            // Send data to Formspree
+            fetch(this.action, {
+                method: this.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    resultMessage.innerText = 'Message sent successfully!';
+                    resultMessage.style.color = 'green';
+
+                    // Clear form fields
+                    document.getElementById("contact-form").reset();
+                } else {
+                    resultMessage.innerText = 'Failed to send message. Please try again.';
+                    resultMessage.style.color = 'red';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                resultMessage.innerText = 'An error occurred. Please try again later.';
+                resultMessage.style.color = 'red';
+            });
+        });
+    </script>
 </body>
 </html>
