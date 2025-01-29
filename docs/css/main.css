@@ -99,9 +99,9 @@ a:visited {
 
 @font-face {
     font-family: 'Saturday August';
-    src: url('fonts/SaturdayAugust-K7xyD.ttf') format('truetype'),
-         url('fonts/SaturdayAugust-K7xyD.woff2') format('woff2'),
-         url('fonts/SaturdayAugust-K7xyD.woff') format('woff');
+    src: url('../fonts/SaturdayAugust.ttf') format('truetype'),
+         url('../fonts/SaturdayAugust.woff2') format('woff2'),
+         url('../fonts/SaturdayAugust.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
