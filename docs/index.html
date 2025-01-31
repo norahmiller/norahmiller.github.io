@@ -22,7 +22,7 @@
       </script>
 </head>
 <body>
-    <div class="main-containter">
+    <div class="main-container">
         <header>
             <div class="gradient-overlay"></div>
             <a href="index.html" class="watermark sassy-frass-regular">N</a>
@@ -106,10 +106,9 @@
         // JavaScript to scroll to the mid section
         document.getElementById('arrow').addEventListener('click', function() {
             // Scroll to the mid section
-            document.getElementById('mid').scrollIntoView({
-                behavior: 'smooth', // Smooth scroll animation
-                block: 'start',      // Aligns the top of the section with the top of the viewport
-                inline: 'nearest'    // Ensures the nearest edge is aligned
+            window.scrollTo({
+                top: 900, // Adjust this value to match where you want to scroll
+                behavior: 'smooth'
             });
         });
     </script>

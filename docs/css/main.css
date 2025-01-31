@@ -10,21 +10,30 @@
         scroll-behavior: smooth; /* Enables smooth scrolling */
     }
 
+    html, body {
+        height: 100%;  /* Ensure the body and html elements stretch full height of the viewport */
+        margin: 0;     /* Remove default margin */
+        padding: 0;    /* Remove default padding */
+    }
+
     body {
     overflow-x: hidden; /* Hide horizontal overflow */
     background-color: #1C2630;
-    font-family: 'Anonymous Pro', monospace;
-    margin: 0;
-    padding: 0;
+    font-family: 'Anonymous Pro', monospace; 
     color: white; /* Default text color */
+    position: relative;
     }
 
-    .main-container { /* Holds Everything */
-        height: 100px;
-        overflow-y: hidden;
+    .main-container {
+        height: 1700px;
+        width: 100vw;
+        overflow: hidden; /* Hides anything outside */
+        position: relative; /* Ensures blobs position relative to this */
     }
 
+    
     /* Fonts */
+
         .sassy-frass-regular {
             font-family: 'Sassy Frass', cursive;
         }
@@ -204,6 +213,7 @@
             width: 100vw;          
             margin: 0; 
             padding-bottom: 100px;
+            position: relative;
         }
 
 
@@ -309,6 +319,7 @@
         }
 
         .blob1 {
+            position: absolute;
             background: linear-gradient(45deg, rgba(156, 165, 178, .5), rgba(156, 165, 178, 0));
             height: 764px;
             width: 918px;
@@ -319,6 +330,7 @@
         }
 
         .blob2 {
+            position: absolute;
             background: linear-gradient(-45deg, rgba(138, 65, 133, 1), rgba(138, 65, 133, 0));
             height: 764px;
             width: 918px;
@@ -330,6 +342,7 @@
         }
 
         .blob3 {
+            position: absolute;
             background: linear-gradient(-45deg, rgba(138, 65, 133, 1), rgba(138, 65, 133, 0));
             height: 764px;
             width: 918px;
@@ -361,6 +374,9 @@
 
 /* Secondary Page - Nav */
 
+        .mid {
+            position: relative;
+        }
         .mid .illustrations{
             top: 260px;
             position: absolute;

@@ -1,16 +1,24 @@
-body {
-    background-color: #1C2630;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.anonymous-pro-font {
-    font-family: 'Anonymous Pro', monospace;
-}
+
+/* Basic */
+
+    body {
+        background-color: #1C2630;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+
+        /* Fonts */
+
+            .anonymous-pro-font {
+                font-family: 'Anonymous Pro', monospace;
+            }
 
 #main {
     width: 100%;
