@@ -381,7 +381,8 @@
             top: 260px;
             position: absolute;
             left: 460px;
-            pointer-events: none;
+            -webkit-user-drag: none;
+            user-drag: none;
         }
 
         .mid .labels {
