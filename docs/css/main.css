@@ -381,6 +381,7 @@
             top: 260px;
             position: absolute;
             left: 460px;
+            pointer-events: none;
         }
 
         .mid .labels {
