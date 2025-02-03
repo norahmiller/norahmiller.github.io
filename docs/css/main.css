@@ -375,71 +375,45 @@
 /* Secondary Page - Nav */
 
         .mid {
-            position: relative;
-        }
-        .mid .illustrations{
-            top: 260px;
+            display: flex;
+            justify-content: center;
+            gap: 80px; /* Adds space between illustrations */
+            flex-wrap: wrap; /* Ensures responsiveness */
+            width: 100%;
+            top: calc(100vh + 350px);
             position: absolute;
-            left: 460px;
-            -webkit-user-drag: none;
-            user-drag: none;
         }
 
-        .mid .labels {
-            position: absolute;
-            top: 500px;
-            left: 100px
+        .illustration-container {
+            display: flex;
+            flex-direction: column; /* Stack image & label */
+            align-items: center; /* Center them */
+            text-align: center;
+            position: relative;
         }
 
         /* Style the navigation list */
-        .mid .labels ul {
-            list-style: none; /* Remove default list styling */
-            display: flex; /* Align list items horizontally */
-            justify-content: center;
-        }
-
-        .mid .labels ul li {
-            padding-left: 169px; /* Space between list items */
-        }
-
-        .mid .labels a {
+        .label {
+            margin-top: 50px; /* Space between image & text */
             color: white;
-            text-decoration: none;
             font-family: 'Anonymous Pro', monospace;
             font-size: 26px;
+            text-decoration: none;
         }
 
         /* Add hover effect for navigation links */
-        .mid .labels a:hover {
-            color: #A8A8A8; /* Change to a lighter gray when hovered */
+        .label:hover {
+            color: #A8A8A8;
         }
-
-        .mid .illustrations img{
+        
+        .illustration {
             width: 200px;
             height: 200px;
-            padding-left: 80px;
-        }
-
-        .mid .illustrations #hand{
-            width: 260px;
-            height: 260px;
-            position: absolute;
-            left: -320px;
-            top: -40px;
-        }
-
-        .mid{
-            position: absolute;
-            top: 900px;
-            width: 100vw;
-        }
-
-        .mid .illustrations img {
-            transition: transform .5s ease;
+            transition: transform 0.5s ease;
         }
         
         /* [3] Finally, transforming the image when container gets hovered */
-        .illustrations img:hover {
+        .illustration:hover {
             transform: scale(1.1);
         }
 
