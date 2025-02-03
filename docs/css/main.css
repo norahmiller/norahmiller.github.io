@@ -93,23 +93,28 @@
             color: #A8A8A8; /* Change to a lighter gray when hovered */
         }
 
-        /* Highlight the active link */
-        nav a.active {
-            border-bottom: 2px solid white;
-        }
 
-        /* Hide Hamburger Button by Default */
-        .menu-toggle {
-            display: none;
+        /* Reset Button Styles */
+        button.menu-toggle {
             background: none;
             border: none;
-            font-size: 28px;
-            color: white;
+            padding: 0;
+            margin: 0;
             cursor: pointer;
-            position: absolute;
+            position: fixed;
             top: 15px;
             right: 20px;
             z-index: 10;
+            width: 30px; /* Match the image width */
+            height: auto; /* Match the image height */
+        }
+
+        /* Hide Hamburger Button by Default */
+        .menu-toggle img {
+            display: none;
+            width: 100%; /* Ensure the image fills the button */
+            height: auto;
+            z-index: 0; /* Ensure it is below the invisible layer */
         }
 
         /* Responsive: When Screen is Smaller than 768px */
@@ -132,7 +137,7 @@
             }
 
             /* Show Hamburger Menu */
-            .menu-toggle {
+            .menu-toggle img{
                 display: block;
             }
 
