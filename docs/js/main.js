@@ -15,3 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 2000); // Adjust timeout as needed (e.g., 2000 milliseconds)
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav");
+
+    menuToggle.addEventListener("click", function () {
+        nav.classList.toggle("active");
+    });
+});

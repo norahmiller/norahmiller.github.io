@@ -98,6 +98,50 @@
             border-bottom: 2px solid white;
         }
 
+        /* Hide Hamburger Button by Default */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        /* Responsive: When Screen is Smaller than 768px */
+        @media (max-width: 1000px) {
+            nav ul {
+                display: none; /* Hide menu */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: rgba(17, 23, 31, 0.7);
+                width: 200px;
+                border-radius: 8px;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            /* Show Hamburger Menu */
+            .menu-toggle {
+                display: block;
+            }
+
+            /* Show menu when active */
+            nav.active ul {
+                display: flex;
+            }
+        }
+
         header .gradient-overlay {
             position: fixed;
             top: 0;
