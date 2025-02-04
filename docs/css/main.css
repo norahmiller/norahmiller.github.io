@@ -105,15 +105,15 @@
             top: 15px;
             right: 20px;
             z-index: 10;
-            width: 30px; /* Match the image width */
-            height: auto; /* Match the image height */
+            width: 35px; /* Match the image width */
+            height: 35px; /* Match the image height */
         }
 
         /* Hide Hamburger Button by Default */
         .menu-toggle img {
             display: none;
-            width: 100%; /* Ensure the image fills the button */
-            height: auto;
+            width: 100%; /* Make it fill the button */
+            height: 100%;
             z-index: 0; /* Ensure it is below the invisible layer */
         }
 
@@ -123,13 +123,17 @@
                 display: none; /* Hide menu */
                 flex-direction: column;
                 position: absolute;
-                top: 60px;
+                top: 0px;
                 right: 20px;
                 background: rgba(17, 23, 31, 0.7);
                 width: 200px;
                 border-radius: 8px;
                 text-align: center;
                 padding: 10px 0;
+            }
+
+            nav {
+                top: 50px;
             }
 
             nav ul li {
