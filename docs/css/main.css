@@ -270,7 +270,7 @@
         main {
             top: 70px;
             display: grid;
-            grid-template-columns: .885fr 1fr; /* Three columns: left, middle (avatar), right */
+            grid-template-columns: .885fr 1fr .1fr; /* Three columns: left, middle (avatar), right */
             align-items: center; /* Align items vertically */
             justify-content: center; /* Center everything horizontally */
             gap: 40px; /* Space between columns */
