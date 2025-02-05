@@ -351,14 +351,14 @@
 
         .avatar .gradient-overlay {
             position: absolute;
-            bottom: -150px;
+            bottom: -300px;
             left: 60%; /* Center the gradient */
             transform: translateX(-50%); /* Ensure it's truly centered */
-            width: calc(100% + 450px);
-            height: 300px; /* Adjust as needed */
+            width: calc(100% + 700px);
+            height: 600px; /* Adjust as needed */
             
             background: radial-gradient(ellipse at center, 
-                rgba(28, 38, 48, 1) 30%, /* Fully opaque in the center */
+                rgba(28, 38, 48, 1) 25%, /* Fully opaque in the center */
                 rgba(28, 38, 48, 0) 75%  /* Gradually fades out towards edges */
             );
         
