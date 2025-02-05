@@ -228,7 +228,6 @@
     /* Arrow */        
 
         .arrow{
-            border: 2px solid green;
             grid-column: 1; /* Leftmost column */
             cursor: pointer; /* Changes the cursor to a hand when hovering */
             justify-self: end; /* Aligns the whole container to the right */
@@ -277,15 +276,11 @@
             padding: 50px;
             width: fit-content;
             height: fit-content;
-            background: rgba(255, 0, 0, 0.1);
             margin: auto;
             position: relative;
             top: 0px;
         }
 
-        main * {
-            outline: 1px solid blue;
-        }
 
         .main-wrapper {
             display: flex;
@@ -301,7 +296,6 @@
         .intro {
             grid-column: 1; /* Leftmost column */
             grid-row: 1;
-            border: 2px solid green;
             top: 12px;
             right: -49px;
             position: relative;
@@ -336,7 +330,6 @@
     /* Avatar */
    
         .avatar {
-            border: 2px solid green;
             width: 500px; /* Adjust as needed */
             height: 900px; /* Adjust as needed */
             top: -150px;
@@ -357,7 +350,6 @@
         .avatar .gradient-overlay {
             position: absolute;
             grid-row: 2;
-            border: 2px solid orange;
             bottom: 0;
             left: 9px;
             grid-row: 1;
