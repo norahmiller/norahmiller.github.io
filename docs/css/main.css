@@ -329,7 +329,7 @@
         }
 
 
-        @media (max-height: 800px) {
+        @media (max-height: 790px) {
             .intro {
                 top: -15px;
             }
