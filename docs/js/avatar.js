@@ -13,7 +13,6 @@ const avatarCHeight = avatarContainer.clientHeight;
 renderer.setSize(avatarCWidth, avatarCHeight);
 renderer.setClearColor(0x000000, 0); // Set the clear color to black with full transparency
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.domElement.style.position = 'absolute';  // Use 'absolute' for precise positioning
 renderer.domElement.style.right = '0';            // Align to the right of its containing block
 avatarContainer.appendChild(renderer.domElement);
 
