@@ -329,6 +329,20 @@
         }
 
 
+        @media (max-height: 800px) {
+            .intro {
+                top: -15px;
+            }
+            .intro p {
+                padding-top: 150px !important; /* Move text up */
+            }
+        
+            .arrow {
+                top: 180px; /* Move arrow up */
+            }
+        }
+
+
     /* Avatar */
    
         .avatar {
