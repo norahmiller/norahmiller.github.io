@@ -357,7 +357,7 @@
             left: 60%; /* Center the gradient */
             transform: translateX(-50%); /* Ensure it's truly centered */
             width: calc(100% + 1500px);
-            height: 800px; /* Adjust as needed */
+            height: calc(90%); /* Adjust as needed */
             background: radial-gradient(ellipse at center, 
                 rgba(28, 38, 48, 1) 20%, /* Fully opaque in the center */
                 rgba(28, 38, 48, 0) 72%  /* Gradually fades out towards edges */
@@ -373,7 +373,7 @@
             left: 60%; /* Center the gradient */
             transform: translateX(-50%); /* Ensure it's truly centered */
             width: calc(100% + 550px);
-            height: 700px; /* Adjust as needed */
+            height: calc(80%); /* Adjust as needed */
             
             background: radial-gradient(ellipse at center, 
                 rgba(28, 38, 48, 1) 30%, /* Fully opaque in the center */
@@ -442,6 +442,10 @@
                 height: 800px;
             }
 
+            .avatar .gradient-behind, .gradient-overlay {
+                bottom: -325px !important;
+            }
+
             .intro h1 {
                 font-size: 30px !important; /* Minimum 25px, preferred dynamic size, max 35px */
             }
@@ -507,6 +511,10 @@
                 width: 300px;
                 height: 700px;
                 top: -70px !important;
+            }
+
+            .avatar .gradient-behind, .gradient-overlay {
+                bottom: -298px !important;
             }
 
             .greeting {
