@@ -8,8 +8,8 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 // Set up the rendering container and dimensions
 const avatarContainer = document.getElementById('avatar');
-const avatarCWidth = avatarContainer.clientWidth;
-const avatarCHeight = avatarContainer.clientHeight;
+let avatarCWidth = avatarContainer.clientWidth;
+let avatarCHeight = avatarContainer.clientHeight;
 renderer.setSize(avatarCWidth, avatarCHeight);
 renderer.setClearColor(0x000000, 0); // Set the clear color to black with full transparency
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -89,3 +89,27 @@ function playIdleLoop() {
 
 // Initialize the clock
 const clock = new THREE.Clock();
+
+window.addEventListener("resize", () => {
+
+    // Update canvas size
+    avatarCWidth = avatarContainer.clientWidth;
+    avatarCHeight = avatarContainer.clientHeight;
+
+    renderer.setSize(avatarCWidth, avatarCHeight); // Resize renderer
+    camera.aspect = avatarCWidth / avatarCHeight; // Maintain aspect ratio
+    camera.updateProjectionMatrix(); // Apply camera changes
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+
+    // Adjust camera zoom or position for smaller screens
+    if (window.innerWidth <= 1028) {
+        camera.position.z = 5.8; // Move camera back (zoom out)
+    } else if (window.innerWidth <= 400) {
+        camera.position.z = 6; // Move camera back (zoom out)
+    } else {
+        camera.position.z = 5.65; // Default zoom
+    }
+});
+

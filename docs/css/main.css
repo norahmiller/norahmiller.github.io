@@ -117,7 +117,7 @@
             z-index: 0; /* Ensure it is below the invisible layer */
         }
 
-        /* Responsive: When Screen is Smaller than 768px */
+        /* Hamburger Menu: When Screen is Smaller than 768px */
         @media (max-width: 1000px) {
             nav ul {
                 display: none; /* Hide menu */
@@ -211,17 +211,18 @@
             grid-column: 1; /* Leftmost column */
             width: 159px;
             height: 47px;
-            display: block;
-            right: -10px;            
+            display: flex;
+            right: 25px;            
             position: absolute;
             top: 115px;
+            justify-content: end;
         }
 
         .icons img {
             width: 37px;
             height: 37px;
-            padding-left: 5px;
-            z-index: 2;
+            margin-left: 20px;
+            z-index: 6;
         }
 
         
@@ -301,6 +302,7 @@
             right: -49px;
             position: relative;
             z-index: 5;
+            white-space: nowrap
         }
 
         .intro h1, .intro h2, .intro p {
@@ -329,20 +331,6 @@
         }
 
 
-        @media (max-height: 790px) {
-            .intro {
-                top: -15px;
-            }
-            .intro p {
-                padding-top: 150px !important; /* Move text up */
-            }
-        
-            .arrow {
-                top: 180px; /* Move arrow up */
-            }
-        }
-
-
     /* Avatar */
    
         .avatar {
@@ -365,15 +353,14 @@
 
         .avatar .gradient-overlay {
             position: absolute;
-            bottom: -300px;
+            bottom: -400px;
             left: 60%; /* Center the gradient */
             transform: translateX(-50%); /* Ensure it's truly centered */
-            width: calc(100% + 700px);
-            height: 600px; /* Adjust as needed */
-            
+            width: calc(100% + 1500px);
+            height: 800px; /* Adjust as needed */
             background: radial-gradient(ellipse at center, 
-                rgba(28, 38, 48, 1) 25%, /* Fully opaque in the center */
-                rgba(28, 38, 48, 0) 72%  /* Gradually fades out towards edges */
+                rgba(28, 38, 48, 1) 20%, /* Fully opaque in the center */
+                rgba(28, 38, 48, 0) 74%  /* Gradually fades out towards edges */
             );
         
             pointer-events: none; /* Prevents interactions */
@@ -382,11 +369,11 @@
 
         .avatar .gradient-behind {
             position: absolute;
-            bottom: 0px;
+            bottom: -70px;
             left: 60%; /* Center the gradient */
             transform: translateX(-50%); /* Ensure it's truly centered */
-            width: calc(100% + 450px);
-            height: 600px; /* Adjust as needed */
+            width: calc(100% + 550px);
+            height: 700px; /* Adjust as needed */
             
             background: radial-gradient(ellipse at center, 
                 rgba(28, 38, 48, 1) 30%, /* Fully opaque in the center */
@@ -424,6 +411,157 @@
             position: absolute;
         }
 
+
+
+/* Responsivity */
+
+        
+    /* Smaller laptop screen heights */
+
+        @media (max-height: 790px) {
+            .intro {
+                top: -15px;
+            }
+            .intro p {
+                padding-top: 150px !important; /* Move text up */
+            }
+        
+            .arrow {
+                top: 180px; /* Move arrow up */
+            }
+        }
+
+
+    /* Reposition for tablet */
+
+        @media (min-width: 750px) and (max-width: 1028px) {
+
+
+            .avatar {
+                width: 400px;
+                height: 800px;
+            }
+
+            .intro h1 {
+                font-size: 30px !important; /* Minimum 25px, preferred dynamic size, max 35px */
+            }
+            .intro h2 {
+                font-size: 23px !important; /* Minimum 18px, preferred dynamic size, max 28px */
+            }
+            .intro p {
+                font-size: 16px !important; /* Minimum 18px, preferred dynamic size, max 28px */
+                padding-top: 150px !important;
+            }
+
+            .intro {
+                top: -50px;
+            }
+            
+            .icons img {
+                width: 32px !important;
+                height: 32px !important;
+            }
+
+            .icons {
+                top: 95px !important;
+                right: 20px !important;
+            }
+
+            .greeting .saturday-august-regular {
+                font-size: 40px !important;
+            }
+
+            .arrow {
+                top: 123px !important;
+                transform: scale(0.8) !important;
+                transform-origin: center;
+                right: 17px !important;
+            }
+
+        }
+
+
+     /* Reposition for mobile */
+
+          @media (max-width: 750px) {
+
+            main {
+                display: grid;
+                grid-auto-columns: unset; /* or none */
+                grid-auto-flow: row !important;
+                grid-template-columns: 1fr !important;
+                gap: 0px;
+            }
+
+            main > * {
+                grid-column: 1 / -1 !important; /* Forces everything to span full width */
+            }
+
+            .avatar {
+                grid-column: 1;
+                grid-row: 1;
+                width: 300px;
+                height: 700px;
+                top: -50px !important;
+            }
+
+            .greeting {
+                grid-column: 1;
+                grid-row: 1;
+                right: -2px !important;
+                top: -150px !important;
+            }
+
+            .greeting .saturday-august-regular {
+                font-size: 30px !important;
+            }
+
+            .greeting svg {
+                right: 40px !important;
+                top: 40px !important;
+                transform: scale(0.8) rotate(25deg) !important;
+                transform-origin: center;
+            }
+
+
+            .intro {
+                grid-column: 1;
+                grid-row: 1;
+                z-index: 5;
+                justify-self: center;
+                right: 0px !important;
+                top: -40px !important;
+            }
+
+            .intro h1 {
+                font-size: 28px !important; /* Minimum 25px, preferred dynamic size, max 35px */
+                text-align: left !important;
+            }
+            .intro h2 {
+                font-size: 21px !important; /* Minimum 18px, preferred dynamic size, max 28px */
+                text-align: left !important;
+            }
+            .intro p {
+                font-size: 16px !important; /* Minimum 18px, preferred dynamic size, max 28px */
+                padding-top: 400px !important;
+                text-align: center !important;
+            }
+
+            .icons {
+                display: none;
+            }
+
+            .arrow {
+                grid-column: 1;
+                grid-row: 1;
+                z-index: 5;
+                transform: scale(0.6) !important;
+                transform-origin: center;
+                right: 130px !important;
+                top: 250px;
+            }
+
+          }
 
 
 /* Background Blobs*/
