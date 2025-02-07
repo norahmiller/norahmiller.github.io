@@ -510,7 +510,7 @@
                 grid-row: 1;
                 width: 300px;
                 height: 700px;
-                top: -70px !important;
+                top: -90px !important;
             }
 
             .avatar .gradient-behind, .gradient-overlay {
@@ -521,7 +521,7 @@
                 grid-column: 1;
                 grid-row: 1;
                 right: -2px !important;
-                top: -170px !important;
+                top: -190px !important;
             }
 
             .greeting .saturday-august-regular {
@@ -542,7 +542,7 @@
                 z-index: 5;
                 justify-self: center;
                 right: 0px !important;
-                top: -60px !important;
+                top: -80px !important;
             }
 
             .intro h1 {
@@ -570,7 +570,7 @@
                 transform: scale(0.6) !important;
                 transform-origin: center;
                 right: 130px !important;
-                top: 230px;
+                top: 210px;
             }
 
           }
