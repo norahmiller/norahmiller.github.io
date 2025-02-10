@@ -80,46 +80,51 @@
                 </div>
             </main>
         </div>
-        <div class="mid" id="mid">
-            <div class="illustration-container">
-                <a href="about.html">
-                    <img id="hand" src="images/hand.png" alt="About Me" class="illustration">
-                </a>
-                <a href="about.html" class="label">About Me</a>
-            </div>
+        <div class="mid-wrapper">
+            <div class="mid" id="mid">
+                <div class="illustration-container">
+                    <a href="about.html">
+                        <img id="hand" src="images/hand.png" alt="About Me" class="illustration">
+                    </a>
+                    <a href="about.html" class="label">About Me</a>
+                </div>
+                
+                <div class="illustration-container">
+                    <a href="skills.html">
+                        <img src="images/pencil.png" alt="Skills" class="illustration">
+                    </a>
+                    <a href="skills.html" class="label">Skills</a>
+                </div>
+                
+                <div class="illustration-container">
+                    <a href="experience.html">
+                        <img src="images/clipboard.png" alt="Experience" class="illustration">
+                    </a>
+                    <a href="experience.html" class="label">Experience</a>
+                </div>
             
-            <div class="illustration-container">
-                <a href="skills.html">
-                    <img src="images/pencil.png" alt="Skills" class="illustration">
-                </a>
-                <a href="skills.html" class="label">Skills</a>
+                <div class="illustration-container">
+                    <a href="portfolio.html">
+                        <img src="images/folder.png" alt="Portfolio" class="illustration">
+                    </a>
+                    <a href="portfolio.html" class="label">Portfolio</a>
+                </div>
             </div>
-            
-            <div class="illustration-container">
-                <a href="experience.html">
-                    <img src="images/clipboard.png" alt="Experience" class="illustration">
-                </a>
-                <a href="experience.html" class="label">Experience</a>
-            </div>
-        
-            <div class="illustration-container">
-                <a href="portfolio.html">
-                    <img src="images/folder.png" alt="Portfolio" class="illustration">
-                </a>
-                <a href="portfolio.html" class="label">Portfolio</a>
-            </div>
-        </div>
+        </div>  
     </div>
     <script src="js/main.js"></script>
     <script type="module" src="js/avatar.js"></script>
     <script>
-        // JavaScript to scroll to the mid section
         document.getElementById('arrow').addEventListener('click', function() {
-            // Scroll to the mid section
-            window.scrollTo({
-                top: 900, // Adjust this value to match where you want to scroll
-                behavior: 'smooth'
-            });
+            // Get the position of mid-wrapper
+            const midWrapper = document.querySelector('.mid-wrapper');
+    
+            if (midWrapper) {
+                window.scrollTo({
+                    top: midWrapper.offsetTop, // Scrolls to the top of mid-wrapper
+                    behavior: 'smooth'
+                });
+            }
         });
     </script>
 </body>

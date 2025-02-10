@@ -25,7 +25,3 @@ document.addEventListener("DOMContentLoaded", function () {
         nav.classList.toggle("active");
     });
 });
-
-document.addEventListener("click", function (event) {
-    console.log("Clicked element:", event.target);
-});

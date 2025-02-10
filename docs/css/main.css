@@ -25,8 +25,8 @@
     }
 
     .main-container {
-        height: 1700px;
-        width: 100vw;
+        display: flex;
+        flex-direction: column;
         overflow: hidden; /* Hides anything outside */
         position: relative; /* Ensures blobs position relative to this */
     }
@@ -437,6 +437,10 @@
         @media (min-width: 750px) and (max-width: 1028px) {
 
 
+            main {
+                height: calc(650px) !important;
+            }
+
             .avatar {
                 width: 400px;
                 height: 800px;
@@ -488,6 +492,10 @@
      /* Reposition for mobile */
 
           @media (max-width: 750px) {
+
+            main {
+                height: calc(660px) !important;
+            }
 
             main {
                 display: grid;
@@ -699,10 +707,20 @@
             display: flex;
             justify-content: center;
             gap: 80px; /* Adds space between illustrations */
-            flex-wrap: wrap; /* Ensures responsiveness */
-            width: 100%;
-            top: calc(100vh + 350px);
-            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            margin: auto;
+            position: relative;
+            align-items: center; /* Align items vertically */
+            padding: 50px;
+            z-index: 3;
+        }
+
+        .mid-wrapper {
+            display: flex;
+            justify-content: center;   /* Centers horizontally */
+            align-items: center;       /* Centers vertically */
+            min-height: 100vh;         /* Ensures the wrapper takes the full viewport height */
         }
 
         .illustration-container {
@@ -737,6 +755,57 @@
         .illustration:hover {
             transform: scale(1.1);
         }
+
+/* Responsivity of Mid */
+
+        /* Resize for smaller laptop*/
+        @media (min-width: 870px) and (max-width: 1157px) {
+            .illustration {
+                width: 150px;
+                height: 150px;
+            }
+
+            .label {
+                font-size: 21px;
+                margin-top: 40px;
+            }
+
+            .mid {
+                gap: 70px;
+            }
+        }
+
+        /* Resize for tablet*/
+        @media (min-width: 640px) and (max-width: 870px) {
+
+            .mid {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Resize for phone*/
+        @media (max-width: 640px) {
+
+            .mid {
+                flex-wrap: wrap;
+            }
+
+            .illustration {
+                width: 115px;
+                height: 115px;
+            }
+
+            .label {
+                font-size: 16px;
+                margin-top: 20px;
+            }
+
+            .mid {
+                gap: 50px;
+            }
+
+        }
+
 
 
 
