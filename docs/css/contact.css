@@ -16,7 +16,7 @@
     /* Fits All Content */
     .contact {
         display: grid;
-        grid-template-columns: 1.5fr .5fr; /* Three columns: left, middle (avatar), right */
+        grid-template-columns: 1.5fr .5fr; /* Two columns*/
         align-items: center; /* Align items vertically */
         justify-content: center; /* Center everything horizontally */
         gap: 40px; /* Space between columns */
@@ -61,7 +61,7 @@
     }
 
     .name-input {
-        width: 302px;
+        width: 302.5px;
         height: 25px;
         background-color: rgba(186, 197, 210, 0.58);
         color: white;
@@ -76,7 +76,7 @@
     }
 
     .email-input {
-        width: 302px;
+        width: 302.5px;
         height: 25px;
         background-color: rgba(186, 197, 210, 0.58);
         color: white;
@@ -211,5 +211,118 @@
     :-ms-input-placeholder {
         color: #FFFFFF !important;
         opacity: 1.0;
+    }
+
+    .contact-text {
+        line-height: 1.5; /* Adjust this value as needed */
+    }    
+
+
+/* Responsivity */
+
+    /* Resize for smaller laptop window */
+
+    @media (min-width: 776px) and (max-width: 1040px) {
+
+        .name-input {
+            width: 205px;
+        }
+
+        .email-input {
+            width: 205px;
+        }
+
+        .subject-input {
+            width: 450px;
+        }
+
+        .message-input {
+            width: 450px;
+        }
+
+    }
+
+    /* Resize for tablets*/
+
+    @media (min-width: 550px) and (max-width: 776px) {
+
+        .name-input {
+            width: 205px;
+        }
+
+        .email-input {
+            width: 205px;
+        }
+
+        .subject-input {
+            width: 450px;
+        }
+
+        .message-input {
+            width: 450px;
+        }
+
+
+        .contact-side {
+            display: none;
+        }
+
+        .contact {
+            grid-template-columns: 1.5fr;
+
+        }
+
+    }
+
+    /* Resize for mobile*/
+
+    @media (max-width: 550px) {
+        
+        .get-in-touch h2 {
+            font-size: 28px;
+        }
+
+        .name-input {
+            width: 113.5px;
+            font-size: 12px;
+        }
+
+        .email-input {
+            width: 113.5px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .subject-input {
+            width: 255px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .message-input {
+            width: 255px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+
+        .contact-side {
+            display: none;
+        }
+
+        .contact {
+            grid-template-columns: 1.5fr;
+        }
+
+        input[type="submit"] {
+            font-size: 12px;
+            width: 111px;
+            height: 40px;
+        }
+
+        .actions {
+            margin-top: 10px;
+        }
+
     }
 
