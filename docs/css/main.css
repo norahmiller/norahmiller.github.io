@@ -17,11 +17,11 @@
     }
 
     body {
-    overflow-x: hidden; /* Hide horizontal overflow */
-    background-color: #1C2630;
-    font-family: 'Anonymous Pro', monospace; 
-    color: white; /* Default text color */
-    position: relative;
+        overflow-x: hidden; /* Hide horizontal overflow */
+        background-color: #1C2630;
+        font-family: 'Anonymous Pro', monospace; 
+        color: white; /* Default text color */
+        position: relative;
     }
 
     .main-container {
@@ -51,6 +51,10 @@
             font-family: 'Saturday August', sans-serif;
         }
 
+        .anonymous-pro-font {
+            font-family: 'Anonymous Pro', monospace;
+        }
+
 
 
 /* Framing */
@@ -64,7 +68,7 @@
             right: 0;
             background-color: transparent; /* Clear background */
             padding: 20px;
-            z-index: 1000;
+            z-index: 100;
         }
 
         /* Style the navigation list */
@@ -73,7 +77,6 @@
             margin: 0;
             padding: 0;
             display: flex; /* Align list items horizontally */
-            justify-content: flex-end; /* Align items to the right */
         }
 
         nav ul li {
@@ -269,7 +272,6 @@
     /* Container - Holds Startup Main Area */
 
         main {
-            top: 70px;
             display: grid;
             grid-template-columns: .885fr 1fr .1fr; /* Three columns: left, middle (avatar), right */
             align-items: center; /* Align items vertically */
