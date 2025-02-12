@@ -54,18 +54,79 @@ let mixer;
 let animations;
 
 const loader = new GLTFLoader();
-loader.load('js/avatar.glb', function(gltf) {
-    avatar = gltf.scene;
-    avatar.position.set(0, 0, 4.5);
+let isAvatarLoaded = false;  // To track if the avatar is fully loaded
 
-    animations = gltf.animations;
-    mixer = new THREE.AnimationMixer(avatar);
+// Steady loading progress bar
+function steadyProgressBar() {
+    let progress = 0;
+    const progressInterval = setInterval(() => {
+        if (progress < 90) {
+            progress += 1;  // Increase the progress by 1 every interval
+            const offset = 500 - (500 * (progress / 100));  // Update the SVG progress bar
+            document.querySelector("path").setAttribute("stroke-dashoffset", offset);
+        } else {
+            clearInterval(progressInterval);  // Stop the steady progress at 90%
+            loadAvatar();  // Start loading the avatar after the initial progress
+        }
+    }, 15);  // Adjust the interval to control the speed (lower for faster)
+}
 
-    scene.add(avatar);
+// Load the avatar model
+function loadAvatar() {
+    loader.load('js/avatar.glb', function(gltf) {
+        avatar = gltf.scene;
+        avatar.position.set(0, 0, 4.5);
+        animations = gltf.animations;
+        mixer = new THREE.AnimationMixer(avatar);
+        scene.add(avatar);
 
-    // Play the idle loop animation
-    playIdleLoop();
-});
+        // Play the idle loop animation
+        playIdleLoop();
+
+        // Avatar is fully loaded, set the flag to true
+        isAvatarLoaded = true;
+
+        // Finalize the progress bar and show the main screen once the avatar is loaded
+        finalizeLoadingScreen();
+    }, function(xhr) {
+        if (xhr.lengthComputable) {
+            const progress = (xhr.loaded / xhr.total) * 100;
+            const offset = 500 - (500 * (progress / 100));  // Update the progress based on avatar loading
+            document.querySelector("path").setAttribute("stroke-dashoffset", offset);
+        }
+    }, function(error) {
+        console.error('Error loading avatar model', error);
+    });
+}
+
+// Finalize the loading screen transition
+function finalizeLoadingScreen() {
+    // Ensure the SVG completes the progress before switching to the main screen
+    const progressInterval = setInterval(() => {
+        if (isAvatarLoaded) {
+            document.querySelector("path").setAttribute("stroke-dashoffset", 0);  // Complete the progress
+
+            // Fade out all parts of the loading screen (logo, svg, background)
+            document.getElementById("loading-screen").style.transition = "opacity 0.5s ease-out";
+            document.getElementById("loading-screen").style.opacity = "0";
+
+            // After fading out the loading screen, show the main content
+            setTimeout(() => {
+                document.getElementById("loading-screen").style.display = "none";  // Hide loading screen
+                document.querySelector(".main-container").style.display = "block";  // Show the main content
+                window.dispatchEvent(new Event('resize'));  // Trigger resize for layout adjustment
+            }, 500);  // Ensure that the transition happens smoothly
+
+            clearInterval(progressInterval);  // Stop checking after the avatar is loaded
+        }
+    }, 30);  // Checking at every 30ms interval for avatar loaded state
+}
+
+// Start the steady loading process
+steadyProgressBar();
+
+
+
 
 // Function to play the idle animation in a loop
 function playIdleLoop() {

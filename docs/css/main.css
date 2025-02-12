@@ -31,6 +31,42 @@
         position: relative; /* Ensures blobs position relative to this */
     }
 
+
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #1C2630; /* Change to match your background */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+    
+    .loader-container {
+        position: relative; /* To position the circle and logo relative to this container */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .loader-container .circle {
+        position: absolute; /* This allows the circle to overlap with the logo */
+        z-index: 1; /* Ensure the circle is under the logo */
+    }
+    
+    .loader-container .logo {
+        z-index: 2; /* Ensure the logo is on top of the circle */
+        margin-top: 15px;
+        margin-right: 8px;
+    }
+    
+    .main-container {
+        display: none;
+    }
+
     
     /* Fonts */
 
@@ -834,5 +870,20 @@
             display: flex; /* Align list items horizontally */
             flex-direction: column; /* Align items to the right */
             align-items: center;
+            justify-content: center;
+            z-index: 33;
+            position: relative;
+            padding: 50px;
+            width: fit-content;
+            height: fit-content;
+            margin: auto;
+        }
+
+        .announcement-wrapper {
+            display: flex;
+            justify-content: center;   /* Centers horizontally */
+            align-items: center;       /* Centers vertically */
+            min-height: 100vh;
+            overflow: hidden;
         }
 

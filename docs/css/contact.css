@@ -28,6 +28,10 @@
         top: 0px;
     }
 
+    .main-container {
+        display: block;
+    }
+
 
 /* Form Side */
 
