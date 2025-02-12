@@ -55,13 +55,13 @@
     }
 
     .get-in-touch .row1 {
-        position: absolute;
         display: flex;
         flex-direction: row;
+        height: fit-content;
     }
 
     .name-input {
-        width: 300px;
+        width: 302px;
         height: 25px;
         background-color: rgba(186, 197, 210, 0.58);
         color: white;
@@ -76,7 +76,7 @@
     }
 
     .email-input {
-        width: 300px;
+        width: 302px;
         height: 25px;
         background-color: rgba(186, 197, 210, 0.58);
         color: white;
@@ -87,7 +87,7 @@
         padding: 0.75em;
         margin-top: 3px;
         border: none;
-        margin-left: 20px;
+        margin-left: 15px;
     }
 
     .subject-input {
@@ -101,7 +101,7 @@
         resize: none;
         padding: 0.75em;
         border: none;
-        margin-top: 65px;
+        margin-top: 15px;
     }
 
     .message-input {
@@ -113,14 +113,12 @@
         font-size: 16px;
         border-radius: 0.35em;
         resize: none;
-        padding: 0.75em;
-        margin-top: 3px;
+        padding: 0.75em !important;
         border: none;
         margin-top: 15px;
     }
 
     input[type="submit"] {
-        padding: 0.75em 1.5em;
         border: none;
         border-radius: 0.35em;
         background-color: rgba(228, 232, 236, 0.87);
@@ -129,13 +127,14 @@
         font-size: 16px;
         width: 150px;
         height: 50px;
+        text-align: center;
     }
 
     .actions {
         list-style-type: none;
         padding: 0;
         margin: 0;
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
     .result {
