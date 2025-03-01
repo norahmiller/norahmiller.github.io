@@ -267,7 +267,7 @@
         
     /* Arrow */        
 
-        .arrow{
+        .main-wrapper .arrow{
             grid-column: 1; /* Leftmost column */
             cursor: pointer; /* Changes the cursor to a hand when hovering */
             justify-self: end; /* Aligns the whole container to the right */
@@ -464,7 +464,7 @@
                 padding-top: 150px !important; /* Move text up */
             }
         
-            .arrow {
+            .main-wrapper .arrow {
                 top: 180px; /* Move arrow up */
             }
         }
@@ -517,7 +517,7 @@
                 font-size: 40px !important;
             }
 
-            .arrow {
+            .main-wrapper .arrow {
                 top: 123px !important;
                 transform: scale(0.8) !important;
                 transform-origin: center;
@@ -609,7 +609,7 @@
                 display: none;
             }
 
-            .arrow {
+            .main-wrapper .arrow {
                 grid-column: 1;
                 grid-row: 1;
                 z-index: 5;
