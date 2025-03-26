@@ -1,0 +1,376 @@
+ 
+    /* Main Portfolio Info */
+ 
+        .portfolio-main-wrapper {
+            display: flex;
+            justify-content: center;   /* Centers horizontally */
+            align-items: center;       /* Centers vertically */
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+
+        /* Shows Content */
+        .main-container {
+            display: block;
+        }
+
+        .portfolio-main {
+            display: grid;
+            grid-template-columns: auto auto auto; /* Two columns*/
+            grid-template-rows: auto auto;
+            align-items: center; /* Align items vertically */
+            justify-content: center; /* Center everything horizontally */
+            row-gap: 10px; /* Space between columns */
+            column-gap: 20px;
+            padding: 50px;
+            width: min(100%);        
+            height: fit-content;
+            margin: auto;
+            position: relative;
+            top: 0px;
+        }
+
+        /* Font */
+
+            @font-face {
+                font-family: 'Campton';
+                src: url('../fonts/CamptonExtraBoldItalic.otf') format('opentype');
+                font-weight: 800; /* Adjust if needed */
+                font-style: normal;
+            }
+
+
+    /* Arrows for Carousel */
+
+        /* Disabled Arrow Styles */
+        .disabled {
+            opacity: 0.3;
+            cursor: default !important;
+        }
+
+        /* Styling for forward and back arrows */
+        .forward-arrow-nav,
+        .back-arrow-nav {
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Positioning for forward arrow */
+        .forward-arrow-nav {
+            grid-column: 3;
+            grid-row: 2;
+            top: -85px;
+        }
+
+        /* Positioning for back arrow */
+        .back-arrow-nav {
+            grid-column: 1;
+            grid-row: 2;
+            top: -85px;
+        }
+
+     
+
+   /* Carousel Label Text */
+    
+        .portfolio-main .featured h6 {
+            position: relative;
+            font-size: 35px;
+        }
+
+        .portfolio-main .featured {
+            position: relative;
+            grid-column: 2;
+            grid-row: 1;
+            left: 30px;
+            top: -5px;
+        }
+
+
+    /* Carousel Basics */
+
+        .card {
+            flex: 0 0 auto; /* Prevent shrinking */
+            background-color: rgba(156, 165, 178, 0.4); /* 9CA5B2 with 50% opacity */
+            border-radius: 30px; /* 30px corner radius */
+            width: 1100px; /* Adjust width as needed */
+            height: 500px; /* Adjust height as needed */
+            position: relative;
+            display: flex; /* Make the card a flex container */
+            align-items: center;
+            margin-right: 80px; /* Space between cards */
+        }
+
+        .svg-background {
+            z-index: 1;
+            grid-column: 2;
+            grid-row: 2;
+            top: -83px;
+            position: relative;
+        }
+
+        .carousel {
+            position: relative;
+            grid-column: 2;
+            grid-row: 2;
+            top: -85px;
+            display: flex;
+            overflow: hidden; /* Hide the items that are not in view */
+            width: 1100px;  /* Set the width of the carousel */
+            height: 500px; /* Adjust height as needed */
+            align-items: center;
+            z-index: 2;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform .7s ease-in-out; /* Smooth sliding effect */
+            will-change: transform;
+        }
+
+
+    /* Multiple Cards */
+
+        .card .gradient-behind {
+            position: absolute;
+            left: 220px; /* Center the gradient */
+            transform: translateX(-50%); /* Ensure it's truly centered */
+            width: 400px;
+            height: 500px; /* Adjust as needed */
+            
+            background: radial-gradient(ellipse at center, 
+                rgba(28, 38, 48, .5) 0%, /* Fully opaque in the center */
+                rgba(28, 38, 48, 0) 70%  /* Gradually fades out towards edges */
+            );
+        
+            pointer-events: none; /* Prevents interactions */
+            z-index: 1;
+        }
+
+
+    /* PicFit Card */
+
+        .picfit {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+        }
+
+        .picfit .card-text .logo {
+            height: 35px;
+            top: 102px;
+            position: relative;
+            grid-row: 1;
+            grid-column: 1;
+            left: 110px;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+        }
+        
+        .picfit .card-text h7 {
+            top: 100px;
+            grid-row: 1;
+            grid-column: 1;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .picfit .card-text h8 {
+            grid-row: 1;
+            grid-column: 1;
+            left: 170px;
+            top: 108px;
+            font-size: 24px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .picfit .card-text h9 {
+            top: 70px;
+            grid-row: 2;
+            grid-column: 1;
+            font-size: 18px;
+            position: relative;
+            line-height: 2; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .picfit .card-text {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto;
+            padding-left: 25px;
+            padding-right: 30px;
+        }
+
+        .picfit .button-link {
+            border: none;
+            border-radius: 0.35em;
+            background-color: rgba(228, 232, 236, 0.87);
+            color: #1C2630;
+            cursor: pointer;
+            font-size: 16px;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            justify-self: end;
+            position: relative;
+            display: inline-block;
+            text-decoration: none; /* Removes underline */
+            cursor: pointer;
+            top: 50px;
+            right: 40px;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+   
+    /* BudgetBooking Card */
+
+        .card .gradient-laptop {
+            position: absolute;
+            left: 220px; /* Center the gradient */
+            transform: translateX(-50%); /* Ensure it's truly centered */
+            width: 500px;
+            height: 500px; /* Adjust as needed */
+            
+            background: radial-gradient(ellipse at center, 
+                rgba(28, 38, 48, .5) 0%, /* Fully opaque in the center */
+                rgba(28, 38, 48, 0) 70%  /* Gradually fades out towards edges */
+            );
+        
+            pointer-events: none; /* Prevents interactions */
+            z-index: 1;
+        }
+
+        .budget-booking {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+        }
+        
+        .budget-booking .card-text h7 {
+            top: 92px;
+            grid-row: 1;
+            grid-column: 1;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .budget-booking .card-text h8 {
+            grid-row: 1;
+            grid-column: 1;
+            left: 270px;
+            top: 108px;
+            font-size: 24px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .budget-booking .card-text h9 {
+            top: 70px;
+            grid-row: 2;
+            grid-column: 1;
+            font-size: 18px;
+            position: relative;
+            line-height: 2; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .budget-booking .card-text {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto;
+            padding-left: 25px;
+            padding-right: 30px;
+        }
+
+        .budget-booking .button-link {
+            border: none;
+            border-radius: 0.35em;
+            background-color: rgba(228, 232, 236, 0.87);
+            color: #1C2630;
+            cursor: default !important;
+            font-size: 16px;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            justify-self: end;
+            position: relative;
+            display: inline-block;
+            text-decoration: none; /* Removes underline */
+            cursor: pointer;
+            top: 50px;
+            right: 40px;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+
+    /* Starmail Card */
+
+        .starmail {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+        }
+        
+        .starmail .card-text h7 {
+            top: 95px;
+            grid-row: 1;
+            grid-column: 1;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .starmail .card-text h8 {
+            grid-row: 1;
+            grid-column: 1;
+            left: 220px;
+            top: 108px;
+            font-size: 24px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .starmail .card-text h9 {
+            top: 70px;
+            grid-row: 2;
+            grid-column: 1;
+            font-size: 18px;
+            position: relative;
+            line-height: 2; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .starmail .card-text {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto;
+            padding-left: 25px;
+            padding-right: 30px;
+        }
+
+        .starmail .button-link {
+            border: none;
+            border-radius: 0.35em;
+            background-color: rgba(228, 232, 236, 0.87);
+            color: #1C2630;
+            cursor: default !important;
+            font-size: 16px;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            justify-self: end;
+            position: relative;
+            display: inline-block;
+            text-decoration: none; /* Removes underline */
+            cursor: pointer;
+            top: 50px;
+            right: 40px;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
