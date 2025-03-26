@@ -60,14 +60,16 @@
         .forward-arrow-nav {
             grid-column: 3;
             grid-row: 2;
-            top: -85px;
+            top: -95px;
+            left: -10px;
         }
 
         /* Positioning for back arrow */
         .back-arrow-nav {
             grid-column: 1;
             grid-row: 2;
-            top: -85px;
+            top: -95px;
+            right: -10px;
         }
 
      
@@ -83,7 +85,7 @@
             position: relative;
             grid-column: 2;
             grid-row: 1;
-            left: 30px;
+            left: 40px;
             top: -5px;
         }
 
@@ -98,6 +100,7 @@
             height: 500px; /* Adjust height as needed */
             position: relative;
             margin-right: 80px; /* Space between cards */
+            box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.1);
         }
 
         .card-info {
@@ -114,13 +117,15 @@
             position: relative;
             grid-column: 2;
             grid-row: 2;
-            top: -85px;
+            top: -95px;
+            border-radius: 30px; /* 30px corner radius */
             display: flex;
             overflow: hidden; /* Hide the items that are not in view */
-            width: 1100px;  /* Set the width of the carousel */
-            height: 500px; /* Adjust height as needed */
+            width: 1120px;  /* Set the width of the carousel */
+            height: 520px; /* Adjust height as needed */
             align-items: center;
             z-index: 2;
+            right: -10px;
         }
 
         .carousel-track {
