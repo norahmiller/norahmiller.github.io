@@ -637,7 +637,7 @@
             border-radius: 50%;
             transform: translate(-50%, -50%);
             overflow: hidden; /* To prevent scrollbars if the blob moves outside the viewport */
-            filter: blur(15px);
+            filter: blur(25px);
         }
 
         .blob1 {
