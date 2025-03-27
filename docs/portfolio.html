@@ -46,7 +46,7 @@
                     <h6>Featured Works</h6>
                 </div>                   
                 <div class="carousel">
-                    <div class="carousel-track">
+                    <div class="carousel-track" style="transform: translateX(10px);">
                         <div class="card">
                             <div class="svg-background">
                                 <svg class="responsive-svg" viewBox="0 0 1100 500" preserveAspectRatio="none">
@@ -141,19 +141,21 @@
     </div> <!-- Keep this div closing here -->
     <script src="js/main.js"></script>
     <script>
-      // Portfolio Items
+        // Portfolio Items
         const track = document.querySelector('.carousel-track');
         const prevArrow = document.getElementById('prevArrow');
         const nextArrow = document.getElementById('nextArrow');
         const cards = document.querySelectorAll('.card');
 
         let currentIndex = 0;
+        const initialOffset = 10; // Amount to shift on load
 
+        // Function to update carousel position
         function updateCarousel() {
             if (cards.length === 0) return;
 
             const cardWidth = cards[0].offsetWidth + 80; // Get width of one card
-            const newTransformValue = -currentIndex * cardWidth; // Move by full width per card
+            let newTransformValue = -currentIndex * cardWidth + initialOffset; // Keep initial offset
 
             track.style.transform = `translateX(${newTransformValue}px)`;
 
@@ -192,8 +194,12 @@
             }
         }
 
-        // Initial positioning
+        // Initial positioning without animation
+        track.style.transform = `translateX(-${initialOffset}px)`;
+
+        // Now call updateCarousel() after setting the initial position
         updateCarousel();
+
 
     </script>
 </body>
