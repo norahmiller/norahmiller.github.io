@@ -72,7 +72,7 @@
                         <div class="card">
                             <div class="svg-background">
                                 <svg class="responsive-svg" viewBox="0 0 1100 500" preserveAspectRatio="none">
-                                    <rect width="100%" height="100%" rx="30" fill="#1C2630" fill-opacity="0.6"/>
+                                    <rect width="100%" height="100%" rx="30" fill="#1C2630" fill-opacity="0.7"/>
                                 </svg>
                             </div>
                             <div class="card-info">
@@ -141,29 +141,34 @@
     </div> <!-- Keep this div closing here -->
     <script src="js/main.js"></script>
     <script>
-        // Portfolio Items
         const track = document.querySelector('.carousel-track');
         const prevArrow = document.getElementById('prevArrow');
         const nextArrow = document.getElementById('nextArrow');
         const cards = document.querySelectorAll('.card');
 
         let currentIndex = 0;
-        const initialOffset = 10; // Amount to shift on load
+        const initialOffset = 10; // Shift on load
 
-        // Function to update carousel position
+        // Temporarily disable transition for initial positioning
+        track.style.transition = 'none';
+        track.style.transform = `translateX(-${initialOffset}px)`;
+
+        // Ensure transition is back after initial render
+        setTimeout(() => {
+            track.style.transition = ''; // Reset to default (enables smooth animations)
+        }, 50); // Small delay to ensure browser renders the first state
+
         function updateCarousel() {
             if (cards.length === 0) return;
 
-            const cardWidth = cards[0].offsetWidth + 80; // Get width of one card
-            let newTransformValue = -currentIndex * cardWidth + initialOffset; // Keep initial offset
+            const cardWidth = cards[0].offsetWidth + 80; 
+            let newTransformValue = -currentIndex * cardWidth + initialOffset; 
 
             track.style.transform = `translateX(${newTransformValue}px)`;
 
-            // Check if we are at the start or the end to disable/enable arrows
             checkArrows();
         }
 
-        // Move to the next card
         nextArrow.addEventListener('click', () => {
             if (currentIndex < cards.length - 1) {
                 currentIndex++;
@@ -171,7 +176,6 @@
             }
         });
 
-        // Move to the previous card
         prevArrow.addEventListener('click', () => {
             if (currentIndex > 0) {
                 currentIndex--;
@@ -179,27 +183,13 @@
             }
         });
 
-        // Function to check if the scroll position is at the start or end
         function checkArrows() {
-            if (currentIndex === 0) {
-                prevArrow.classList.add('disabled'); // Disable left arrow
-            } else {
-                prevArrow.classList.remove('disabled'); // Enable left arrow
-            }
-
-            if (currentIndex === cards.length - 1) {
-                nextArrow.classList.add('disabled'); // Disable right arrow
-            } else {
-                nextArrow.classList.remove('disabled'); // Enable right arrow
-            }
+            prevArrow.classList.toggle('disabled', currentIndex === 0);
+            nextArrow.classList.toggle('disabled', currentIndex === cards.length - 1);
         }
 
-        // Initial positioning without animation
-        track.style.transform = `translateX(-${initialOffset}px)`;
-
-        // Now call updateCarousel() after setting the initial position
+        // Ensure carousel is correctly positioned on load
         updateCarousel();
-
 
     </script>
 </body>
