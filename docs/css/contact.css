@@ -33,6 +33,10 @@
         display: block;
     }
 
+    .svg-background {
+        z-index: -1;
+    }
+
 
 /* Form Side */
 
@@ -68,7 +72,7 @@
     .name-input {
         width: 302.5px;
         height: 25px;
-        background-color: rgba(186, 197, 210, 0.58);
+        background-color: rgba(186, 197, 210, 0.3);
         color: white;
         font-family: 'Inter', sans-serif;
         font-size: 16px;
@@ -80,10 +84,24 @@
         margin-left: 0px;
     }
 
+    .half .svg-background {
+        width: 326.5px !important;  /* Adjust as needed */
+        height: 49px !important; /* Adjust as needed */
+        position: absolute;
+        border-radius: 0.35em; /* Ensure the correct rounded corners */
+    }
+
+    .half .responsive-svg {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.35em; /* Apply the same rounded corners */
+    }
+
+
     .email-input {
         width: 302.5px;
         height: 25px;
-        background-color: rgba(186, 197, 210, 0.58);
+        background-color: rgba(186, 197, 210, 0.3);
         color: white;
         font-family: 'Inter', sans-serif;
         font-size: 16px;
@@ -98,7 +116,7 @@
     .subject-input {
         width: 645px;
         height: 25px;
-        background-color: rgba(186, 197, 210, 0.58);
+        background-color: rgba(186, 197, 210, 0.3);
         color: white;
         font-family: 'Inter', sans-serif;
         font-size: 16px;
@@ -109,10 +127,24 @@
         margin-top: 15px;
     }
 
+    .subject .svg-background {
+        width: 669px !important;  /* Adjust as needed */
+        height: 49px !important; /* Adjust as needed */
+        margin-top: 15px;
+        position: absolute;
+        border-radius: 0.35em; /* Ensure the correct rounded corners */
+    }
+
+    .subject .responsive-svg {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.35em; /* Apply the same rounded corners */
+    }
+
     .message-input {
         width: 645px;
         height: 150px;
-        background-color: rgba(186, 197, 210, 0.58);
+        background-color: rgba(186, 197, 210, 0.3);
         color: white;
         font-family: 'Inter', sans-serif;
         font-size: 16px;
@@ -121,6 +153,20 @@
         padding: 0.75em !important;
         border: none;
         margin-top: 15px;
+    }
+
+    .message .svg-background {
+        width: 669px !important;  /* Adjust as needed */
+        height: 174px !important; /* Adjust as needed */
+        margin-top: 15px;
+        position: absolute;
+        border-radius: 0.35em; /* Ensure the correct rounded corners */
+    }
+
+    .message .responsive-svg {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.35em; /* Apply the same rounded corners */
     }
 
     input[type="submit"] {
@@ -233,6 +279,14 @@
             width: 205px;
         }
 
+        .half .svg-background {
+            width: 229px !important;  /* Adjust as needed */
+        }
+        
+        .half .responsive-svg {
+            width: 100% !important;
+        }
+
         .email-input {
             width: 205px;
         }
@@ -241,8 +295,24 @@
             width: 450px;
         }
 
+        .subject .svg-background {
+            width: 474px !important;  /* Adjust as needed */
+        }
+        
+        .subject .responsive-svg {
+            width: 100% !important;
+        }
+
         .message-input {
             width: 450px;
+        }
+
+        .message .svg-background {
+            width: 474px !important;  /* Adjust as needed */
+        }
+        
+        .message .responsive-svg {
+            width: 100% !important;
         }
 
     }
@@ -259,14 +329,37 @@
             width: 205px;
         }
 
+        .half .svg-background {
+            width: 229px !important;  /* Adjust as needed */
+        }
+        
+        .half .responsive-svg {
+            width: 100% !important;
+        }
+
         .subject-input {
             width: 450px;
+        }
+
+        .subject .svg-background {
+            width: 474px !important;  /* Adjust as needed */
+        }
+        
+        .subject .responsive-svg {
+            width: 100% !important;
         }
 
         .message-input {
             width: 450px;
         }
 
+        .message .svg-background {
+            width: 474px !important;  /* Adjust as needed */
+        }
+        
+        .message .responsive-svg {
+            width: 100% !important;
+        }
 
         .contact-side {
             display: none;
@@ -292,6 +385,14 @@
             font-size: 12px;
         }
 
+        .half .svg-background {
+            width: 137.5px !important;  /* Adjust as needed */
+        }
+        
+        .half .responsive-svg {
+            width: 100% !important;
+        }
+
         .email-input {
             width: 113.5px;
             font-size: 12px;
@@ -304,10 +405,28 @@
             margin-top: 10px;
         }
 
+        .subject .svg-background {
+            width: 279px !important;  /* Adjust as needed */
+            margin-top: 10px !important; 
+        }
+        
+        .subject .responsive-svg {
+            width: 100% !important;
+        }
+
         .message-input {
             width: 255px;
             font-size: 12px;
             margin-top: 10px;
+        }
+
+        .message .svg-background {
+            width: 279px !important;  /* Adjust as needed */
+            margin-top: 10px !important;
+        }
+        
+        .message .responsive-svg {
+            width: 100% !important;
         }
 
 
