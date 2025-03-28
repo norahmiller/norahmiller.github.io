@@ -1,0 +1,179 @@
+/* Main Containers */
+
+
+    /* Centers in Window */
+
+    .skills-main-wrapper {
+        display: flex;
+        justify-content: center;   /* Centers horizontally */
+        align-items: center;       /* Centers vertically */
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+
+    /* Shows Content */
+    .main-container {
+        display: block;
+    }
+
+
+/* Header */
+   
+    .skills-main .skills-label h6 {
+        position: relative;
+        font-size: 35px;
+    }
+
+    .skills-main .skills-label {
+        position: relative;
+        grid-column: 1;
+        grid-row: 1;
+        left: 40px;
+        top: -5px;
+    }
+
+
+/* Main Skills Items */
+
+    .skills-main {
+        display: grid;
+        grid-template-columns: auto; /* Three columns*/
+        grid-template-rows: auto auto;
+        align-items: center; /* Align items vertically */
+        justify-content: center; /* Center everything horizontally */
+        row-gap: 10px; /* Space between columns */
+        column-gap: 20px;
+        padding: 50px;
+        padding-bottom: 0px;
+        width: min(100%);        
+        height: fit-content;
+        margin: auto;
+        position: relative;
+        top: 0px;
+    }
+
+    .card-wrapper {
+            position: relative;
+            grid-column: 1;
+            grid-row: 2;
+            top: -95px;
+            display: flex;
+            width: 1120px;  /* Set the width of the carousel */
+            height: 520px; /* Adjust height as needed */
+            align-items: center;
+            z-index: 2;
+            right: -10px;
+    }
+
+    .card {
+        flex: 0 0 auto; /* Prevent shrinking */
+        background-color: rgba(156, 165, 178, 0.3); /* 9CA5B2 with 50% opacity */
+        border-radius: 30px; /* 30px corner radius */
+        width: 1100px; /* Adjust width as needed */
+        height: 500px; /* Adjust height as needed */
+        position: relative;
+        margin-right: 80px; /* Space between cards */
+        box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .svg-background {
+        z-index: -1;
+        width: 1100px !important;  /* Adjust as needed */
+        height: 500px !important; /* Adjust as needed */
+        position: absolute;
+        border-radius: 30px; /* Ensure the correct rounded corners */
+    }
+    
+    .responsive-svg {
+        width: 100%;
+        height: 100%;
+        border-radius: 30px; /* Apply the same rounded corners */
+    }
+
+
+/* Skills Top Content */
+
+    .skill-id-icon {
+        height: 35px;
+        width: auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Target the HTML icon */
+    .skill-id-icon[alt="Html"] {
+        left: -1px; /* Set your desired width */
+    }
+
+    /* Target the CSS icon */
+    .skill-id-icon[alt="CSS"] {
+        left: -1px; /* Set your desired width */
+    }
+
+    .skill-id {
+        display: flex;
+        flex-direction: column; /* Stack skill items vertically */
+        align-items: flex-start; /* Align to the left */
+        gap: 15px; /* Space between each skill item */
+        position: relative;
+    }
+
+    .skill-item {
+        display: flex;
+        flex-direction: row; /* Place icon and text side by side */
+        align-items: center; /* Align items in the middle */
+        gap: 10px; /* Space between icon and text */
+    }
+
+    .top-progress {
+        display: flex;
+        justify-content: center; /* Centers the flex container */
+        align-items: center; /* Aligns items vertically */
+        gap: 80px; /* Space between left and right */
+        padding-top: 70px;
+    }
+
+    .left-side, .right-side {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Space between skill items and progress bar */
+        width: 425px;
+    }
+
+    .skill-item h7 {
+        font-size: 21px;
+    }
+
+    .progress-bar {
+        height: 0px;
+        padding: 1%;
+        margin-right: 1%;
+        top: -5px;
+        border: 1px solid white;
+        border-radius: 13px;
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+        width: 371px;
+        background-image: none;
+        left: 45px;
+        position: relative;
+    }
+
+    .progress-bar .bar.bar-animation {
+        width: 0;
+        
+        -webkit-transition: width 3s ease-in-out;
+           -moz-transition: width 3s ease-in-out;
+             -o-transition: width 3s ease-in-out;
+                transition: width 3s ease-in-out;
+                background-image: linear-gradient(to bottom,#ffffff 0,#ffffff 100%);
+                height: 9px;
+                border-radius: 13px;
+                left: -5px;
+                top: -4.5px;
+                position: relative;
+                box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.158); /* Adjust values as needed */
+    
+      }
+    
