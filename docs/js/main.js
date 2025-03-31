@@ -30,16 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-  // ---------------------------------------------------------------------------
-  //  Progress Bar
-  // ---------------------------------------------------------------------------
-
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("Page loaded! Animating progress bars...");
-
+document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.progress-bar .bar').forEach(bar => {
-        let width = bar.getAttribute('aria-valuenow') + "%";
-        console.log("Setting bar width:", width);
-        bar.style.width = width;
+        bar.style.width = "0";  // Reset first
+        setTimeout(() => {
+            let width = bar.getAttribute('aria-valuenow') + "%";
+            bar.style.width = width;
+        }, 50); // Short delay ensures transition runs
     });
 });
