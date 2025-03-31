@@ -29,8 +29,8 @@
         position: relative;
         grid-column: 1;
         grid-row: 1;
-        left: 40px;
-        top: -5px;
+        left: 45px;
+        top: 5px;
     }
 
 
@@ -57,13 +57,13 @@
             position: relative;
             grid-column: 1;
             grid-row: 2;
-            top: -95px;
+            top: -135px;
             display: flex;
             width: 1120px;  /* Set the width of the carousel */
-            height: 520px; /* Adjust height as needed */
+            height: 970px; /* Adjust height as needed */
             align-items: center;
             z-index: 2;
-            right: -10px;
+            right: -15px;
     }
 
     .card {
@@ -71,16 +71,15 @@
         background-color: rgba(156, 165, 178, 0.3); /* 9CA5B2 with 50% opacity */
         border-radius: 30px; /* 30px corner radius */
         width: 1100px; /* Adjust width as needed */
-        height: 500px; /* Adjust height as needed */
+        height: 850px; /* Adjust height as needed */
         position: relative;
-        margin-right: 80px; /* Space between cards */
         box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.1);
     }
     
     .svg-background {
         z-index: -1;
         width: 1100px !important;  /* Adjust as needed */
-        height: 500px !important; /* Adjust as needed */
+        height: 850px !important; /* Adjust as needed */
         position: absolute;
         border-radius: 30px; /* Ensure the correct rounded corners */
     }
@@ -180,3 +179,70 @@
     
       }
     
+
+/* Skills Bottom Content */
+
+    .bottom-progress {
+        display: flex;
+        place-content: center;
+        padding-top: 120px;      
+        padding-bottom: 70px;
+    }
+
+    
+    .skill-charts {
+        display: flex;
+        align-self: center;
+        position: relative;
+        gap: 80px;
+    }
+
+    .chart {
+        position: relative;
+        display: inline-block;
+        width: 140px;
+        height: 140px;
+        text-align: center;  
+    }
+
+    .chart canvas {
+        position:absolute;
+        top:0;
+        left:0;
+        border: 1px solid white;  /* 1px white stroke */
+        border-radius: 50%;       /* Keep it circular */
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    .chart::before {
+        content: '';
+        position: absolute;
+        top: 8.25px;  /* Adjust the size to position it smaller and inside */
+        left: 8.25px; /* Same as top for centering */
+        width: calc(100% - 15px); /* Decrease width by 6px to make it smaller */
+        height: calc(100% - 15px); /* Decrease height by 6px to make it smaller */
+        border-radius: 50%;
+        border: 1px solid white; /* Inner 1px white stroke */
+        box-sizing: border-box; /* Prevents the border from affecting the circle size */
+        box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.25)
+        }
+    
+    .chart-label {
+        font-size: 21px;
+        font-weight: 400;
+        text-transform: capitalize;
+        display: block;
+        margin-top: 165px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+    
+    .chart-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centers the image */
+        width: 60px; /* Adjust size as needed */
+        height: 60px;
+        pointer-events: none; /* Prevents interaction blocking */
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+    }

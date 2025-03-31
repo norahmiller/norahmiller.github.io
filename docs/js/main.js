@@ -30,12 +30,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.progress-bar .bar').forEach(bar => {
-        bar.style.width = "0";  // Reset first
-        setTimeout(() => {
-            let width = bar.getAttribute('aria-valuenow') + "%";
-            bar.style.width = width;
-        }, 50); // Short delay ensures transition runs
-    });
-});
+

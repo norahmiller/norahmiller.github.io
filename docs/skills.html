@@ -150,11 +150,73 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="bottom-progress">
+                            <div class="skill-charts">
+                                <div class="chart-item">
+                                    <div class="chart" data-percent="80">
+                                        <span class="chart-label">Communication</span>
+                                        <img src="images/Communication.png" class="chart-icon">
+                                    </div>
+                                </div>
+                                <div class="chart-item">
+                                    <div class="chart" data-percent="75">
+                                        <span class="chart-label">Creativity</span>
+                                        <img src="images/Paintbrush.png" class="chart-icon">
+                                    </div>
+                                </div>
+                                <div class="chart-item">
+                                    <div class="chart" data-percent="90">
+                                        <span class="chart-label">Adaptability</span>
+                                        <img src="images/Change.png" class="chart-icon">
+                                    </div>
+                                </div>
+                                <div class="chart-item">
+                                    <div class="chart" data-percent="95">
+                                        <span class="chart-label" style="text-wrap: nowrap;">Problem Solving</span>
+                                        <img src="images/Thinking Bubble.png" class="chart-icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div> <!-- Keep this div closing here -->
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/jquery.easypiechart.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.progress-bar .bar').forEach(bar => {
+            bar.style.width = "0";  // Reset first
+            setTimeout(() => {
+                let width = bar.getAttribute('aria-valuenow') + "%";
+                bar.style.width = width;
+            }, 50); // Short delay ensures transition runs
+        });
+    });
+    </script>
+    <script>
+        // Charts
+        $(document).ready(function() {
+            // configuration goes here
+            $('.chart').easyPieChart({
+                easing:       'easeOut',
+                barColor:   'white',
+                delay:      1500,
+                lineWidth:  8,
+                rotate:     0,
+                scaleColor: false,
+                size:       140,
+                trackColor:   'transparent',  // Transparent track
+                animate: {
+                    duration: 2500,
+                    enabled:  true
+                },
+            });
+        });
+    </script>
 </body>
 </html>
