@@ -99,16 +99,17 @@
         width: auto;
         position: relative;
         z-index: 2;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
     }
 
     /* Target the HTML icon */
     .skill-id-icon[alt="Html"] {
-        left: -1px; /* Set your desired width */
+        left: -1px;
     }
 
     /* Target the CSS icon */
     .skill-id-icon[alt="CSS"] {
-        left: -1px; /* Set your desired width */
+        left: -1px;
     }
 
     .skill-id {
@@ -143,6 +144,7 @@
 
     .skill-item h7 {
         font-size: 21px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     }
 
     .progress-bar {
@@ -158,6 +160,7 @@
         background-image: none;
         left: 45px;
         position: relative;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
     }
 
     .progress-bar .bar.bar-animation {
