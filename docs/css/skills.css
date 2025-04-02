@@ -176,7 +176,13 @@
                 top: -4.5px;
                 position: relative;
                 box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.158); /* Adjust values as needed */
-    
+      }
+
+      .progress-text {
+        left: 350px;
+        position: relative;
+        bottom: 20px;
+        opacity: 90%;
       }
     
 
@@ -199,11 +205,14 @@
 
     .chart {
         position: relative;
-        display: inline-block;
         width: 140px;
         height: 140px;
         text-align: center;  
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; 
     }
+    
 
     .chart canvas {
         position:absolute;
@@ -230,19 +239,33 @@
     .chart-label {
         font-size: 21px;
         font-weight: 400;
-        text-transform: capitalize;
         display: block;
-        margin-top: 165px;
+        margin-top: 200px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        align-self: center;
     }
     
     .chart-icon {
         position: absolute;
-        top: 50%;
+        top: calc(50% - 10px);
         left: 50%;
         transform: translate(-50%, -50%); /* Centers the image */
-        width: 60px; /* Adjust size as needed */
-        height: 60px;
+        width: 55px; /* Adjust size as needed */
+        height: 55px;
         pointer-events: none; /* Prevents interaction blocking */
         filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    .chart-percent {
+        position: absolute; /* Keep absolute positioning inside the chart */
+        color: white;
+        z-index: 10;
+        top: 100px;
+        opacity: 90%;
+    }
+
+    .chart-item {
+        display: flex;               /* Use flex to center the content */
+        justify-content: center;     /* Centers the content horizontally */
+        align-items: center;         /* Centers the content vertically */
     }

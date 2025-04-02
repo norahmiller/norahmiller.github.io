@@ -60,6 +60,7 @@
                                     <div class="progress-bar">
                                         <div class="bar bar-animation" aria-valuenow="80" aria-valuemin="0"
                                             aria-valuemax="100" role="progressbar">
+                                            <span class="progress-text">80%</span>
                                         </div>
                                     </div>
                                     <div class="skill-item">
@@ -69,6 +70,7 @@
                                     <div class="progress-bar">
                                         <div class="bar bar-animation" aria-valuenow="65" aria-valuemin="0"
                                             aria-valuemax="100" role="progressbar">
+                                            <span class="progress-text">65%</span>
                                         </div>
                                     </div>
                                     <div class="skill-item">
@@ -78,6 +80,7 @@
                                     <div class="progress-bar">
                                         <div class="bar bar-animation" aria-valuenow="90" aria-valuemin="0"
                                             aria-valuemax="100" role="progressbar">
+                                            <span class="progress-text">90%</span>
                                         </div>
                                     </div>
                                     <div class="skill-item">
@@ -87,6 +90,7 @@
                                     <div class="progress-bar">
                                         <div class="bar bar-animation" aria-valuenow="90" aria-valuemin="0"
                                             aria-valuemax="100" role="progressbar">
+                                            <span class="progress-text">90%</span>
                                         </div>
                                     </div>
                                     <div class="skill-item">
@@ -96,6 +100,7 @@
                                     <div class="progress-bar">
                                         <div class="bar bar-animation" aria-valuenow="80" aria-valuemin="0"
                                             aria-valuemax="100" role="progressbar">
+                                            <span class="progress-text">80%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -109,6 +114,7 @@
                                     <div class="progress-bar">
                                         <div class="bar bar-animation" aria-valuenow="75" aria-valuemin="0"
                                             aria-valuemax="100" role="progressbar">
+                                            <span class="progress-text">75%</span>
                                         </div>
                                     </div>
                                     <div class="skill-item">
@@ -118,6 +124,7 @@
                                     <div class="progress-bar">
                                         <div class="bar bar-animation" aria-valuenow="65" aria-valuemin="0"
                                             aria-valuemax="100" role="progressbar">
+                                            <span class="progress-text">65%</span>
                                         </div>
                                     </div>
                                     <div class="skill-item">
@@ -127,6 +134,7 @@
                                     <div class="progress-bar">
                                         <div class="bar bar-animation" aria-valuenow="80" aria-valuemin="0"
                                             aria-valuemax="100" role="progressbar">
+                                            <span class="progress-text">80%</span>
                                         </div>
                                     </div>
                                     <div class="skill-item">
@@ -136,6 +144,7 @@
                                     <div class="progress-bar">
                                         <div class="bar bar-animation" aria-valuenow="65" aria-valuemin="0"
                                             aria-valuemax="100" role="progressbar">
+                                            <span class="progress-text">65%</span>
                                         </div>
                                     </div>
                                     <div class="skill-item">
@@ -145,6 +154,7 @@
                                     <div class="progress-bar">
                                         <div class="bar bar-animation" aria-valuenow="75" aria-valuemin="0"
                                             aria-valuemax="100" role="progressbar">
+                                            <span class="progress-text">75%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -188,35 +198,74 @@
 	<script src="js/jquery.easypiechart.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('.progress-bar .bar').forEach(bar => {
-            bar.style.width = "0";  // Reset first
-            setTimeout(() => {
-                let width = bar.getAttribute('aria-valuenow') + "%";
-                bar.style.width = width;
-            }, 50); // Short delay ensures transition runs
-        });
-    });
-    </script>
-    <script>
-        // Charts
         $(document).ready(function() {
-            // configuration goes here
-            $('.chart').easyPieChart({
-                easing:       'easeOut',
-                barColor:   'white',
-                delay:      1500,
-                lineWidth:  8,
-                rotate:     0,
-                scaleColor: false,
-                size:       140,
-                trackColor:   'transparent',  // Transparent track
-                animate: {
-                    duration: 2500,
-                    enabled:  true
-                },
+            $('.chart').each(function() {
+                let $chart = $(this);
+                let $text = $("<span class='chart-percent'>0%</span>"); // Create percentage text
+                $chart.parent().append($text); // Append below the chart
+    
+                let targetPercentage = parseInt($chart.attr("data-percent"));
+                let animationDuration = 2500; // Match EasyPieChart animation time
+    
+                // Initialize EasyPieChart
+                $chart.easyPieChart({
+                    easing: 'easeOut',
+                    barColor: 'white',
+                    delay: 1500,
+                    lineWidth: 8,
+                    rotate: 0,
+                    scaleColor: false,
+                    size: 140,
+                    trackColor: 'transparent',
+                    animate: {
+                        duration: animationDuration,
+                        enabled: true
+                    },
+                    onStep: function(from, to, percent) {
+                        $text.text(Math.round(percent) + "%"); // Update text smoothly
+                    }
+                });
             });
         });
-    </script>
+    </script>    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.progress-bar').forEach(progressBar => {
+                let bar = progressBar.querySelector('.bar');
+                let text = bar.querySelector('.progress-text'); // Now inside the bar
+                let targetPercentage = parseInt(bar.getAttribute('aria-valuenow'));
+                let animationDuration = 2000; // 2 seconds
+    
+                if (!bar || !text) return; // Safety check
+    
+                // Reset bar width and text
+                bar.style.width = "0%";
+                text.innerText = "0%";
+    
+                // Start animation after a short delay
+                setTimeout(() => {
+                    bar.style.transition = `width ${animationDuration}ms ease-in-out`; 
+                    bar.style.width = targetPercentage + "%";
+    
+                    let startTime;
+                    
+                    function animateText(timestamp) {
+                        if (!startTime) startTime = timestamp;
+                        let progress = timestamp - startTime;
+                        let percentage = Math.min((progress / animationDuration) * targetPercentage, targetPercentage);
+                        text.innerText = Math.round(percentage) + "%";
+    
+                        if (progress < animationDuration) {
+                            requestAnimationFrame(animateText);
+                        } else {
+                            text.innerText = targetPercentage + "%"; // Ensure final value
+                        }
+                    }
+    
+                    requestAnimationFrame(animateText);
+                }, 50); // Ensure transition runs
+            });
+        });
+    </script>    
 </body>
 </html>
