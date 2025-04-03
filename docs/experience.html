@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Norah</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/experience.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -37,18 +38,52 @@
             <div class="blob blob1"></div>
             <div class="blob blob2"></div>
         </div>
-        <div class="announcement-wrapper">
-            <div class="announcement">
-                <div class="label">
-                    <h3>Experience</h3>
+        <div class="experience-main-wrapper">
+            <div class="experience-main">
+                <div class="card-side">
+                    <div class="floating-card" onclick="flipCard(this)">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="images/Business Card.png" alt="Company Logo">
+                            </div>
+                            <div class="card-back">
+                                <img src="images/Lafayette Instrument.png" alt="Company Logo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gradient-shadow"></div>
                 </div>
-                <img src="images/construction.png" alt="Under Construction" class="construction">
-                <div class="later">
-                    <h3>Coming Soon!</h3>
+                <div class="text-side">
+                    <h1>Lafayette Instrument</h1>
+                    <h2> - Intern</h2>
+                    <p>I’m currently a Software Intern at Lafayette Instrument Company.
+                    <br><br>Working here has strengthened my coding, problem-solving, and design skills. I’ve also enjoyed improving my interpersonal skills and collaborating with others.</p>
+                    <p><a href="images/Norah Miller Resume-Summer 2025 Design.pdf" target="_blank">Check out my resume here!</a></p>
+                </div> 
+                <div class="see-more">
+                    <div class="saturday-august-regular">Click Here!</div>                      
                 </div>
+                <div class="arrow" id="arrow">
+                    <svg width="58" height="70" viewBox="0 0 58 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M56.3299 67.9768C37.3408 62.6227 -3.07474 37.3371 9.42636 2.77495M9.42636 2.77495L1.56453 9.36567M9.42636 2.77495L15.582 10.0796" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>                                    
+                </div> 
             </div>
         </div>
-    </div> <!-- Keep this div closing here -->
+    </div>
     <script src="js/main.js"></script>
+    <script>
+        function flipCard(card) {
+            let innerCard = card.querySelector(".card-inner");
+    
+            if (innerCard.classList.contains("flipped")) {
+                innerCard.style.transform = "rotateY(0deg) skewX(5deg)";
+                innerCard.classList.remove("flipped");
+            } else {
+                innerCard.style.transform = "rotateY(180deg) skewX(-5deg)";  // Invert skew on flip
+                innerCard.classList.add("flipped");
+            }
+        }
+    </script>
 </body>
 </html>
