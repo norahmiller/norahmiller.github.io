@@ -169,6 +169,23 @@
         color: white;
     }
 
+    .text-side a {
+        color: white;
+        text-decoration: underline; /* Ensures the underline stays */
+    }
+    
+    .text-side a:visited {
+        color: white; /* Keeps it white even after clicking */
+    }
+    
+    .text-side a:hover {
+        color: white; /* Ensures no color change on hover */
+    }
+    
+    .text-side a:active {
+        color: white; /* Ensures no color change when clicked */
+    }
+
     .text-side h1, .text-side h2 {
         display: inline;
         margin: 0; /* Removes extra spacing */
