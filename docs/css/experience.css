@@ -164,7 +164,7 @@
         font-weight: 400;
     }
 
-    a {
+    .text-side a {
         text-decoration: underline;
         color: white;
     }
