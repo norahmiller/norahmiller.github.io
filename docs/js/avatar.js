@@ -8,7 +8,7 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 // Set up the rendering container and dimensions
 const avatarContainer = document.getElementById('avatar');
-let avatarCWidth = avatarContainer.clientWidth;
+let avatarCWidth = avatarContainer.clientWidth + 50;
 let avatarCHeight = avatarContainer.clientHeight;
 renderer.setSize(avatarCWidth, avatarCHeight);
 renderer.setClearColor(0x000000, 0); // Set the clear color to black with full transparency
@@ -28,17 +28,17 @@ const spotLight = new THREE.SpotLight(0xffffff, 0.6, 100, 0.2, 0.5);
 spotLight.position.set(0, 25, 25);
 scene.add(spotLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
 directionalLight.position.set(0, 1, 5);
 directionalLight.lookAt(0, 0, 5);
 scene.add(directionalLight);
 
-const blueLight = new THREE.DirectionalLight(0x2C598C, 0.9);
+const blueLight = new THREE.DirectionalLight(0x2C598C, 2.5);
 blueLight.position.set(-3, 3, 5);
 blueLight.lookAt(0, 0, 5);
 scene.add(blueLight);
 
-const pinkLight = new THREE.DirectionalLight(0x7C4578, 1.1);
+const pinkLight = new THREE.DirectionalLight(0x7C4578, 2.5);
 pinkLight.position.set(2, 0.5, 5);
 pinkLight.lookAt(0, 0, 5);
 scene.add(pinkLight);
@@ -154,7 +154,7 @@ const clock = new THREE.Clock();
 window.addEventListener("resize", () => {
 
     // Update canvas size
-    avatarCWidth = avatarContainer.clientWidth;
+    avatarCWidth = avatarContainer.clientWidth + 50;
     avatarCHeight = avatarContainer.clientHeight;
 
     renderer.setSize(avatarCWidth, avatarCHeight); // Resize renderer
