@@ -387,7 +387,7 @@
             z-index: 4;
             width: 550px;
             height: 100px;
-            top: 700px;
+            top: 730px;
             backdrop-filter: blur(2px);
             pointer-events: none;
           }
