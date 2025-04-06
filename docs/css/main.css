@@ -399,6 +399,7 @@
             top: 0;
             left: 0;
             z-index: 2;
+            filter: drop-shadow(0 0 8px #1a1e286c); /* soft white blur */
         }
 
         .avatar .gradient-overlay {
@@ -594,6 +595,7 @@
 
             .avatar .gradient-behind {
                 bottom: -108px !important;
+                width: 100%;
             }
 
             .avatar .gradient-overlay {
@@ -680,7 +682,7 @@
 
         .blob1 {
             position: absolute;
-            background: linear-gradient(45deg, rgba(156, 165, 178, .5), rgba(156, 165, 178, 0));
+            background: linear-gradient(45deg, rgba(156, 165, 178, .3), rgba(156, 165, 178, 0));
             height: 764px;
             width: 918px;
             left: -600px;
