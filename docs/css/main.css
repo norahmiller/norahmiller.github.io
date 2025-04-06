@@ -410,7 +410,7 @@
             height: calc(40%); /* Adjust as needed */
             background: radial-gradient(ellipse at center, 
                 #1A1E28 20%, /* Fully opaque in the center */
-                #1A1E2800 75%  /* Gradually fades out towards edges */
+                #1A1E2800 72%  /* Gradually fades out towards edges */
             );
         
             pointer-events: none; /* Prevents interactions */
