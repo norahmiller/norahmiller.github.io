@@ -403,14 +403,14 @@
 
         .avatar .gradient-overlay {
             position: absolute;
-            bottom: -400px;
+            bottom: -150px;
             left: 60%; /* Center the gradient */
             transform: translateX(-50%); /* Ensure it's truly centered */
             width: calc(100% + 1500px);
-            height: calc(90%); /* Adjust as needed */
+            height: calc(40%); /* Adjust as needed */
             background: radial-gradient(ellipse at center, 
                 #1A1E28 20%, /* Fully opaque in the center */
-                #1A1E2800 72%  /* Gradually fades out towards edges */
+                #1A1E2800 75%  /* Gradually fades out towards edges */
             );
         
             pointer-events: none; /* Prevents interactions */
@@ -423,15 +423,15 @@
             left: 60%; /* Center the gradient */
             transform: translateX(-50%); /* Ensure it's truly centered */
             width: calc(100% + 550px);
-            height: calc(80%); /* Adjust as needed */
+            height: calc(90%); /* Adjust as needed */
             
             background: radial-gradient(ellipse at center, 
-                #1A1E28 30%, /* Fully opaque in the center */
+               #1A1E28 30%, /* Fully opaque in the center */
                 #1A1E2800 70%  /* Gradually fades out towards edges */
             );
         
             pointer-events: none; /* Prevents interactions */
-            z-index: 0; /* Ensures it's above the avatar */
+            z-index: 0;
         }
 
 
@@ -496,8 +496,17 @@
                 height: 800px;
             }
 
-            .avatar .gradient-behind, .gradient-overlay {
+            .avatar {
                 bottom: -325px !important;
+            }
+
+            .avatar .gradient-behind {
+                bottom: -120px !important;
+            }
+
+            .avatar .gradient-overlay {
+                height: 60%;
+                bottom: -190px !important;
             }
 
             .avatar::after {
@@ -574,6 +583,8 @@
                 width: 300px;
                 height: 700px;
                 top: -90px !important;
+                left: -30px;
+                position: relative;
             }
 
             .avatar::after {
@@ -581,8 +592,13 @@
                 width: 400px;
             }
 
-            .avatar .gradient-behind, .gradient-overlay {
-                bottom: -298px !important;
+            .avatar .gradient-behind {
+                bottom: -108px !important;
+            }
+
+            .avatar .gradient-overlay {
+                height: 60% !important;
+                bottom: -160px !important;
             }
 
             .greeting {
