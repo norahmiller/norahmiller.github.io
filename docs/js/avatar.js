@@ -24,11 +24,11 @@ camera.position.set(0, 1.45, 5.65);
 camera.lookAt(0, 1.45, 5);
 
 // Add lights
-const spotLight = new THREE.SpotLight(0xffffff, 0.6, 100, 0.2, 0.5);
+const spotLight = new THREE.SpotLight(0xffffff, 0.6, 100, 0.2, 0.3);
 spotLight.position.set(0, 25, 25);
 scene.add(spotLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
 directionalLight.position.set(0, 1, 5);
 directionalLight.lookAt(0, 0, 5);
 scene.add(directionalLight);
