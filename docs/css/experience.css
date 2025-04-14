@@ -157,11 +157,6 @@
         text-decoration: underline;
         color: white;
     }
-
-    .text-side a {
-        color: white;
-        text-decoration: underline; /* Ensures the underline stays */
-    }
     
     .text-side a:visited {
         color: white; /* Keeps it white even after clicking */

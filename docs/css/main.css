@@ -695,13 +695,14 @@
             position: absolute;
             background: linear-gradient(-45deg, rgb(131, 53, 126), rgba(131, 53, 126, 0));
             height: 764px;
-            width: 918px;
-            left: 750px;
+            width: 1218px;
             top: -400px;
             transform: rotate(180deg);
             animation: transform 17s ease-in-out infinite both alternate, movement_two 20s ease-in-out infinite both;
             overflow: hidden;
+            left: calc(100% - 785px); /* Position it to the right */
         }
+        
 
         .blob3 {
             position: absolute;

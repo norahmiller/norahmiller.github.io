@@ -1,0 +1,1236 @@
+ 
+    /* Main PicFit Info */
+ 
+        .PicFit-main-wrapper {
+            display: flex;
+            justify-content: center;   /* Centers horizontally */
+            align-items: center;       /* Centers vertically */
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: visible; /* Let the body handle vertical scrolling */
+        }
+
+        /* Shows Content */
+        .main-container {
+            display: block;
+        }
+
+        .PicFit-main {
+            display: grid;
+            grid-template-columns: auto;
+            align-items: center; /* Align items vertically */
+            justify-content: center; /* Center everything horizontally */
+            padding: 50px;
+            width: min(100%);        
+            height: fit-content;
+            margin: auto;
+            position: relative;
+            top: 0px;
+        }
+
+
+    /* Card Basics */
+
+        .card {
+            flex: 0 0 auto; /* Prevent shrinking */
+            background-color: rgba(156, 165, 178, 0.25); /* 9CA5B2 with 50% opacity */
+            border-radius: 30px; /* 30px corner radius */
+            width: 1100px; /* Adjust width as needed */
+            height: fit-content; /* Adjust height as needed */
+            position: relative;
+            box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, .2);
+        }
+
+        .card-info {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;  /* stack items vertically */
+        }
+
+        .card-wrapper {
+            grid-column: 1;
+            display: flex;
+            width: 1120px;  /* Set the width of the carousel */
+            height: fit-content; /* Adjust height as needed */
+            align-items: center;
+            z-index: 2;
+            right: -15px;
+            padding-top: 80px;
+            will-change: scroll-position;
+        }
+
+        .svg-background {
+            z-index: -1;
+            width: 1100px !important;  /* Adjust as needed */
+            height: 100% !important; /* Adjust as needed */
+            position: absolute;
+            border-radius: 30px; /* Ensure the correct rounded corners */
+        }
+
+        .responsive-svg {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px; /* Apply the same rounded corners */
+        }
+
+
+
+    /* PicFit Intro Secion*/
+
+        .picfit-intro {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        .picfit-intro .card-text .logo {
+            height: 35px;
+            top: 62px;
+            position: relative;
+            grid-row: 1;
+            grid-column: 1;
+            left: 130px;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        .picfit-intro .card-text h7 {
+            top: 50px;
+            grid-row: 1;
+            grid-column: 1;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .picfit-intro .card-text h8 {
+            grid-row: 2;
+            grid-column: 1;
+            top: 0px;
+            font-size: 24px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .picfit-intro .card-text h9 {
+            grid-row: 3;
+            grid-column: 1;
+            font-size: 18px;
+            top: 0px;
+            position: relative;
+            line-height: 1.5; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .picfit-intro .card-text {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto;
+            padding-left: 25px;
+            padding-right: 30px;
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .picfit-intro .below-text {
+            display: flex;
+            gap: 160px; /* Space between left and right */
+            justify-self: center; /* or 'stretch' if you want full width */
+            left: -30px;
+            position: relative;
+            top: -10px;
+        }
+
+        .picfit-intro .item img {
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+        }
+
+        .picfit-intro .bottom {
+            display: flex;
+            gap: 60px; /* Space between left and right */
+            grid-column: 1 / 3;
+            justify-self: center; /* or 'stretch' if you want full width */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .picfit-intro .item {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto;
+        }
+
+        .picfit-intro .item h7 {
+            font-size: 22px;
+            font-weight: 700;
+            position: relative;
+            left: 10px;
+            top: 8px;
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .picfit-intro .item h8 {
+            position: relative;
+            grid-row: 2;
+            grid-column: 2;
+            font-size: 18px;
+            top: 3px;
+            left: 10px;
+        }
+
+    /* Main Problem Section */
+
+        .main-problem {
+            display: grid;
+            grid-template-columns: auto auto;
+            border: 2px solid white;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 20px;
+            width: 900px;
+            align-items: center;
+            justify-self: center;
+            margin-top: 80px;
+            padding: 40px;
+            gap: 30px;
+        }
+
+        .main-problem h7 {
+            font-size: 30px;
+            font-weight: 700;
+            grid-column: 1;
+        }
+
+        .main-problem h8 {
+            font-size: 18px;
+            grid-column: 2;
+            line-height: 1.2;
+        }
+
+    /* Timeline Section */
+
+        .timeline {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto;
+            width: 900px;
+            align-items: center;
+            justify-self: center;
+            justify-content: center;
+            margin-top: 80px;
+            padding: 40px;
+        }
+
+        .timeline h7{
+            font-size: 35px;
+            font-weight: 700;
+            grid-column: 1/4;
+            grid-row: 1;
+            justify-self: center;
+            margin-bottom: 15px;
+        }
+
+        .week-1 {
+            grid-column: 1;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            grid-template-rows: auto auto auto;
+        }
+
+        .week-2 {
+            grid-column: 3;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+        }
+
+        .week-1 .label {
+            grid-row: 1;
+            grid-column: 1/6;
+            justify-self: center;
+            position: relative;
+            font-size: 24px;
+            pointer-events: none;
+            align-self: start;
+            margin-top: auto;
+            padding: 40px;
+            padding-bottom: 20px;
+            margin-left: 10px;
+            text-decoration: underline;
+        }
+
+        .week-2 .label {
+            grid-row: 1;
+            grid-column: 1/4;
+            justify-self: center;
+            position: relative;
+            font-size: 24px;
+            pointer-events: none;
+            align-self: start;
+            margin-top: auto;
+            padding: 40px;
+            padding-bottom: 20px;
+            margin-left: 5px;
+            text-decoration: underline;
+        }
+
+        .week-1 .half-dotted-box {
+            grid-row: 2;
+            grid-column: 1/6;
+            margin-top: auto;
+            position: absolute;
+            padding-left: 10px;
+            justify-self: center;
+            padding-top: 75px;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+        }     
+        
+        .week-2 .half-dotted-box {
+            grid-row: 2;
+            grid-column: 1/4;
+            margin-top: auto;
+            padding-top: 75px;
+            padding-left: 5px;
+            position: absolute;
+            z-index: 5;
+            justify-self: center;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+        }        
+
+        .timeline .circle {
+            border-radius: 50%;
+            width: 140px;
+            height: 140px;
+            border: 2px solid white; /* Inner 1px white stroke */
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+            grid-row: 3;
+            display: grid;
+            grid-template-rows: auto auto;
+            justify-self: center;
+            margin-left: 5px;
+            z-index: 2;
+        }
+
+        .timeline .middle {
+            display: grid;
+            grid-column: 2;
+            grid-row: 2;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto;
+        }
+
+
+        .timeline svg {
+            grid-row: 3;
+            align-self: center;
+            justify-self: center;
+            position: relative;
+        }
+
+        .timeline .circle img {
+            justify-self: center;
+            position: relative;
+            grid-row: 1;
+            grid-column: 1;
+            margin-top: 20px;
+        }
+
+        .timeline .middle .blank {
+            font-size: 21px;
+            margin-top: 95.2px;
+        }
+
+        .timeline .middle-arrow {
+            grid-row: 2;
+            grid-column: 1;
+            height: 144px;
+            align-self: center;
+            justify-self: center;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .timeline .circle h9 {
+            justify-self: center;
+            grid-row: 2;
+            grid-column: 1;
+            font-size: 18px;
+            top: -10px;
+            position: relative;
+        }
+
+    /* Detailed Phases */
+
+        .detailed-phases h1 {
+            font-weight: normal;
+            font-size: 38px;
+            justify-self: center;
+            transform: rotate(-8deg);
+            top: 30px;
+            right: 60px;
+            position: relative;
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .detailed-phases svg {
+            justify-self: center;
+            grid-row: 1;
+            grid-column: 1;
+            top: 60px;
+            right: -120px;
+            position: relative;
+        }
+
+        .detailed-phases {
+            justify-content: center;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+        }
+
+
+    /* Phases */
+
+        .phases {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto;
+            padding: 40px;
+            padding-top: 100px;
+            justify-content: center;
+        }
+
+        .phases h1 {
+            position: relative;
+            justify-self: start;
+            font-size: 35px;
+        }
+
+
+        .phases h2 {
+            font-size: 30px;
+            text-decoration: underline;
+        }
+
+        .phases h3 {
+            font-size: 18px;
+            font-weight: normal;
+            line-height: 1.5;
+        }
+
+        /* Explore */
+
+            .phases .explore {
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto auto auto;
+                border: 2px solid white;
+                filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+                border-radius: 20px;
+                width: 900px;
+                align-items: center;
+                justify-self: center;
+                padding: 40px;
+                gap: 30px;
+            }
+
+
+            /* Row One */
+
+                .phases .explore .row-one {
+                    grid-row: 1;
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-row: auto;
+                }
+
+                .phases .explore .row-one h3 {
+                    max-width: 620px;
+                    justify-self: center;
+                }
+
+                .phases .explore .row-one h2 {
+                    justify-self: center;
+                }
+
+            /* Row Two */
+                
+                .phases .explore .row-two {
+                    grid-row: 2;
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    grid-template-rows: auto auto auto;
+                    justify-content: center;
+                    padding-top: 20px;
+                }
+
+                .phases .explore .row-two h3{
+                    grid-column: 1/4;
+                    grid-row: 1;
+                    justify-self: center;
+                }
+
+                .phases .explore .row-two li {
+                    justify-self: center;
+                    line-height: 1.5;
+                    margin-top: 20px;
+                }
+
+                .phases .explore .row-two svg{
+                    justify-self: center;
+                    grid-column: 1/4;
+                    grid-row: 2;
+                }
+
+            /* Row Three */
+
+                .phases .explore .row-three {
+                    grid-row: 3;
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto auto auto;
+                    justify-content: center;
+                    padding-top: 20px;
+                }
+
+                .phases .explore .row-three h3:first-child {
+                    grid-row: 1;
+                    grid-column: 2;
+                    font-size: 20px;
+                    justify-self: center;
+                    padding-right: 0px;
+                }
+
+                .phases .explore .row-three h3 {
+                    grid-column: 1;
+                    grid-row: 2;
+                    max-width: 350px;
+                    padding-right: 50px;
+                }
+
+                .phases .explore .row-three img {
+                    grid-row: 2/4;
+                    grid-column: 2;
+                    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+                    justify-self: center;
+                }
+
+                .phases .explore .row-three svg {
+                    grid-column: 1;
+                    grid-row: 3;
+                    scale: .7;
+                    justify-self: end;
+                    top: -50px;
+                    position: relative;
+                }
+
+            /* Row Four */
+
+                .phases .explore .row-four {
+                    grid-row: 4;
+                    display: grid;
+                    grid-template-rows: auto auto auto;
+                    grid-template-columns: auto;
+                    justify-content: center;
+                }
+
+                .phases .explore .row-four h3 {
+                    justify-self: center;
+                    font-size: 20px;
+                }
+
+                .phases .explore .row-four h3:first-child {
+                    max-width: 750px;
+                    padding-top: 50px;
+                    font-size: 18px;
+                }
+
+                .phases .explore .row-four img {
+                    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+                    justify-self: center;
+                }
+
+            /* Row Five */
+
+                .phases .explore .row-five {
+                    grid-row: 5;
+                    display: grid;
+                    grid-template-columns: 2;
+                    grid-template-rows: 2;
+                    justify-content: center;
+                    padding-top: 100px;
+                }
+
+                .phases .explore .row-five h2 {
+                    grid-row: 1;
+                    grid-column: 1;
+                    justify-self: center;
+                    align-self: center;
+                    font-size: 25px;
+                    text-decoration: none;
+                }
+
+                .phases .explore .row-five h3 {
+                    grid-row: 1;
+                    grid-column: 2;
+                    justify-self: center;
+                    max-width: 500px;
+                    align-self: center;
+                }
+
+                .phases .explore .row-five svg {
+                    grid-row: 2;
+                    grid-column: 1/3;
+                    justify-self: center;
+                    padding-left: 70px;
+                    padding-right: 70px;
+                    padding-top: 10px;
+                    padding-bottom: 50px;
+                }
+
+        /* Define */
+
+            .phases .define {
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto auto auto;
+                border: 2px solid white;
+                filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+                border-radius: 20px;
+                width: 900px;
+                align-items: center;
+                justify-self: center;
+                padding: 40px;
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+
+            /* Row One */
+
+                .phases .define .row-one {
+                    grid-row: 1;
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-row: auto;
+                }
+
+                .phases .define .row-one h3 {
+                    max-width: 650px;
+                    justify-self: center;
+                }
+
+                .phases .define .row-one h2 {
+                    justify-self: center;
+                }
+
+            /* Row Two */
+
+                .phases .define .row-two {
+                    grid-row: 2;
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-row: auto auto;
+                    padding-top: 50px;
+                }
+
+                .phases .define .row-two h3 {
+                    justify-self: center;
+                }
+
+                .phases .define .row-two img {
+                    justify-self: center;
+                    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+                }
+
+            /* Row Three */
+
+                .phases .define .row-three {
+                    grid-row: 3;
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-row: auto auto;
+                    padding-top: 60px;
+                }
+
+                .phases .define .row-three h2 {
+                    grid-row: 1;
+                    grid-column: 2;
+                    justify-self: center;
+                    font-size: 20px;
+                    text-decoration: none;
+                }
+
+                .phases .define .row-three h3 {
+                    grid-row: 2;
+                    grid-column: 1;
+                    justify-self: center;
+                    max-width: 360px;
+                }
+
+                .phases .define .row-three img {
+                    grid-row: 2;
+                    grid-column: 2;
+                    justify-self: center;
+                    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+                }
+
+            /* Row Four */
+
+                .phases .define .row-four {
+                    grid-row: 5;
+                    display: grid;
+                    grid-template-columns: 2;
+                    grid-template-rows: 2;
+                    justify-content: center;
+                    padding-top: 50px;
+                }
+
+                .phases .define .row-four h2 {
+                    grid-row: 1;
+                    grid-column: 1;
+                    justify-self: center;
+                    align-self: center;
+                    font-size: 25px;
+                    text-decoration: none;
+                }
+
+                .phases .define .row-four h3 {
+                    grid-row: 1;
+                    grid-column: 2;
+                    justify-self: center;
+                    max-width: 500px;
+                    align-self: center;
+                }
+
+                .phases .define .row-four svg {
+                    grid-row: 2;
+                    grid-column: 1/3;
+                    justify-self: center;
+                    padding-left: 70px;
+                    padding-right: 70px;
+                    padding-top: 10px;
+                    padding-bottom: 50px;
+                }
+
+
+
+        /* Ideate */
+
+            .phases .ideate {
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto auto auto;
+                border: 2px solid white;
+                filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+                border-radius: 20px;
+                width: 900px;
+                align-items: center;
+                justify-self: center;
+                padding: 40px;
+                gap: 30px;
+                margin-top: 40px;
+            }
+
+
+            /* Row One */
+
+                .phases .ideate .row-one {
+                    grid-row: 1;
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-row: auto;
+                }
+
+                .phases .ideate .row-one h3 {
+                    max-width: 650px;
+                    justify-self: center;
+                }
+
+                .phases .ideate .row-one h2 {
+                    justify-self: center;
+                }
+
+            /* Row Two */
+
+                .phases .ideate .row-two {
+                    grid-row: 2;
+                    display: grid;
+                    grid-template-columns:auto auto auto;
+                    grid-row: auto auto;
+                    padding-top: 50px;
+                }
+
+                .phases .ideate .row-two h3 {
+                    grid-column: 1/4;
+                    justify-self: center;
+                    text-align: center;
+                }
+
+                .phases .ideate .row-two ul {
+                    grid-row: 2;
+                    justify-self: center;
+                    max-width: 252px;
+                }
+
+            /* Row Three */
+
+                .phases .ideate .row-three {
+                    grid-row: 3;
+                    display: grid;
+                    grid-template-columns:auto auto;
+                    grid-template-rows: auto auto auto;
+                    padding-top: 50px;
+                }
+
+                .phases .ideate .row-three h2{
+                    grid-row: 1;
+                    grid-column: 2;
+                    justify-self: center;
+                    align-self: center;
+                    font-size: 20px;
+                    text-decoration: none;
+                }
+
+                .phases .ideate .row-three h3 {
+                    grid-row: 2;
+                    grid-column: 1;
+                }
+
+                .phases .ideate .row-three .diagram {
+                    grid-row: 2/4;
+                    grid-column: 2;
+                    padding: 20px;
+                    padding-top: 5px;
+                }
+
+                .phases .ideate .row-three svg {
+                    grid-column: 1;
+                    grid-row: 3;
+                    justify-self: end;
+                    scale: .8;
+                    align-self: start;
+                    top: -150px;
+                    position: relative;
+                }
+
+                            
+                .phases .ideate .row-three a {
+                    text-decoration: underline;
+                    color: white;
+                }
+                
+                .phases .ideate .row-three a:visited {
+                    color: white; /* Keeps it white even after clicking */
+                }
+                
+                .phases .ideate .row-three a:hover {
+                    color: white; /* Ensures no color change on hover */
+                }
+                
+                .phases .ideate .row-three a:active {
+                    color: white; /* Ensures no color change when clicked */
+                }
+
+
+            /* Row Four */
+
+                .phases .ideate .row-four {
+                    display: grid;
+                    grid-row: 4;
+                    grid-template-columns: 1;
+                    grid-template-rows: 3;
+                    padding-top: 50px;
+                }
+
+                .phases .ideate .row-four h2 {
+                    grid-row: 2;
+                    grid-column: 1;
+                    justify-self: center;
+                    align-self: center;
+                    font-size: 20px;
+                    text-decoration: none;
+                    padding-top: 10px;
+                }
+
+                .phases .ideate .row-four h3 {
+                    justify-self: center;
+                    text-align: center;
+                    max-width: 750px;
+                    font-size: 18px;
+                }
+
+                .phases .ideate .row-four img {
+                    justify-self: center;
+                }
+
+                
+
+            /* Row Four */
+
+                .phases .ideate .row-five {
+                    grid-row: 5;
+                    display: grid;
+                    grid-template-columns: 2;
+                    grid-template-rows: 2;
+                    justify-content: center;
+                    padding-top: 50px;
+                }
+
+                .phases .ideate .row-five h2 {
+                    grid-row: 1;
+                    grid-column: 1;
+                    justify-self: center;
+                    align-self: center;
+                    font-size: 25px;
+                    text-decoration: none;
+                }
+
+                .phases .ideate .row-five h3 {
+                    grid-row: 1;
+                    grid-column: 2;
+                    justify-self: center;
+                    max-width: 500px;
+                    align-self: center;
+                }
+
+                .phases .ideate .row-five svg {
+                    grid-row: 2;
+                    grid-column: 1/3;
+                    justify-self: center;
+                    padding-left: 70px;
+                    padding-right: 70px;
+                    padding-top: 10px;
+                    padding-bottom: 50px;
+                }
+
+
+
+         /* Design */
+
+         .phases .design {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto auto;
+            border: 2px solid white;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 20px;
+            width: 900px;
+            align-items: center;
+            justify-self: center;
+            padding: 40px;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+            /* Row One */
+
+            .phases .design .row-one {
+                grid-row: 1;
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-row: auto;
+            }
+
+            .phases .design .row-one h3 {
+                max-width: 650px;
+                justify-self: center;
+            }
+
+            .phases .design .row-one h2 {
+                justify-self: center;
+            }
+
+            /* Row Two */
+
+            .phases .design .row-two {
+                grid-row: 2;
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-rows: auto auto auto auto;
+                padding-top: 50px;
+            }
+
+            .phases .design .row-two .annotation {
+                grid-column: 1;
+                display: flex;
+                height: fit-content;
+                padding-bottom: 10px;
+            }
+
+            .phases .design .row-two .annotation h3 {
+                font-size: 18px;
+                align-self: start;
+                margin: 0;
+                padding-left: 10px;
+            }
+
+            .phases .design .row-two .annotation img {
+                padding-left: 0px;
+                padding-top: 0px;
+            }
+
+            .phases .design .row-two h2 {
+                font-size: 25px;
+                text-decoration: none;
+            }
+
+            .phases .design .row-two img {
+                grid-column: 2;
+                grid-row: 1/5;
+                padding-left: 20px;
+                padding-top: 50px;
+                justify-self: end;
+            }
+
+
+            /* Row Three */
+
+            .phases .design .row-three {
+                grid-row: 3;
+                display: grid;
+                grid-template-columns: auto max-content;
+                grid-template-rows: auto auto auto auto auto;
+                padding-top: 50px;
+            }
+
+            .phases .design .row-three .annotation {
+                grid-column: 2;
+                display: flex;
+                height: fit-content;
+                padding-bottom: 10px;
+                max-width: 307.3px;
+            }
+
+            .phases .design .row-three .annotation h3 {
+                font-size: 18px;
+                align-self: start;
+                margin: 0;
+            }
+
+            .phases .design .row-three .annotation img {
+                padding-left: 0px;
+                padding-top: 0px;
+            }
+
+            .phases .design .row-three h2 {
+                font-size: 25px;
+                text-decoration: none;
+                max-width: 307.3px;
+            }
+
+            .phases .design .row-three img {
+                grid-column: 1;
+                grid-row: 1/6;
+                padding-right: 20px;
+                padding-top: 50px;
+                justify-self: start;
+            }
+
+        /* Row Four */
+
+            .phases .design .row-four {
+                grid-row: 4;
+                display: grid;
+                grid-template-columns: max-content auto;
+                grid-template-rows: auto auto auto auto;
+                padding-top: 50px;
+            }
+
+            .phases .design .row-four .annotation {
+                grid-column: 1;
+                display: flex;
+                height: fit-content;
+                padding-bottom: 10px;
+                max-width: 307.3px;
+            }
+
+            .phases .design .row-four .annotation h3 {
+                font-size: 18px;
+                align-self: start;
+                margin: 0;
+                padding-left: 10px;
+            }
+
+            .phases .design .row-four .annotation img {
+                padding-left: 0px;
+                padding-top: 0px;
+            }
+
+            .phases .design .row-four h2 {
+                font-size: 25px;
+                text-decoration: none;
+                max-width: 307.3px;
+            }
+
+            .phases .design .row-four img {
+                grid-column: 2;
+                grid-row: 1/5;
+                padding-left: 20px;
+                padding-top: 50px;
+                justify-self: end;
+            }
+
+        
+
+        
+        /* Testing */
+
+        .phases .testing {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            border: 2px solid white;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 20px;
+            width: 900px;
+            align-items: center;
+            justify-self: center;
+            padding: 40px;
+            gap: 30px;
+            margin-top: 40px;
+            height: fit-content;
+        }
+
+            /* Row One */
+
+            .phases .testing .row-one {
+                grid-row: 1;
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-row: auto;
+            }
+
+            .phases .testing .row-one h3 {
+                max-width: 670px;
+                justify-self: center;
+            }
+
+            .phases .testing .row-one h2 {
+                justify-self: center;
+            }
+
+    
+    /* Final Product */
+
+        .final-product {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            border-radius: 20px;
+            width: 900px;
+            align-items: center;
+            justify-self: center;
+            padding: 40px;
+            margin-top: 40px;
+            height: fit-content;
+            gap: 30px;
+            padding-bottom: 120px;
+            padding-left: 77px;
+        }
+
+        /* Row One */
+
+            .final-product .row-one {
+                grid-row: 1;
+                display: grid;
+                grid-template-columns: auto 30px auto auto;
+                grid-template-rows: auto;
+                justify-self: center;
+            }
+
+            .final-product .row-one .figma-icons {
+                justify-self: center;
+                grid-row: 2;
+                text-align: center;
+                filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+            }
+
+            .final-product .row-one .figma-icons h3 {
+                font-weight: normal;
+            }
+
+            .final-product .row-one .figma-icons:nth-of-type(1) {
+                grid-column: 1;
+            }
+            
+            .final-product .row-one .figma-icons:nth-of-type(2) {
+                grid-column: 3;
+            }
+
+            .final-product .row-one h2 {
+                justify-self: center;
+                grid-row: 1;
+                grid-column: 1/4;
+                text-decoration: none;
+                font-size: 60px;
+                font-weight: normal;
+                margin: 0;
+                padding-bottom: 20px;
+            }
+
+            .final-product .row-one svg {
+                position: relative;
+                top: -40px;
+                left: 20px;
+                justify-self: center;
+                align-self: center;
+                grid-row: 1/3;
+                grid-column: 4;
+            }
+
+    /* Footer */
+
+        .footer {
+            display: flex;
+            justify-self: center;
+            justify-content: center;
+            width: 900px;
+        }
+
+        .footer h4 {
+            position: relative;
+            left: -15px;
+            font-size: 18;
+            opacity: 60%;
+            font-weight: normal;
+        }
+
+
+    /* Side Nav */
+
+        .side-nav-wrapper {
+            width: 10vw;
+            height: 100vh;
+            z-index: 500;
+            position: fixed; /* so it stays on screen while scrolling */
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* or center */
+            left: 25px;
+        }
+        
+        .side-nav img.nav-img {
+            display: none;
+            max-height: 250px;
+        }
+        
+        .side-nav img.nav-img.active {
+            display: block;
+        }
+
+        .nav-node {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 600;
+          }
+        
