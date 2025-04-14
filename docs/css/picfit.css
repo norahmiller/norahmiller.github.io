@@ -1211,13 +1211,21 @@
             left: 0;
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* or center */
+            justify-content: center; /* or center */
             left: 25px;
+        }
+        
+        .side-nav {
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: auto;
         }
         
         .side-nav img.nav-img {
             display: none;
             max-height: 250px;
+            grid-row: 1;
+            grid-column: 1;
         }
         
         .side-nav img.nav-img.active {
@@ -1225,7 +1233,11 @@
         }
 
         .nav-node {
+            grid-row: 1;
+            grid-column: 1;
             position: absolute;
+            justify-self: center;
+            align-self: center;
             width: 30px;
             height: 30px;
             background: transparent;
