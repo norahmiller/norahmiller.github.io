@@ -378,28 +378,32 @@
             const phases = document.querySelector('.nav-img:nth-child(2)');
             const final = document.querySelector('.nav-img:nth-child(3)');
     
-            const timeline = document.getElementById('phases'); // Your "Timeline" section
-            const finalProduct = document.getElementById('final-product'); // Your "Final Product" section
-    
-            const scrollY = window.scrollY;
-            const timelineTop = timeline.offsetTop;
-            const finalTop = finalProduct.offsetTop;
+            const timeline = document.getElementById('phases'); // Timeline section
+            const finalProduct = document.getElementById('final-product'); // Final Product section
     
             // Reset all
             overview.classList.remove('active');
             phases.classList.remove('active');
             final.classList.remove('active');
     
-            if (scrollY < timelineTop - 100) {
-                overview.classList.add('active');
-            } else if (scrollY >= timelineTop - 100 && scrollY < finalTop - 100) {
-                phases.classList.add('active');
-            } else if (scrollY >= finalTop - 100) {
+            const timelineRect = timeline.getBoundingClientRect();
+            const finalRect = finalProduct.getBoundingClientRect();
+    
+            if (finalRect.top < window.innerHeight && finalRect.bottom > 0) {
+                // Final product is in view
                 final.classList.add('active');
+            } else if (timelineRect.top < window.innerHeight && timelineRect.bottom > 0) {
+                // Timeline is in view
+                phases.classList.add('active');
+            } else {
+                // Otherwise, show overview
+                overview.classList.add('active');
             }
         });
+    
+        // Trigger once on load
         window.dispatchEvent(new Event('scroll'));
-    </script> 
+    </script>     
     <script>
         document.querySelectorAll('.nav-node').forEach(btn => {
             btn.addEventListener('click', () => {
