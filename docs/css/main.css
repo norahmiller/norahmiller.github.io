@@ -558,9 +558,21 @@
 
             .main-wrapper .arrow {
                 top: 123px !important;
-                transform: scale(0.8) !important;
+                transform: scale(0.8);
                 transform-origin: center;
                 right: 17px !important;
+            }
+
+            @keyframes bounce-tablet {
+                0%, 100% {
+                    transform: scale(0.8) translateY(0);
+                }
+                50% {
+                    transform: scale(0.8) translateY(-5px);
+                }
+            }
+            .arrow.bounce {
+                animation: bounce-tablet 0.5s ease-in-out !important;
             }
 
         }
@@ -665,10 +677,22 @@
                 grid-column: 1;
                 grid-row: 1;
                 z-index: 5;
-                transform: scale(0.6) !important;
+                transform: scale(0.6);
                 transform-origin: center;
                 right: 130px !important;
                 top: 210px;
+            }
+
+            @keyframes bounce-mobile {
+                0%, 100% {
+                    transform: scale(0.6) translateY(0);
+                }
+                50% {
+                    transform: scale(0.6) translateY(-5px);
+                }
+            }
+            .arrow.bounce {
+                animation: bounce-mobile 0.5s ease-in-out !important;
             }
 
           }
