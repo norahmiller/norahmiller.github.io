@@ -29,7 +29,7 @@
                     <li><a href="../about.html">About</a></li>
                     <li><a href="../skills.html">Skills</a></li>
                     <li><a href="../experience.html">Experience</a></li>
-                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../portfolio.html" style="text-decoration: underline;">Portfolio</a></li>
                     <li><a href="../contact.html">Contact Me</a></li>
                 </ul>
             </nav>
@@ -423,10 +423,6 @@
             });
         });
     </script>
-    <div id="blob-container" class="blobs"></div>
-
-    <div id="blob-container" class="blobs"></div>
-
     <script>
         const container = document.getElementById("blob-container");
         const pageHeight = document.body.scrollHeight;
@@ -453,7 +449,7 @@
             const newBlob2 = document.createElement("div");
             newBlob2.classList.add("blob", "blob2");
             newBlob2.style.top = `${-400 + (i * interval)}px`; // Repeat with 100px lower each time
-            newBlob2.style.left = "750px"; // Same horizontal position as blob2
+            newBlob2.style.left = "calc(100% - 785px)"; // Same horizontal position as blob2
             container.appendChild(newBlob2);
         }
     </script>

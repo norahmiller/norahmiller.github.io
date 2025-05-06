@@ -29,5 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    document.querySelectorAll('.blob-wrapper').forEach(wrapper => {
+      const speed = parseFloat(wrapper.dataset.speed);
+      wrapper.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+  });
+
 
 

@@ -45,7 +45,7 @@
             </button>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" style="text-decoration: underline;">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="skills.html">Skills</a></li>
                     <li><a href="experience.html">Experience</a></li>
@@ -55,20 +55,26 @@
             </nav>
         </header>
         <div class="blobs">
-            <div class="blob blob1"></div>
-            <div class="blob blob2"></div>
-            <div class="blob blob3"></div>
-        </div>
+            <div class="blob-wrapper" data-speed="0.2">
+              <div class="blob blob1"></div>
+            </div>
+            <div class="blob-wrapper" data-speed="0.4">
+              <div class="blob blob2"></div>
+            </div>
+            <div class="blob-wrapper" data-speed="0.1">
+              <div class="blob blob3"></div>
+            </div>
+          </div>
         <div class="main-wrapper">
             <main>
                 <div class="intro">
                     <h1>I'm Norah,</h1>
                     <h2>I code and design</h2>
                     <div class="icons">
-                        <a href="https://www.linkedin.com/in/norahmiller/">
+                        <a href="https://www.linkedin.com/in/norahmiller/" target="_blank">
                             <img src="images/linkedin.png" alt="LinkedIn Icon" class="icon">
                         </a>
-                        <a href="https://github.com/norahmiller">
+                        <a href="https://github.com/norahmiller" target="_blank">
                             <img src="images/github.png" alt="GitHub Icon">
                         </a>
                         <a href="mailto:norah@purdue.edu">
@@ -141,5 +147,55 @@
             }
         });
     </script>
+    <script>
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY;
+          document.querySelectorAll('.blob').forEach(blob => {
+            const speed = parseFloat(blob.dataset.speed);
+            blob.style.transform = `translateY(${scrollY * speed}px)`;
+          });
+        });
+    </script>
+    <script>
+        const arrow = document.querySelector('.arrow');
+        const path = arrow.querySelector('svg path');
+
+        let bounceInterval;
+
+        function startBouncing() {
+            bounceInterval = setInterval(() => {
+                arrow.classList.remove('bounce');
+                void arrow.offsetWidth; // Trigger reflow
+                arrow.classList.add('bounce');
+            }, 5000);
+        }
+
+        function stopBouncing() {
+            clearInterval(bounceInterval);
+            arrow.classList.remove('bounce');
+        }
+
+        // Stop bounce on hover
+        arrow.addEventListener('mouseenter', () => {
+            stopBouncing();
+
+            // Reset the draw animation so it can retrigger every time
+            path.style.animation = 'none';
+            path.offsetHeight; // force reflow
+            path.style.animation = 'draw-arrow 1s ease-in-out forwards';
+        });
+
+        // Resume bounce on leave
+        arrow.addEventListener('mouseleave', () => {
+            path.style.animation = 'none';
+            startBouncing();
+        });
+
+        // Start bounce on load
+        startBouncing();
+
+    </script>
+    
+       
 </body>
 </html>
