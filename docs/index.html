@@ -130,7 +130,8 @@
                     <a href="portfolio.html" class="label">Portfolio</a>
                 </div>
             </div>
-        </div>  
+        </div> 
+        
     </div>
     <script src="js/main.js"></script>
     <script type="module" src="js/avatar.js"></script>
@@ -193,9 +194,39 @@
 
         // Start bounce on load
         startBouncing();
-
     </script>
-    
-       
+    <script>
+        const illustrations = document.querySelectorAll('.illustration');
+        let hasAnimated = false;
+      
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+              hasAnimated = true;
+      
+              illustrations.forEach((img, index) => {
+                setTimeout(() => {
+                  img.classList.add('animate-once');
+      
+                  // Optional: remove class so hover works normally
+                  setTimeout(() => {
+                    img.classList.remove('animate-once');
+                  }, 800); // slightly longer to match slower animation
+                }, index * 200); // 200ms gap between each image
+              });
+      
+              observer.disconnect(); // Stop after first run
+            }
+          });
+        }, {
+          threshold: 0.6 // 60% of the element must be visible before triggering
+        });
+      
+        // Observe the wrapper element or first image
+        if (illustrations.length > 0) {
+          observer.observe(illustrations[0].parentElement);
+        }
+      </script>      
+      
 </body>
 </html>
