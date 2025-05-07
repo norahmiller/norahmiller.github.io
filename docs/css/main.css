@@ -198,7 +198,7 @@
             height: 70px; /* Adjust height of the gradient overlay */
             background: linear-gradient(to bottom, #1A1E28 25%, #1A1E2800 98%);
             pointer-events: none; /* Ensure the overlay does not interfere with user interactions */
-            z-index: 8; /* Higher z-index to ensure it is on top of the avatar */
+            z-index: 8;
         }
 
 
@@ -412,31 +412,23 @@
             left: 0;
             z-index: 2;
             filter: drop-shadow(0 0 8px #1a1e286c); /* soft white blur */
-        }
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 90%);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 90%);
 
-        .avatar .gradient-overlay {
-            position: absolute;
-            bottom: -150px;
-            left: 60%; /* Center the gradient */
-            transform: translateX(-50%); /* Ensure it's truly centered */
-            width: calc(100% + 1500px);
-            height: calc(40%); /* Adjust as needed */
-            background: radial-gradient(ellipse at center, 
-                #1A1E28 20%, /* Fully opaque in the center */
-                #1A1E2800 72%  /* Gradually fades out towards edges */
-            );
-        
-            pointer-events: none; /* Prevents interactions */
-            z-index: 3; /* Ensures it's above the avatar */
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
         }
 
         .avatar .gradient-behind {
             position: absolute;
-            bottom: -70px;
+            bottom: -150px;
             left: 60%; /* Center the gradient */
             transform: translateX(-50%); /* Ensure it's truly centered */
             width: calc(100% + 550px);
-            height: calc(90%); /* Adjust as needed */
+            height: calc(100%); /* Adjust as needed */
             
             background: radial-gradient(ellipse at center, 
                #1A1E28 30%, /* Fully opaque in the center */
