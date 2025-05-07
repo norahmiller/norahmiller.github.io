@@ -404,7 +404,7 @@
             pointer-events: none;
           }
 
-        canvas {
+        .avatar canvas {
             position: absolute;
             width: 100%; /* Adjust as needed */
             height: 100%; /* Adjust as needed */
