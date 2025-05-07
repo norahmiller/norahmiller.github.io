@@ -820,7 +820,7 @@
         .mid {
             display: flex;
             justify-content: center;
-            gap: 80px; /* Adds space between illustrations */
+            gap: 50px; /* Adds space between illustrations */
             width: fit-content;
             height: fit-content;
             margin: auto;
@@ -843,7 +843,30 @@
             align-items: center; /* Center them */
             text-align: center;
             position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            transition: transform 0.1s ease;
+            padding: 15px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            will-change: transform;
+
         }
+
+        .illustration-container:hover {
+            background: linear-gradient(
+              45deg,
+              rgba(156, 165, 178, 0.05) 0%,
+              rgba(156, 165, 178, 0.0375) 15%,
+              rgba(156, 165, 178, 0.005) 31%,
+              rgba(156, 165, 178, 0.05) 43%,
+              rgba(156, 165, 178, 0.0375) 72%,
+              rgba(156, 165, 178, 0.05) 97%
+            );
+            border: 1px solid #9CA5B2;
+            box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+          }
+          
 
         /* Style the navigation list */
         .label {
@@ -865,7 +888,6 @@
             transition: transform 0.5s ease;
         }
         
-        /* [3] Finally, transforming the image when container gets hovered */
         .illustration:hover {
             transform: scale(1.1);
         }
@@ -885,6 +907,20 @@
           .illustration.animate-once {
             animation: pop 0.6s ease-in-out forwards;
           }
+
+        .bottom-text p {
+            justify-self: center;
+            opacity: 60%;
+        }
+
+        .bottom-text {
+            margin-top: -48px;
+            height: fit-content;
+        }
+
+        .bottom-text a {
+            text-decoration: underline;
+        }
           
 
 /* Responsivity of Mid */

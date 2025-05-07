@@ -130,6 +130,9 @@
                 </div>
             </div>
         </div> 
+        <div class="bottom-text">
+            <p>Want to reach out? <a href="contact.html">Contact me!</a></p>
+        </div>
         
     </div>
     <script src="js/main.js"></script>
@@ -225,7 +228,30 @@
         if (illustrations.length > 0) {
           observer.observe(illustrations[0].parentElement);
         }
-      </script>      
+      </script>    
+      <script>
+        const containers = document.querySelectorAll('.illustration-container');
+      
+        containers.forEach(container => {
+          container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left; // mouse X inside element
+            const y = e.clientY - rect.top;  // mouse Y inside element
+      
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+      
+            const rotateX = -(y - centerY) / 12;
+            const rotateY = (x - centerX) / 12;
+      
+            container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+          });
+      
+          container.addEventListener('mouseleave', () => {
+            container.style.transform = `rotateX(0deg) rotateY(0deg)`;
+          });
+        });
+      </script>  
       
 </body>
 </html>
