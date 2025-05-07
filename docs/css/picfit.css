@@ -35,13 +35,13 @@
             flex: 0 0 auto; /* Prevent shrinking */
             background: linear-gradient(
                 45deg,
-                rgba(156, 165, 178, 0.25) 0%,
-                rgba(156, 165, 178, 0.1875) 15%,
-                rgba(156, 165, 178, 0.125) 31%,
-                rgba(156, 165, 178, 0.25) 43%,
-                rgba(156, 165, 178, 0.1875) 72%,
-                rgba(156, 165, 178, 0.25) 97%
-              );            
+                rgba(156, 165, 178, 0.15) 0%,
+                rgba(156, 165, 178, 0.1375) 15%,
+                rgba(156, 165, 178, 0.075) 31%,
+                rgba(156, 165, 178, 0.15) 43%,
+                rgba(156, 165, 178, 0.1375) 72%,
+                rgba(156, 165, 178, 0.15) 97%
+              );       
             border-radius: 30px; /* 30px corner radius */
             width: 1100px; /* Adjust width as needed */
             height: fit-content; /* Adjust height as needed */
