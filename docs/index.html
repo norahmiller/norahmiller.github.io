@@ -59,11 +59,15 @@
             <div class="blob blob2"></div>
             <div class="blob blob3"></div>
         </div>
-        <div class="main-wrapper">
+        <div class="main-wrapper" id="main-wrapper">
             <main>
-                <div class="intro">
-                    <h1>I'm Norah,</h1>
-                    <h2>I code and design</h2>
+                <div class="intro" id="intro">
+                    <div class="h1-wrapper" id="h1-wrapper">
+                        <h1 class="h1-background">I'm Norah</h1>
+                        <h1 class="shiny-text" id="shinyText">I'm Norah,</h1>
+                    </div>
+                    <h2>I design and code</h2>
+                    <p>learn more about me</p>
                     <div class="icons">
                         <a href="https://www.linkedin.com/in/norahmiller/" target="_blank">
                             <img src="images/linkedin.png" alt="LinkedIn Icon" class="icon">
@@ -71,17 +75,19 @@
                         <a href="https://github.com/norahmiller" target="_blank">
                             <img src="images/github.png" alt="GitHub Icon">
                         </a>
-                        <a href="mailto:norah@purdue.edu">
+                        <a href="mailto:norah.network@gmail.com">
                             <img src="images/email.png" alt="Email Icon">
                         </a>
                     </div>
-                    <p>learn more about me</p>
+                    <!-- <div class="arrow" id="arrow">
+                        <svg width="30" height="83" viewBox="0 0 30 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.62352 1.15438C4.7435 16.5993 -6.03129 35.6517 8.08876 45.5381C16.0938 51.143 33.1373 41.6252 26.8673 31.4062C16.7455 24.8627 9.22393 49.827 20.0567 80.8049M20.0567 80.8049L21.5066 76.5939M20.0567 80.8049L16.4777 77.977" stroke="#F6F6F6" stroke-width="2" stroke-linecap="round"/>
+                            </svg>                                       
+                    </div>     -->
                 </div>
                 <div class="arrow" id="arrow">
-                    <svg width="30" height="83" viewBox="0 0 30 83" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.62352 1.15438C4.7435 16.5993 -6.03129 35.6517 8.08876 45.5381C16.0938 51.143 33.1373 41.6252 26.8673 31.4062C16.7455 24.8627 9.22393 49.827 20.0567 80.8049M20.0567 80.8049L21.5066 76.5939M20.0567 80.8049L16.4777 77.977" stroke="#F6F6F6" stroke-width="2" stroke-linecap="round"/>
-                        </svg>                                       
-                </div>          
+                    <img src="images/Scroll.png" alt="Scroll Icon">
+                </div>
                 <div id="avatar" class="avatar">
                     <div class="gradient-behind"></div>
                 </div>
@@ -146,42 +152,32 @@
     </script>
     <script>
         const arrow = document.querySelector('.arrow');
-        const path = arrow.querySelector('svg path');
-
+    
         let bounceInterval;
-
+    
         function startBouncing() {
             bounceInterval = setInterval(() => {
-                arrow.classList.remove('bounce');
-                void arrow.offsetWidth; // Trigger reflow
                 arrow.classList.add('bounce');
+                setTimeout(() => {
+                    arrow.classList.remove('bounce');
+                }, 1000); // Match this to your bounce animation duration
             }, 5000);
         }
-
+    
         function stopBouncing() {
             clearInterval(bounceInterval);
             arrow.classList.remove('bounce');
         }
-
+    
         // Stop bounce on hover
-        arrow.addEventListener('mouseenter', () => {
-            stopBouncing();
-
-            // Reset the draw animation so it can retrigger every time
-            path.style.animation = 'none';
-            path.offsetHeight; // force reflow
-            path.style.animation = 'draw-arrow 1s ease-in-out forwards';
-        });
-
+        arrow.addEventListener('mouseenter', stopBouncing);
+    
         // Resume bounce on leave
-        arrow.addEventListener('mouseleave', () => {
-            path.style.animation = 'none';
-            startBouncing();
-        });
-
+        arrow.addEventListener('mouseleave', startBouncing);
+    
         // Start bounce on load
         startBouncing();
-    </script>
+    </script>    
     <script>
         const illustrations = document.querySelectorAll('.illustration');
         let hasAnimated = false;
@@ -237,6 +233,37 @@
           });
         });
       </script>  
+      <script>
+        const shinyText = document.getElementById("shinyText");
+      
+        function startShinyAnimation() {
+          console.log("[startShinyAnimation] Removing class: shiny-animate");
+          shinyText.classList.remove("shiny-animate");
+          void shinyText.offsetWidth;
+          console.log("[startShinyAnimation] Reflow triggered");
+      
+          setTimeout(() => {
+            console.log("[startShinyAnimation] Adding class: shiny-animate");
+            shinyText.classList.add("shiny-animate");
+          }, 50);
+        }
+      
+        // Click handler to replay the shine effect
+        shinyText.addEventListener("click", () => {
+          console.log("[click] Replaying shine animation");
+          startShinyAnimation();
+        });
+      </script>
+      <script>
+        const h1Wrapper = document.querySelector(".main-wrapper");
+      
+        window.addEventListener("scroll", () => {
+          const scrollY = window.scrollY;
+          // Adjust 0.5 to make it scroll slower (parallax)
+          h1Wrapper.style.transform = `translateY(${scrollY * 0.2}px)`;
+        });
+      </script>
+      
       
 </body>
 </html>

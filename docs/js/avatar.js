@@ -28,7 +28,7 @@ const spotLight = new THREE.SpotLight(0xffffff, 0.6, 100, 0.2, 0.3);
 spotLight.position.set(0, 25, 25);
 scene.add(spotLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.45);
 directionalLight.position.set(0, 1, 5);
 directionalLight.lookAt(0, 0, 5);
 scene.add(directionalLight);
@@ -38,7 +38,7 @@ blueLight.position.set(-3, 3, 5);
 blueLight.lookAt(0, 0, 5);
 scene.add(blueLight);
 
-const pinkLight = new THREE.DirectionalLight(0x7C4578, 2.5);
+const pinkLight = new THREE.DirectionalLight(0x7C4578, 3.5);
 pinkLight.position.set(2, 0.5, 5);
 pinkLight.lookAt(0, 0, 5);
 scene.add(pinkLight);
@@ -101,26 +101,67 @@ function loadAvatar() {
 
 // Finalize the loading screen transition
 function finalizeLoadingScreen() {
-    // Ensure the SVG completes the progress before switching to the main screen
     const progressInterval = setInterval(() => {
         if (isAvatarLoaded) {
-            document.querySelector("path").setAttribute("stroke-dashoffset", 0);  // Complete the progress
+            document.querySelector("path").setAttribute("stroke-dashoffset", 0);
 
-            // Fade out all parts of the loading screen (logo, svg, background)
-            document.getElementById("loading-screen").style.transition = "opacity 0.5s ease-out";
-            document.getElementById("loading-screen").style.opacity = "0";
+            const loadingScreen = document.getElementById("loading-screen");
+            loadingScreen.style.transition = "opacity 0.5s ease-out";
+            loadingScreen.style.opacity = "0";
 
-            // After fading out the loading screen, show the main content
             setTimeout(() => {
-                document.getElementById("loading-screen").style.display = "none";  // Hide loading screen
-                document.querySelector(".main-container").style.display = "block";  // Show the main content
-                window.dispatchEvent(new Event('resize'));  // Trigger resize for layout adjustment
-            }, 500);  // Ensure that the transition happens smoothly
+                loadingScreen.style.display = "none";
+                document.querySelector(".main-container").style.display = "block";
+                window.dispatchEvent(new Event('resize'));
+                startShinyAnimation();
 
-            clearInterval(progressInterval);  // Stop checking after the avatar is loaded
+                const introElements = document.querySelectorAll('#intro #h1-wrapper, #intro h2, #intro p, #intro .icons, #main-wrapper #arrow');
+
+                const opacityMap = {
+                    "#h1-wrapper": 1,
+                    "h2": 1,
+                    "p": 0.8,
+                    ".icons": 0.6,
+                    "#arrow": 0.35
+                };
+
+                const delayMap = {
+                    "#h1-wrapper": 0,
+                    "h2": 1200,
+                    "p": 1200,
+                    ".icons": 1200, // same as p
+                    "#arrow": 2000
+                };
+
+                introElements.forEach(el => {
+                    let delay = 0;
+                    for (const selector in delayMap) {
+                        if (el.matches(selector)) {
+                            delay = delayMap[selector];
+                            break;
+                        }
+                    }
+
+                    setTimeout(() => {
+                        el.classList.add('intro-fade-in');
+
+                        for (const selector in opacityMap) {
+                            if (el.matches(selector)) {
+                                el.style.opacity = opacityMap[selector];
+                                break;
+                            }
+                        }
+                    }, delay);
+                });
+
+            }, 500);
+
+            clearInterval(progressInterval);
         }
-    }, 30);  // Checking at every 30ms interval for avatar loaded state
+    }, 30);
 }
+
+
 
 // Start the steady loading process
 steadyProgressBar();

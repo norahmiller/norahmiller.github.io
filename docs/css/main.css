@@ -67,6 +67,18 @@
         display: none;
     }
 
+    #intro #h1-wrapper,
+    #intro h2,
+    #intro p,
+    #intro .icons,
+    #main-wrapper #arrow {
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    
+    .intro-fade-in {
+        /* Don't set opacity here; JS handles final opacity */
+    }
     
     /* Fonts */
 
@@ -247,20 +259,22 @@
     /* Icons */        
   
         .icons {
-            grid-column: 1; /* Leftmost column */
             width: 159px;
             height: 47px;
             display: flex;
-            right: 25px;            
             position: absolute;
-            top: 115px;
-            justify-content: end;
+            left: -22px;
+            grid-row: 4;
+            margin: 0px;
+            padding-top: 8px;
+            opacity: 60%;
+
         }
 
         .icons img {
             width: 37px;
             height: 37px;
-            margin-left: 20px;
+            padding-left: 20px;
             z-index: 6;
         }
 
@@ -268,14 +282,16 @@
     /* Arrow */        
 
         .main-wrapper .arrow{
-            grid-column: 1; /* Leftmost column */
             cursor: pointer; /* Changes the cursor to a hand when hovering */
-            justify-self: end; /* Aligns the whole container to the right */
+            justify-self: center; /* Aligns the whole container to the right */
             position: relative;
+            grid-column: 1 / 3;
             grid-row: 1;
-            top: 237px;
-            right: 48px;
+            margin-left: 100px;
+            margin-top: 550px;
             z-index: 5;
+            opacity: 30%;
+            scale: 35%;
         }
 
         .arrow svg path {
@@ -285,8 +301,9 @@
         }
 
         /* Hover effect to draw the path again */
+
         .arrow:hover svg path {
-            animation: draw-arrow 1s ease-in-out forwards;
+            animation: draw-arrow 1.5s forwards;
         }
 
         @keyframes bounce {
@@ -294,7 +311,7 @@
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-5px);
+                transform: translateY(-20px);
             }
         }
         
@@ -321,16 +338,17 @@
 
         main {
             display: grid;
-            grid-template-columns: .885fr 1fr .1fr; /* Three columns: left, middle (avatar), right */
+            grid-template-columns: auto auto; /* Three columns: left, middle (avatar), right */
             align-items: center; /* Align items vertically */
             justify-content: center; /* Center everything horizontally */
-            gap: 40px; /* Space between columns */
+            gap: 80px; /* Space between columns */
             padding: 50px;
+            left: -50px;
             width: fit-content;
             height: fit-content;
             margin: auto;
             position: relative;
-            top: 0px;
+            top: -20px;
         }
 
 
@@ -346,39 +364,84 @@
     /* Introduction Text */
 
         .intro {
-            grid-column: 1; /* Leftmost column */
+            grid-column: 2; /* Leftmost column */
             grid-row: 1;
-            top: 12px;
-            right: -49px;
             position: relative;
             z-index: 5;
-            white-space: nowrap
-        }
-
-        .intro h1, .intro h2, .intro p {
-            text-align: right;
+            white-space: nowrap;
+            display: grid;
+            grid-template-rows: auto auto auto auto auto;
+            margin-top: -120px;
         }
 
         main .intro h1 {
             font: weight 50px;
-            font-size: 35px;
+            font-size: 65px;
             font-family: 'Anonymous Pro', monospace;
-            margin-bottom: 0;
+            margin: 0;
+            grid-row: 1;
         }
 
+        main .intro h1:hover {
+            cursor: pointer;
+        }
+
+        .h1-background {
+            position: absolute;
+            color: #1A1E28; /* background color to mask shine trail */
+            z-index: -10;
+          }
+          
+
         main .intro h2 {
-            margin-top: 0;
-            font-size: 28px;
+            font-size: 42px;
             font-weight: 10;
-            padding-top: 10px;
+            grid-row: 2;
+            margin: 0;
+
         }
 
         main .intro p {
-            padding-top: 207px;
-            font-size: 21px;
+            font-size: 23px;
             font-weight: 10;
-            padding-bottom: 0px;
+            grid-row: 3;
+            margin: 0;
+            margin-top: 50px;
+            opacity: 80%;
         }
+
+        .shiny-text {
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(
+              -120deg,
+              #ffffff 0%,
+              #ffffff 40%,
+              #ffffff4f 50%,
+              #ffffff 60%,
+              #ffffff 100%
+            );
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+          }
+          
+          .shiny-animate {
+            animation: textShine 2s ease forwards;
+          }
+
+          @keyframes textShine {
+            0% {
+              background-position: 100% 0;
+            }
+            100% {
+              background-position: -80% 0;
+            }
+          }
+          
+          
 
 
     /* Avatar */
@@ -387,7 +450,7 @@
             width: 500px; /* Adjust as needed */
             height: 900px; /* Adjust as needed */
             top: -150px;
-            grid-column: 2; /* Middle column */
+            grid-column: 1; /* Middle column */
             grid-row: 1;
             position: relative;
         }
@@ -444,11 +507,11 @@
     /* Greeting Text */
 
         .greeting {
-            grid-column: 2; /* Rightmost column */
+            grid-column: 1; /* Rightmost column */
             grid-row: 1;
-            justify-self: end; /* Aligns the whole container to the right */
+            justify-self: start; /* Aligns the whole container to the right */
             top: -267px;
-            right: -24px;
+            right: -54px;
             z-index: 3; /* Higher z-index to ensure it is on top of the avatar */
             position: relative;
         }
@@ -456,13 +519,13 @@
         main .greeting .saturday-august-regular {
             font-size: 45px;
             color: white;
-            transform: rotate(10deg); /* Rotate the text */
+            transform: rotate(-10deg); /* Rotate the text */
         }
 
         main .greeting svg {
             top: 51px;
-            right: 62px;
-            transform: rotate(25deg); /* Rotate the text */
+            right: 32px;
+            transform: rotate(-25deg) scaleX(-1); /* Rotate the text */
             position: absolute;
         }
 
@@ -494,6 +557,7 @@
 
             main {
                 height: calc(650px) !important;
+                left: -25px !important;
             }
 
             .avatar {
@@ -520,14 +584,13 @@
             }
 
             .intro h1 {
-                font-size: 30px !important; /* Minimum 25px, preferred dynamic size, max 35px */
+                font-size: 45px !important; /* Minimum 25px, preferred dynamic size, max 35px */
             }
             .intro h2 {
-                font-size: 23px !important; /* Minimum 18px, preferred dynamic size, max 28px */
+                font-size: 30px !important; /* Minimum 18px, preferred dynamic size, max 28px */
             }
             .intro p {
                 font-size: 16px !important; /* Minimum 18px, preferred dynamic size, max 28px */
-                padding-top: 150px !important;
             }
 
             .intro {
@@ -540,7 +603,6 @@
             }
 
             .icons {
-                top: 95px !important;
                 right: 20px !important;
             }
 
@@ -549,7 +611,6 @@
             }
 
             .main-wrapper .arrow {
-                top: 123px !important;
                 transform: scale(0.8);
                 transform-origin: center;
                 right: 17px !important;
@@ -576,6 +637,7 @@
 
             main {
                 height: calc(660px) !important;
+                left: 0px !important;
             }
 
             main {
@@ -584,6 +646,7 @@
                 grid-auto-flow: row !important;
                 grid-template-columns: 1fr !important;
                 gap: 0px;
+                top: 80px;
             }
 
             main > * {
@@ -599,7 +662,7 @@
                 grid-row: 1;
                 width: 300px;
                 height: 700px;
-                top: -90px !important;
+                top: -170px !important;
                 left: -30px;
                 position: relative;
             }
@@ -631,9 +694,9 @@
             }
 
             .greeting svg {
-                right: 40px !important;
+                right: 20px !important;
                 top: 40px !important;
-                transform: scale(0.8) rotate(25deg) !important;
+                transform: scale(0.8) rotate(-250deg) !important;
                 transform-origin: center;
             }
 
@@ -648,7 +711,7 @@
             }
 
             .intro h1 {
-                font-size: 28px !important; /* Minimum 25px, preferred dynamic size, max 35px */
+                font-size: 35px !important; /* Minimum 25px, preferred dynamic size, max 35px */
                 text-align: left !important;
             }
             .intro h2 {
@@ -657,7 +720,7 @@
             }
             .intro p {
                 font-size: 16px !important; /* Minimum 18px, preferred dynamic size, max 28px */
-                padding-top: 400px !important;
+                padding-top: 340px !important;
                 text-align: center !important;
             }
 
@@ -671,8 +734,8 @@
                 z-index: 5;
                 transform: scale(0.6);
                 transform-origin: center;
-                right: 130px !important;
-                top: 210px;
+                right: 50px !important;
+                top: -140px;
             }
 
             @keyframes bounce-mobile {
