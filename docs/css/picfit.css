@@ -1247,7 +1247,6 @@
         .nav-node {
             grid-row: 1;
             grid-column: 1;
-            position: absolute;
             justify-self: center;
             align-self: center;
             width: 30px;
