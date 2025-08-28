@@ -1865,35 +1865,38 @@
             /* Row Two */
 
             .phases .design .row-two {
-                grid-template-columns: auto;
+                grid-template-columns: 472px;
                 grid-template-rows: auto auto auto auto auto;
-                justify-content: center;
+                justify-content: center !important;
             }
 
             .phases .design .row-two .annotation h3 {
-                padding-left: 0px;
-                max-width: 472px;
-                justify-self: center;
+                font-size: 18px;
+                align-self: start;
+                margin: 0;
             }
 
             .phases .design .row-two .annotation {
-                justify-self: center;
-            }
-
-            .phases .design .row-two .annotation img {
-                padding-left: 0px;
-                padding-top: 0px;
+                grid-column: 1;
+                padding-bottom: 10px;
+                max-width: 472px;
             }
 
             .phases .design .row-two h2 {
+                font-size: 25px;
+                text-decoration: none;
+                max-width: 472px;
+                grid-row: 1;
+                grid-column: 1;
                 justify-self: center;
             }
 
             .phases .design .row-two img {
                 grid-column: 1;
                 grid-row: 5;
-                justify-self: start;
+                justify-self: center;
                 scale: .8;
+                padding: 0px;
             }
 
 
@@ -1931,6 +1934,7 @@
                 grid-row: 6;
                 justify-self: center;
                 scale: .8;
+                padding: 0px;
             }
 
         /* Row Four */
@@ -1951,10 +1955,6 @@
             justify-self: center;
         }
 
-        .phases .design .row-four .annotation img {
-            padding-left: 0px;
-            padding-top: 0px;
-        }
 
         .phases .design .row-four h2 {
             justify-self: center;
@@ -1965,6 +1965,7 @@
             grid-row: 5;
             justify-self: center;
             scale: .8;
+            padding: 0px;
         }
 
         
