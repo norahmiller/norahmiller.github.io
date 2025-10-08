@@ -179,6 +179,7 @@
             top: 8px;
             grid-column: 2;
             grid-row: 1;
+            width: auto;
         }
 
         .picfit-intro .item h8 {
@@ -1206,7 +1207,7 @@
         .footer h4 {
             position: relative;
             left: -15px;
-            font-size: 18;
+            font-size: 18px;
             opacity: 60%;
             font-weight: normal;
         }
@@ -1990,6 +1991,1004 @@
             }
 
             
+
+
+          }
+
+
+          @media (max-width: 750px) {
+            .card {
+                width: 310px; /* Adjust width as needed */                
+            }
+    
+            .card-wrapper {
+                width: 330px;  /* Set the width of the carousel */
+                padding-top: 40px;
+                justify-self: center;
+            }
+    
+            .svg-background {
+                width: 310px !important;  /* Adjust as needed */
+                height: 100% !important; /* Adjust as needed */
+            }
+    
+            .responsive-svg {
+                width: 100%;
+                height: 100%;
+            }
+
+            /* Intro Section */
+
+                .picfit-intro {
+                    grid-template-rows: auto auto;
+                    justify-content: center;
+                }
+
+                .picfit-intro img {
+                    grid-row: 1;
+                    grid-column: 1/3;
+                    z-index: 8 !important;
+                    position: absolute !important;
+                    justify-self: center;
+                    left: auto !important;
+                    transform: translateX(-13px) translateY(20px) scale(.7);
+                }
+
+                
+                .picfit-intro .card-text {
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto 400px auto auto auto auto auto;
+                    grid-column: 1/3;
+                    grid-row: 1;
+                    justify-self: center;
+                    text-align: center;
+                    justify-content: center;
+                }
+
+                .picfit-intro .card-text .logo {
+                    grid-column: 2 !important;
+                    z-index: 9 !important;
+                    justify-self: start !important;
+                    position: relative !important;
+                    transform: scale(1.0);
+                }
+
+                .picfit-intro .card-text h7 {
+                    grid-column: 1;
+                    align-self: end;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+                    text-align: end !important;
+                    padding-right: 10px;
+                }
+        
+                .picfit-intro .card-text h8 {
+                    grid-row: 3;
+                    grid-column: 1/3;
+                    font-size: 24px;
+                    justify-self: center;
+                    padding-bottom: 30px;
+                }
+
+                .picfit-intro .card-text .item h8 {
+                    text-align: left;
+                }
+        
+                .picfit-intro .card-text h9 {
+                    grid-row: 4;
+                    grid-column: 1/3;
+                    font-size: 16px;
+                    top: 0px;
+                    position: relative;
+                    line-height: 1; 
+                }
+        
+        
+                .picfit-intro .below-text {
+                    gap: 10px; /* Space between left and right */
+                    left: -15px;
+                    position: relative;
+                    top: -10px;
+                    grid-row: 5/8;
+                    grid-column: 1/3;
+                    padding-top: 50px;
+                }
+        
+                .picfit-intro .item img.icon {
+                    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+                    width: 25px;
+                    height: 25px;
+                    transform: none;
+                    position: static !important;
+                    align-self: center;
+                }
+
+                .picfit-intro .card-text .item {
+                    height: fit-content;
+                    max-width: 127.5px;
+                }
+        
+                .picfit-intro .bottom {
+                    display: grid;
+                    gap: 0px; /* Space between left and right */
+                    row-gap: 15px;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: auto auto;
+                    justify-self: center; /* or 'stretch' if you want full width */
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+                    max-width: 270px;
+                    justify-items: center;
+                    margin-left: -15px;
+                }
+
+                .picfit-intro .bottom .item:last-child {
+                    grid-column: 1/3;
+                    justify-self: center;
+                }
+
+                .picfit-intro .bottom .item:last-child h8 {
+                    max-width: 215px !important;
+                }
+        
+                .picfit-intro .item h7 {
+                    font-size: 18px;
+                    font-weight: 700;
+                    position: relative;
+                    left: 10px;
+                    top: 0px;
+                    grid-column: 2;
+                    grid-row: 1;
+                    width: fit-content;
+                    height: fit-content;
+                    align-self: center;
+                    text-align: left !important;
+                    padding-bottom: 5px;
+                }
+        
+                .picfit-intro .item h8 {
+                    position: relative;
+                    grid-row: 2;
+                    grid-column: 2;
+                    font-size: 14px;
+                    align-self: center;
+                    top: 0px !important;
+                    padding-bottom: 0px;
+                    justify-self: left;
+                }
+
+            /* Main Problem Section */
+
+                .main-problem {
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto auto;
+                    width: 245px;
+                    align-items: center;
+                    justify-self: center;
+                    margin-top: 80px;
+                    padding: 15px;
+                    gap: 30px;
+                    text-align: center;
+                }
+
+                .main-problem h7 {
+                    font-size: 24px;
+                    font-weight: 700;
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+
+                .main-problem h8 {
+                    font-size: 16px;
+                    grid-column: 1;
+                    line-height: 1.2;
+                    grid-row: 2;
+                }
+
+            /* Timeline Section */
+
+                .timeline {
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto auto auto auto;
+                    width: 900px;
+                    align-items: center;
+                    justify-self: center;
+                    justify-content: center;
+                    margin-top: 80px;
+                    padding: 20px;
+                }
+
+                .timeline h7 {
+                    font-size: 30px;
+                    margin-bottom: 0px;
+                }
+
+                .timeline .label {
+                    font-size: 20px;
+                    padding-bottom: 10px !important;
+                }
+
+                .week-2 {
+                    grid-column: 1;
+                    grid-row: 4;
+                    width: fit-content;
+                    justify-self: center;
+                }
+
+                .week-1 {
+                    grid-template-columns: auto 32px auto 32px auto;
+                }
+
+                .week-2 {
+                    grid-template-columns: auto 32px auto;
+                }
+
+                .week-1 .half-dotted-box img:first-child {
+                    display: none;
+                }
+
+                .week-1 .half-dotted-box img:last-child {
+                    display: block !important;
+                    width: 280px;
+                }
+
+                .week-2 .half-dotted-box img {
+                    width: 178.4px;
+                    justify-self: center;
+                }
+
+                .week-2 .half-dotted-box {
+                    padding-left: 0px !important;
+                    transform: translateY(15px);
+                    padding-top: 65px;
+                }
+
+                .week-1 .half-dotted-box {
+                    padding-left: 5px !important;
+                    transform: translateY(5px);
+                }
+
+                .timeline .circle {
+                    width: 70px;
+                    height: 70px;
+                    margin-left: 0px;
+                }
+
+                .timeline .circle img {
+                    transform: scale(.55);
+                    margin-top: -5px;
+                }
+
+                .timeline .week-1 .circle:nth-of-type(3) img {
+                    padding: 2.5px !important;
+                }
+
+                .timeline svg {
+                    transform: scale(.6) translateX(-5px);
+                }
+
+                .timeline .circle h9 {
+                    font-size: 10px;
+                    top: -15px;
+                }
+
+                .timeline .middle {
+                    display: none;
+                }
+
+            /* Detailed Phases */
+            
+                .detailed-phases h1 {
+                    font-size: 30px;
+                    right: 25px;
+                }
+
+                .detailed-phases svg {
+                    transform: scale(.65);
+                    top: 45px;
+                    right: -105px;
+                }
+
+            /* Explore */
+
+                .phases .explore {
+                    width: 245px;
+                    justify-content: center;
+                    padding: 15px;
+                }
+
+
+                /* Row One */
+
+                    .phases .explore .row-one {
+                        display: grid;
+                        grid-template-columns: auto;
+                        grid-template-rows: auto auto;
+                        gap: 10px;
+                        justify-self: center;
+                        width: 230px;
+                    }
+
+                    .phases .explore .row-one h3 {
+                        font-size: 16px;
+                        text-align: center;
+                        margin: 0px;
+                    }
+
+                    .phases .explore .row-one h2 {
+                        font-size: 24px;
+                        margin: 0px;
+                        padding-bottom: 30px;
+                        padding-top: 20px;
+                    }
+
+                /* Row Two */
+                    
+                    .phases .explore .row-two {
+                        grid-template-columns: auto;
+                        grid-template-rows: auto auto auto auto auto;
+                        justify-self: center;  
+                        width: 230px;
+                    }
+
+                    .phases .explore .row-two h3{
+                        grid-column: 1;
+                        font-size: 16px;
+                        width: 230px;
+                        text-align: center;
+                    }
+
+                    .phases .explore .row-two li {
+                        max-width: 200px;
+                        font-size: 14px;
+                        margin-left: -15px;
+                        margin-top: 0px;
+                    }
+
+                    .phases .explore .row-two ul {
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+
+                    .phases .explore .row-two svg{
+                        grid-column: 1;
+                        width: 230px;
+                    }
+
+                /* Row Three */
+
+                    .phases .explore .row-three {
+                        grid-template-columns: auto;
+                        grid-template-rows: auto auto auto;
+                        text-align: center;
+                        justify-self: center;  
+                        justify-content: center;     
+                    }
+
+                    .phases .explore .row-three h3:first-child {
+                        grid-row: 2;
+                        grid-column: 1;
+                        justify-self: center;
+                    }
+
+                    .phases .explore .row-three h3 {
+                        grid-column: 1;
+                        grid-row: 1;
+                        max-width: 240px;
+                        justify-self: center;
+                        padding-right: 0px !important;
+                        font-size: 16px;
+                    }
+
+                    .phases .explore .row-three img {
+                        grid-row: 3/4;
+                        grid-column: 1;
+                        transform: scale(.5);
+                        margin: -100px;
+                        height: auto;
+                    }
+
+                    .phases .explore .row-three svg {
+                        display: none;
+                    }
+
+                /* Row Four */
+
+                    .phases .explore .row-four {
+                        grid-template-rows: auto auto auto;
+                        grid-template-columns: auto;
+                        text-align: center;
+                        justify-self: center;      
+                    }
+
+                    .phases .explore .row-four h3:first-child {
+                        max-width: 250px;
+                        font-size: 16px;
+                    }
+
+                    .phases .explore .row-four img {
+                        transform: scale(.45);
+                        margin: -100px;
+                    }
+
+                /* Row Five */
+
+                    .phases .explore .row-five {
+                        grid-row: 5;
+                        display: grid;
+                        grid-template-columns: auto;
+                        grid-template-rows: auto auto auto;
+                        justify-content: center;
+                        text-align: center;
+                        padding-top: 20px;
+                        justify-self: center;      
+                    }
+
+                    .phases .explore .row-five h2 {
+                        grid-row: 1;
+                        grid-column: 1;
+                        font-size: 20px;
+                    }
+
+                    .phases .explore .row-five h3 {
+                        grid-row: 2;
+                        grid-column: 1;
+                        width: 250px;
+                        font-size: 16px;
+                        grid-row: 3;
+                    }
+
+                    .phases .explore .row-five svg {
+                        grid-row: 3;
+                        grid-column: 1;
+                        padding-left: 70px;
+                        padding-right: 70px;
+                        padding-top: 0px;
+                        padding-bottom: 0px;
+                        margin-top: -10px;
+                        transform: scale(.3);
+                        grid-row: 2;
+                    }
+
+
+            /* Define */
+
+            .phases .define {
+                width: 245px;
+                justify-content: center;
+                padding: 15px;
+            }
+
+
+            /* Row One */
+
+                .phases .define .row-one {
+                    width: fit-content;
+                    gap: 0px;
+                    justify-self: center;
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto auto;
+                }
+
+                .phases .define .row-one h2 {
+                    font-size: 24px;
+                    margin-bottom: 14px;
+                }
+
+                .phases .define .row-one h3 {
+                    font-size: 16px;
+                    width: 250px;
+                    text-align: center;
+                }
+
+            /* Row Two */
+
+                .phases .define .row-two h3 {
+                    max-width: 230px;
+                    justify-self: center;
+                    text-align: center;
+                    font-size: 16px;
+                    margin: 16px;
+                }
+
+                .phases .define .row-two img {
+                    display: block !important;
+                    transform: scale(.35);
+                    margin: -100px;
+                }
+
+                .phases .define .row-two img:first-of-type {
+                    display: none !important;
+                }
+
+                .phases .define .row-two {
+                    padding-top: 0px;
+                }
+
+            /* Row Three */                
+
+                .phases .define .row-three {
+                    grid-template-rows: auto auto auto;
+                    grid-template-columns: auto;
+                    text-align: center;
+                    justify-self: center;      
+                    padding-top: 0px;
+                }
+
+                .phases .define .row-three h3 {
+                    max-width: 250px;
+                    grid-column: 1;
+                    grid-row: 1;
+                    font-size: 16px;
+                }
+
+                .phases .define .row-three h2 {
+                    grid-row: 2;
+                    grid-column: 1;
+                    font-size: 20px;
+                }
+
+                .phases .define .row-three img {
+                    grid-column: 1;
+                    grid-row: 3;
+                    transform: scale(.5);
+                    margin: -85px;
+                }
+
+            /* Row Four */
+
+                .phases .define .row-four {
+                    grid-row: 5;
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto auto auto;
+                    justify-content: center;
+                    text-align: center;
+                    justify-self: center;      
+                    padding-top: 0px;
+                }
+
+                .phases .define .row-four h2 {
+                    grid-row: 1;
+                    grid-column: 1;
+                    font-size: 20px;
+                }
+
+                .phases .define .row-four h3 {
+                    grid-row: 2;
+                    grid-column: 1;
+                    width: 230px;
+                    grid-row: 3;
+                    font-size: 16px;
+                }
+
+                .phases .define .row-four svg {
+                    grid-row: 3;
+                    grid-column: 1;
+                    padding-left: 70px;
+                    padding-right: 70px;
+                    padding-top: 0px;
+                    margin-top: -10px;
+                    padding-bottom: 0px;
+                    width: 230px;
+                    grid-row: 2;
+                }
+
+
+        /* Ideate */
+
+            .phases .ideate {
+                width: 245px;
+                justify-content: center;
+                padding: 15px;
+            }
+
+
+            /* Row One */
+
+                .phases .ideate .row-one {
+                    width: fit-content;
+                    gap: 0px;
+                    justify-self: center;
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto auto;
+                }
+
+                .phases .ideate .row-one h3 {
+                    width: 250px;
+                    font-size: 16px;
+                    text-align: center;
+                }
+
+                .phases .ideate .row-one h2 {
+                    font-size: 24px;
+                    margin-bottom: 14px;
+                }
+
+            /* Row Two */
+
+                .phases .ideate .row-two {
+                    grid-template-columns:auto;
+                    grid-template-rows: auto auto auto auto;
+                    justify-self: center;  
+                    justify-content: center;
+                    align-content: center;
+                    padding-top: 0px;
+                }
+
+                .phases .ideate .row-two h3 {
+                    grid-column: 1;
+                    justify-self: center;
+                    font-size: 16px;
+                    width: 250px;
+                }
+
+                .phases .ideate .row-two ul {
+                    grid-column: 1;
+                    grid-row: auto;
+                    justify-self: start;
+                    width: 200px;
+                    font-size: 14px;
+                    margin-left: -10px;
+                }
+
+
+
+            /* Row Three */
+
+                .phases .ideate .row-three {
+                    grid-template-columns: auto;
+                    grid-template-rows: auto auto auto;
+                    text-align: center;
+                    justify-self: center;  
+                    justify-content: center;
+                    padding-top: 10px;     
+                }
+
+                .phases .ideate .row-three h2 {
+                    grid-row: 2;
+                    grid-column: 1;
+                    justify-self: center;
+                    font-size: 20px;
+                }
+
+                .phases .ideate .row-three h3 {
+                    grid-column: 1;
+                    grid-row: 1;
+                    width: 240px;
+                    justify-self: center;
+                    padding-right: 0px !important;
+                    font-size: 16px;
+                }
+
+                .phases .ideate .row-three .diagram {
+                    grid-row: 3/4;
+                    grid-column: 1;
+                    transform: scale(.5);
+                    margin: -170px;
+                    justify-self: center;
+                }
+
+                .phases .ideate .row-three svg {
+                    display: none;
+                }
+
+
+            /* Row Four */
+
+                .phases .ideate .row-four {
+                    justify-content: center;
+                    justify-self: center;
+                    padding-top: 20px;
+                }
+
+                .phases .ideate .row-four h3 {
+                    font-size: 16px;
+                    width: 230px;
+                }
+
+                .phases .ideate .row-four h2 {
+                    width: 230px;
+                    text-align: center;
+                    padding-top: 20px;
+                }
+
+                .phases .ideate .row-four img {
+                    transform: scale(.35);
+                    margin: -100px;
+                }
+
+
+            /* Row Five */
+
+                .phases .ideate .row-five {
+                    grid-row: 5;
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto auto auto;
+                    justify-content: center;
+                    text-align: center;
+                    justify-self: center;    
+                    padding-top: 10px;  
+                }
+
+                .phases .ideate .row-five h2 {
+                    grid-row: 1;
+                    grid-column: 1;
+                    font-size: 20px;
+                }
+
+                .phases .ideate .row-five h3 {
+                    grid-row: 3;
+                    grid-column: 1;
+                    width: 250px;
+                    font-size: 16px;
+                }
+
+                .phases .ideate .row-five svg {
+                    grid-row: 2;
+                    grid-column: 1;
+                    padding-left: 70px;
+                    padding-right: 70px;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    margin-top: -10px;
+                    width: 230px;
+                }
+
+
+
+    /* Design */
+
+        .phases .design {
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto auto;
+            width: 245px;
+            padding: 15px;
+            gap: 30px;
+            justify-content: center;
+        }
+
+            /* Row One */
+
+            .phases .design .row-one {
+                width: 230px;
+                gap: 0px;
+                justify-self: center;
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: auto auto;
+            }
+
+            .phases .design .row-one h3 {
+                text-align: center;
+                font-size: 16px;
+            }
+
+            .phases .design .row-one h2 {
+                text-align: center;
+                font-size: 24px;
+                margin-bottom: 14px;
+            }
+
+            /* Row Two */
+
+            .phases .design .row-two {
+                grid-template-columns: 472px;
+                grid-template-rows: auto auto auto auto auto;
+                justify-content: center !important;
+                align-content: center !important;
+                padding-top: 0px;
+            }
+
+            .phases .design .row-two .annotation h3 {
+                font-size: 16px;
+                margin: 0;
+                width: 210px;
+            }
+
+            .phases .design .row-two .annotation {
+                grid-column: 1;
+                padding-bottom: 10px;
+                max-width: 472px;
+                justify-self: center;
+            }
+
+            .phases .design .row-two h2 {
+                font-size: 20px;
+                text-decoration: none;
+                max-width: 472px;
+                grid-row: 1;
+                grid-column: 1;
+                justify-self: center;
+            }
+
+            .phases .design .row-two img {
+                grid-column: 1;
+                grid-row: 5;
+                justify-self: center;
+                padding: 0px;
+                transform: scale(.7);
+            }
+
+            .phases .design .row-two .prototype {
+                transform: scale(.44);
+                margin: -70px;
+                padding-left: 20px;
+            }
+
+
+            /* Row Three */
+
+            .phases .design .row-three {
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto auto auto;
+                justify-content: center !important;
+                align-content: center !important;
+                padding-top: 0px;
+            }
+
+            .phases .design .row-three .annotation {
+                grid-column: 1;
+                padding-bottom: 10px;
+                justify-self: center;
+            }
+
+            .phases .design .row-three .annotation h3 {
+                font-size: 16px;
+                margin: 0;
+                width: 210px;
+                padding-left: 10px;
+            }
+
+            .phases .design .row-three h2 {
+                font-size: 20px;
+                text-decoration: none;
+                max-width: 472px;
+                grid-row: 1;
+                grid-column: 1;
+                justify-self: center;
+            }
+
+            .phases .design .row-three img {
+                grid-column: 1;
+                grid-row: 6;
+                justify-self: center;
+                transform: scale(.7);
+                padding: 0px;
+            }
+
+            .phases .design .row-three .prototype {
+                transform: scale(.6);
+                margin: -40px;
+                padding-left: 20px;
+            }
+
+        /* Row Four */
+
+            .phases .design .row-four {
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto auto auto;
+                justify-content: center !important;
+                align-content: center !important;
+                padding-top: 0px;
+            }
+
+            .phases .design .row-four .annotation {
+                justify-self: center;
+            }
+
+            .phases .design .row-four .annotation h3 {
+                padding-left: 0px;
+                width: 210px;
+                justify-self: center;
+                padding-left: 10px;
+                font-size: 16px;
+            }
+
+
+            .phases .design .row-four h2 {
+                justify-self: center;
+                font-size: 20px;
+            }
+
+            .phases .design .row-four img {
+                grid-column: 1;
+                grid-row: 5;
+                justify-self: center;
+                transform: scale(.7);
+                padding: 0px;
+            }
+
+            .phases .design .row-four .prototype {
+                    transform: scale(.6);
+                    margin: -40px;
+                    padding-left: 10px;
+            }
+
+        
+
+        
+        /* Testing */
+
+        .phases .testing {
+            width: 245px;
+            padding: 15px;
+        }
+
+            /* Row One */
+
+            .phases .testing .row-one {
+                grid-template-columns: auto;
+                grid-row: auto auto;
+            }
+
+            .phases .testing .row-one h3 {
+                font-size: 16px;
+                text-align: center;
+                margin-top: 0px;
+            }
+
+            .phases .testing h2 {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+                .main-problem h7 {
+                    font-size: 24px;
+                    font-weight: 700;
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+
+                .main-problem h8 {
+                    font-size: 16px;
+                    grid-column: 1;
+                    line-height: 1.2;
+                    grid-row: 2;
+                }
+
+        
+        /* Final Product */
+
+            .final-product {
+                padding-left: unset;
+                padding-right: unset;
+                width: fit-content;
+                grid-template-columns: auto;
+                gap: 15px;
+                padding-bottom: 30px;
+            }
+
+            .final-product .row-one {
+                grid-template-columns: auto 15px auto;
+            }
+
+            .final-product h2 {
+                font-size: 35px !important;
+                text-align: center;
+            }
+
+            .final-product svg {
+                display: none;
+            }
+
+            .final-product .figma-icons img {
+                height: 90px;
+            }
+
+            .final-product .figma-icons h3 {
+                font-size: 16px;
+            }
+
+        /* Footer */
+
+            .footer h4 {
+                left: 0px;
+                font-size: 16px;
+            }
 
 
           }

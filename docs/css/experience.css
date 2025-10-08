@@ -236,12 +236,12 @@
         }
 
         .see-more {
-            top: 400px;
+            top: 350px;
             font-size: 33px;
         }
 
         .experience-main .arrow {
-            top: 350px;
+            top: 300px;
             transform: scale(0.7) translateX(-120px);
         }
     }
