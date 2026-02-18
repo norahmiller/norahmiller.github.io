@@ -277,7 +277,7 @@
             z-index: 1;
         }
 
-        .budget-booking {
+        .allied-solutions {
             display: grid;
             grid-template-columns: auto auto;
             grid-template-rows: auto;
@@ -285,7 +285,7 @@
             z-index: 3;
         }
         
-        .budget-booking .card-text h7 {
+        .allied-solutions .card-text h7 {
             top: 92px;
             grid-row: 1;
             grid-column: 1;
@@ -293,17 +293,25 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
         }
 
-        .budget-booking .card-text h8 {
+        .allied-solutions .card-text h8 {
             grid-row: 1;
             grid-column: 1;
-            left: 270px;
+            left: 280px;
             top: 108px;
             font-size: 24px;
             position: relative;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
         }
 
-        .budget-booking .card-text h9 {
+        .allied-solutions .card-text .mockup-logo {
+            top: 97px;
+            position: relative;
+            height: 38px;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .allied-solutions .card-text h9 {
             top: 70px;
             grid-row: 2;
             grid-column: 1;
@@ -313,7 +321,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
         }
 
-        .budget-booking .card-text {
+        .allied-solutions .card-text {
             display: grid;
             grid-template-columns: auto;
             grid-template-rows: auto auto auto;
@@ -321,7 +329,7 @@
             padding-right: 30px;
         }
 
-        .budget-booking .button-link {
+        .allied-solutions .button-link {
             border: none;
             border-radius: 0.35em;
             background-color: rgba(255, 255, 255, 0.15);
@@ -346,9 +354,25 @@
         }
 
 
-    /* Starmail Card */
+    /* BudgetBooking Card */
 
-        .starmail {
+        .card .gradient-laptop {
+            position: absolute;
+            left: 220px; /* Center the gradient */
+            transform: translateX(-50%); /* Ensure it's truly centered */
+            width: 500px;
+            height: 500px; /* Adjust as needed */
+            
+            background: radial-gradient(ellipse at center, 
+                rgba(28, 38, 48, .5) 0%, /* Fully opaque in the center */
+                rgba(28, 38, 48, 0) 70%  /* Gradually fades out towards edges */
+            );
+        
+            pointer-events: none; /* Prevents interactions */
+            z-index: 1;
+        }
+
+        .microsoft-azure {
             display: grid;
             grid-template-columns: auto auto;
             grid-template-rows: auto;
@@ -356,25 +380,33 @@
             z-index: 3;
         }
         
-        .starmail .card-text h7 {
-            top: 98px;
+        .microsoft-azure .card-text h7 {
+            top: 92px;
             grid-row: 1;
             grid-column: 1;
             position: relative;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
         }
 
-        .starmail .card-text h8 {
+        .microsoft-azure .card-text h8 {
             grid-row: 1;
             grid-column: 1;
-            left: 200px;
+            left: 255px;
             top: 108px;
             font-size: 24px;
             position: relative;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
         }
 
-        .starmail .card-text h9 {
+        .microsoft-azure .card-text .mockup-logo {
+            top: 102px;
+            position: relative;
+            height: 34px;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .microsoft-azure .card-text h9 {
             top: 70px;
             grid-row: 2;
             grid-column: 1;
@@ -384,7 +416,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
         }
 
-        .starmail .card-text {
+        .microsoft-azure .card-text {
             display: grid;
             grid-template-columns: auto;
             grid-template-rows: auto auto auto;
@@ -392,7 +424,7 @@
             padding-right: 30px;
         }
 
-        .starmail .button-link {
+        .microsoft-azure .button-link {
             border: none;
             border-radius: 0.35em;
             background-color: rgba(255, 255, 255, 0.15);
@@ -572,9 +604,9 @@
                 box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
             }
 
-            /* BudgetBooking Card */
+            /* Allied Solutions Card */
 
-                .budget-booking .mockup {
+                .allied-solutions .mockup {
                     width: 270px !important;
                     height: 203px !important;
                     justify-self: center !important;
@@ -582,21 +614,21 @@
                     padding-top: 25px !important;
                 }
 
-                .budget-booking .laptop-shadow {
+                .allied-solutions .laptop-shadow {
                     top: 158px !important;
                     height: 75px !important;
                     justify-self: center !important;
                     left: auto !important;
                 }
 
-                .budget-booking .gradient-laptop {
+                .allied-solutions .gradient-laptop {
                     width: 270px !important;
                     height: 203px !important;
                     justify-self: center !important;
                     transform: translateX(0) !important;
                 }
 
-                .budget-booking {
+                .allied-solutions {
                     grid-template-columns: auto !important;
                     grid-template-rows: auto auto auto auto auto auto;
                     position: relative;
@@ -604,24 +636,14 @@
                     justify-content: center !important;
                 }
 
-                .budget-booking h7 {
+                .allied-solutions .mockup-logo {
                     grid-row: 2 !important;
-                    font-size: 34px !important;
+                    height: 34px !important;
                     top: -30px !important;
                     justify-self: center !important;
                 }
 
-                .budget-booking .logo {
-                    grid-row: 2 !important;
-                    width: 30px !important;
-                    height: 25px !important;
-                    top: 3px !important;
-                    right: -40px !important;
-                    left: auto !important;
-                    justify-self: center !important;
-                }
-
-                .budget-booking h9 {
+                .allied-solutions h9 {
                     grid-row: 5 !important;
                     font-size: 18px !important;
                     text-align: center !important;
@@ -632,21 +654,21 @@
                     padding-right: 10px;
                 }
 
-                .budget-booking a {
+                .allied-solutions a {
                     grid-row: 6 !important;
                     top: 60px !important;
                 }
 
-                .budget-booking .card-text {
+                .allied-solutions .card-text {
                     padding-left: 10px !important;
                     padding-right: 10px !important;
                 }
 
-                .budget-booking .card-text h8.desktop {
+                .allied-solutions .card-text h8.desktop {
                     display: none;
                 }
         
-                .budget-booking .card-text h8.mobile-top {
+                .allied-solutions .card-text h8.mobile-top {
                     display: block;
                     grid-row: 3;
                     grid-column: 1;
@@ -658,7 +680,7 @@
                     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
                 }
 
-                .budget-booking .card-text h8.mobile-bottom {
+                .allied-solutions .card-text h8.mobile-bottom {
                     display: block;
                     grid-row: 4 !important;
                     grid-column: 1;
@@ -671,7 +693,7 @@
                     line-height: .5;
                 }
 
-                .budget-booking .button-link {
+                .allied-solutions .button-link {
                     width: 168px;
                     height: 40px;
                     line-height: 40px;
@@ -686,24 +708,31 @@
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
                 }
 
-            /* Starmail Card */
+            /* Microsoft Azure Card */
 
-                .starmail .mockup {
+                .microsoft-azure .mockup {
                     width: 270px !important;
-                    height: 270px !important;
+                    height: 203px !important;
                     justify-self: center !important;
                     left: -15px !important;
+                    padding-top: 25px !important;
                 }
 
-                .starmail .gradient-behind {
+                .microsoft-azure .laptop-shadow {
+                    top: 158px !important;
+                    height: 75px !important;
+                    justify-self: center !important;
+                    left: auto !important;
+                }
+
+                .microsoft-azure .gradient-laptop {
                     width: 270px !important;
-                    height: 270px !important;
-                    left: 150px !important;
+                    height: 203px !important;
                     justify-self: center !important;
                     transform: translateX(0) !important;
                 }
 
-                .starmail {
+                .microsoft-azure {
                     grid-template-columns: auto !important;
                     grid-template-rows: auto auto auto auto auto auto;
                     position: relative;
@@ -711,74 +740,64 @@
                     justify-content: center !important;
                 }
 
-                .starmail h7 {
+                .microsoft-azure .mockup-logo {
                     grid-row: 2 !important;
-                    font-size: 34px !important;
-                    top: 0px !important;
+                    height: 34px !important;
+                    top: -30px !important;
                     justify-self: center !important;
                 }
 
-                .starmail .logo {
-                    grid-row: 2 !important;
-                    width: 30px !important;
-                    height: 25px !important;
-                    top: 3px !important;
-                    right: -40px !important;
-                    left: auto !important;
-                    justify-self: center !important;
-                }
-
-                .starmail h9 {
+                .microsoft-azure h9 {
                     grid-row: 5 !important;
                     font-size: 18px !important;
                     text-align: center !important;
                     justify-self: center;
-                    top: 40px !important;
+                    top: 15px !important;
                     line-height: 1.5 !important;
                     padding-left: 10px;
                     padding-right: 10px;
                 }
 
-                .starmail a {
+                .microsoft-azure a {
                     grid-row: 6 !important;
                     top: 60px !important;
                 }
 
-                .starmail .card-text {
+                .microsoft-azure .card-text {
                     padding-left: 10px !important;
                     padding-right: 10px !important;
                 }
 
-                .starmail .card-text h8.desktop {
+                .microsoft-azure .card-text h8.desktop {
                     display: none;
                 }
         
-                .starmail .card-text h8.mobile-top {
+                .microsoft-azure .card-text h8.mobile-top {
                     display: block;
                     grid-row: 3;
                     grid-column: 1;
                     justify-self: center !important;
-                    top: 15px;
+                    left: 0px !important;
+                    top: -12px;
                     font-size: 22px;
                     position: relative;
-                    left: 0px !important;
                     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
                 }
 
-                .starmail .card-text h8.mobile-bottom {
+                .microsoft-azure .card-text h8.mobile-bottom {
                     display: block;
                     grid-row: 4 !important;
                     grid-column: 1;
                     justify-self: center !important;
+                    left: 0px !important;
                     font-size: 20px;
                     position: relative;
-                    left: 0px !important;
-                    top: 25px;
+                    top: 0px;
                     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-                    line-height: .5 !important;
+                    line-height: .5;
                 }
 
-                .starmail .button-link {
+                .microsoft-azure .button-link {
                     width: 168px;
                     height: 40px;
                     line-height: 40px;
@@ -787,11 +806,12 @@
                     display: inline-block;
                     text-decoration: none; /* Removes underline */
                     cursor: pointer;
-                    top: 50px;
+                    top: 30px !important;
                     right: 0px !important;
                     font-family: 'Inter', sans-serif;
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
                 }
+
 
         }
 
@@ -947,9 +967,9 @@
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
                 }
 
-            /* BudgetBooking Card */
+            /* Allied Solutions Card */
 
-                .budget-booking .mockup {
+                .allied-solutions .mockup {
                     width: 270px !important;
                     height: 203px !important;
                     justify-self: center !important;
@@ -957,20 +977,20 @@
                     padding-top: 25px !important;
                 }
 
-                .budget-booking .laptop-shadow {
+                .allied-solutions .laptop-shadow {
                     top: 158px !important;
                     left: 15px !important;
                     height: 75px !important;
                 }
 
-                .budget-booking .gradient-laptop {
+                .allied-solutions .gradient-laptop {
                     width: 270px !important;
                     height: 203px !important;
                     left: 140px !important;
                     justify-self: center !important;
                 }
 
-                .budget-booking {
+                .allied-solutions {
                     grid-template-columns: auto !important;
                     grid-template-rows: auto auto auto auto auto auto;
                     position: relative;
@@ -978,24 +998,14 @@
                     justify-content: center !important;
                 }
 
-                .budget-booking h7 {
+                .allied-solutions .mockup-logo {
                     grid-row: 2 !important;
-                    font-size: 25px !important;
+                    height: 30px !important;
                     top: -30px !important;
                     justify-self: center !important;
                 }
 
-                .budget-booking .logo {
-                    grid-row: 2 !important;
-                    width: 30px !important;
-                    height: 25px !important;
-                    top: 3px !important;
-                    right: -40px !important;
-                    left: auto !important;
-                    justify-self: center !important;
-                }
-
-                .budget-booking h9 {
+                .allied-solutions h9 {
                     grid-row: 5 !important;
                     font-size: 12px !important;
                     text-align: center !important;
@@ -1006,21 +1016,21 @@
                     padding-right: 10px;
                 }
 
-                .budget-booking a {
+                .allied-solutions a {
                     grid-row: 6 !important;
                     top: 60px !important;
                 }
 
-                .budget-booking .card-text {
+                .allied-solutions .card-text {
                     padding-left: 10px !important;
                     padding-right: 10px !important;
                 }
 
-                .budget-booking .card-text h8.desktop {
+                .allied-solutions .card-text h8.desktop {
                     display: none;
                 }
         
-                .budget-booking .card-text h8.mobile-top {
+                .allied-solutions .card-text h8.mobile-top {
                     display: block;
                     grid-row: 3;
                     grid-column: 1;
@@ -1032,7 +1042,7 @@
                     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
                 }
 
-                .budget-booking .card-text h8.mobile-bottom {
+                .allied-solutions .card-text h8.mobile-bottom {
                     display: block;
                     grid-row: 4 !important;
                     grid-column: 1;
@@ -1044,7 +1054,7 @@
                     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
                 }
 
-                .budget-booking .button-link {
+                .allied-solutions .button-link {
                     width: 168px;
                     height: 40px;
                     line-height: 40px;
@@ -1059,23 +1069,30 @@
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
                 }
 
-            /* Starmail Card */
+            /* Microsoft Azure Card */
 
-                .starmail .mockup {
+                .microsoft-azure .mockup {
                     width: 270px !important;
-                    height: 270px !important;
+                    height: 203px !important;
                     justify-self: center !important;
                     left: -15px !important;
+                    padding-top: 25px !important;
                 }
 
-                .starmail .gradient-behind {
+                .microsoft-azure .laptop-shadow {
+                    top: 158px !important;
+                    left: 15px !important;
+                    height: 75px !important;
+                }
+
+                .microsoft-azure .gradient-laptop {
                     width: 270px !important;
-                    height: 270px !important;
-                    left: 150px !important;
+                    height: 203px !important;
+                    left: 140px !important;
                     justify-self: center !important;
                 }
 
-                .starmail {
+                .microsoft-azure {
                     grid-template-columns: auto !important;
                     grid-template-rows: auto auto auto auto auto auto;
                     position: relative;
@@ -1083,73 +1100,63 @@
                     justify-content: center !important;
                 }
 
-                .starmail h7 {
+                .microsoft-azure .mockup-logo {
                     grid-row: 2 !important;
-                    font-size: 25px !important;
-                    top: 0px !important;
+                    height: 26px !important;
+                    top: -30px !important;
                     justify-self: center !important;
                 }
 
-                .starmail .logo {
-                    grid-row: 2 !important;
-                    width: 30px !important;
-                    height: 25px !important;
-                    top: 3px !important;
-                    right: -40px !important;
-                    left: auto !important;
-                    justify-self: center !important;
-                }
-
-                .starmail h9 {
+                .microsoft-azure h9 {
                     grid-row: 5 !important;
                     font-size: 12px !important;
                     text-align: center !important;
                     justify-self: center;
-                    top: 40px !important;
+                    top: 15px !important;
                     line-height: 1.5 !important;
                     padding-left: 10px;
                     padding-right: 10px;
                 }
 
-                .starmail a {
+                .microsoft-azure a {
                     grid-row: 6 !important;
                     top: 60px !important;
                 }
 
-                .starmail .card-text {
+                .microsoft-azure .card-text {
                     padding-left: 10px !important;
                     padding-right: 10px !important;
                 }
 
-                .starmail .card-text h8.desktop {
+                .microsoft-azure .card-text h8.desktop {
                     display: none;
                 }
         
-                .starmail .card-text h8.mobile-top {
+                .microsoft-azure .card-text h8.mobile-top {
                     display: block;
                     grid-row: 3;
                     grid-column: 1;
                     justify-self: center !important;
-                    top: 15px;
+                    left: 0px !important;
+                    top: -12px;
                     font-size: 18px;
                     position: relative;
-                    left: 0px !important;
                     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
                 }
 
-                .starmail .card-text h8.mobile-bottom {
+                .microsoft-azure .card-text h8.mobile-bottom {
                     display: block;
                     grid-row: 4 !important;
                     grid-column: 1;
                     justify-self: center !important;
+                    left: 0px !important;
                     font-size: 20px;
                     position: relative;
-                    left: 0px !important;
-                    top: 25px;
+                    top: 0px;
                     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
                 }
 
-                .starmail .button-link {
+                .microsoft-azure .button-link {
                     width: 168px;
                     height: 40px;
                     line-height: 40px;
@@ -1158,7 +1165,7 @@
                     display: inline-block;
                     text-decoration: none; /* Removes underline */
                     cursor: pointer;
-                    top: 50px;
+                    top: 30px !important;
                     right: 0px !important;
                     font-family: 'Inter', sans-serif;
                     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
